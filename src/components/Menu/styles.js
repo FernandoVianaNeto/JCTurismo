@@ -4,7 +4,7 @@ export const Container = styled.div`
   ${({theme}) => css`
     height: auto;
     padding: 2rem;
-    border-bottom: 1px solid ${theme.colors.primaryColor};
+    border-bottom: 1px solid ${theme.colors.thirdColor};
 
     img {
       height: 5rem;
@@ -12,7 +12,8 @@ export const Container = styled.div`
     }
 
     .container {
-      display: grid;
+      display: flex;
+      flex-direction: column;
 
       .flex-left {
         text-align: right;
