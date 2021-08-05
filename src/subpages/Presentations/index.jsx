@@ -1,8 +1,6 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-import { SectionBackground } from '../../components/SectionBackground';
-
 export const Presentations = ({ invert = false, children, title, smallDescription, icon }) => {
   return (
       <Styled.Container>

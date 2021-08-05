@@ -2,7 +2,6 @@ import * as Styled from './styles';
 
 import { Menu } from '../../components/Menu';
 import { MenuLink } from '../../components/MenuLink';
-import { DestinoCard } from '../../components/DestinoCard';
 import { WhatsappButton } from '../../components/WhatsappButton'
 
 import { FaShuttleVan } from 'react-icons/fa';
@@ -10,7 +9,6 @@ import { GiModernCity } from 'react-icons/gi';
 import { FiPackage } from 'react-icons/fi';
 import { AiOutlineSchedule } from 'react-icons/ai';
 import { AiOutlineHome } from 'react-icons/ai';
-import { FaCaravan } from 'react-icons/fa'
 
 import { useHistory } from 'react-router-dom';
 import { Presentations } from '../../subpages/Presentations';
@@ -100,25 +98,3 @@ export const Home = () => {
     </Styled.Container>
   );
 };
-
-
-{/* <div className="destiny-container">
-            <DestinoCard imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628110983/julian-tilgenkamp-J6L2uT15K1o-unsplash_vr53t0.jpg" imgAlt="farol da barra" title="Farol da Barra">
-              Farol da barra mundialmente conhecido pela sua beleza...
-            </DestinoCard>
-            <DestinoCard imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628184380/cleverson-magalhaes-JfMZZqioMSU-unsplash_ej73lh.jpg " imgAlt="Elevador lacerda a noite" title="Elevador Lacerda">
-              Elevador Lacerda com a sua paisagem a noite com a vista para o mar.
-            </DestinoCard>
-            <DestinoCard imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628176149/pexels-mario-pais-cie-4172523_hdxyw4.jpg" imgAlt="Pelourinho" title="Pelourinho">
-              Pelourinho, mundialmente conhecido pela sua arquitetura diferenciada.
-            </DestinoCard>
-            <DestinoCard imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628176149/pexels-mario-pais-cie-4172523_hdxyw4.jpg" imgAlt="Pelourinho" title="Pelourinho">
-              Pelourinho, mundialmente conhecido pela sua arquitetura diferenciada.
-            </DestinoCard>
-            <DestinoCard imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628176149/pexels-mario-pais-cie-4172523_hdxyw4.jpg" imgAlt="Pelourinho" title="Pelourinho">
-              Pelourinho, mundialmente conhecido pela sua arquitetura diferenciada.
-            </DestinoCard>
-            <DestinoCard imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628176149/pexels-mario-pais-cie-4172523_hdxyw4.jpg" imgAlt="Pelourinho" title="Pelourinho">
-              Pelourinho, mundialmente conhecido pela sua arquitetura diferenciada.
-            </DestinoCard>
-          </div> */}
