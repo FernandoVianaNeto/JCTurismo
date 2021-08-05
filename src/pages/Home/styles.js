@@ -32,7 +32,6 @@ export const Container = styled.div`
           }
 
           .know-more {
-            width: 30rem;
             padding: 1rem;
 
             background-color: ${theme.colors.thirdColor};
@@ -49,6 +48,8 @@ export const Container = styled.div`
             cursor: pointer;
 
             transition: ease-in-out all 300ms;
+
+            text-decoration: none;
 
             &:hover {
               background-color: ${theme.colors.secundaryColor};

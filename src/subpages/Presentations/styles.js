@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({theme}) => css`
+  ${({ theme }) => css`
     height: 100vh;
     width: 100%;
 
@@ -49,8 +49,7 @@ export const Container = styled.div`
         &::-webkit-scrollbar-thumb:hover {
           background: #BFBFBF;
         }
-
-
+      }
     }
   `}
 `;
