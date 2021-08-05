@@ -8,7 +8,7 @@ export const Menu = ({ children }) => {
     <Styled.Container>
       <div className="container">
         <div className="flex-left">
-          <div class="phone">
+          <div className="phone">
             <AiFillPhone />
             <p>Fale Conosco: (71) 99999-9999</p>
           </div>

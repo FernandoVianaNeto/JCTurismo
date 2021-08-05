@@ -6,12 +6,12 @@ export const Container = styled.div`
       background-color: ${theme.colors.primaryColor};
       width: 32rem;
 
-      border-radius: 16px 0px 16px 0px;
+      border-radius: 32px 0px 32px 0px;
 
       img {
         width: 32rem;
         height: 28rem;
-        border-top-left-radius: 16px;
+        border-top-left-radius: 32px;
       }
 
       .content {
@@ -41,10 +41,27 @@ export const Container = styled.div`
 
         button {
           width: 100%;
-          height: 2rem;
 
+          background-color: ${theme.colors.secundaryColor};
+          color: ${theme.colors.thirdColor};
+          padding: 0.5rem;
 
           border: none;
+          border-radius: 8px;
+
+          letter-spacing: 0.02em;
+
+          font-family: ${theme.font.family.texts};
+
+          transition: ease-in-out all 300ms;
+
+          cursor: pointer;
+
+          &:hover {
+            background-color: ${theme.colors.thirdColor};
+            color: ${theme.colors.secundaryColor};
+            font-weight: bold;
+          }
         }
       }
     }

@@ -14,6 +14,5 @@ export const MenuLink = ({ link, children  }) => {
 };
 
 MenuLink.propTypes = {
-  children: P.node.isRequired,
-  text: P.string.isRequired,
+  children: P.node,
 }

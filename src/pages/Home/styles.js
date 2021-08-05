@@ -27,6 +27,12 @@ export const Container = styled.div`
             color: ${theme.colors.secundaryColor};
           }
         }
+
+        .destiny-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 5rem;
+        }
       }
     }
   `}
