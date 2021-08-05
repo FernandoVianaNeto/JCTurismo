@@ -11,6 +11,9 @@ export const DestinoCard = ({ imgLink, imgAlt, title, children }) => {
           <p className="description">
             {children}
           </p>
+          <button>
+            Ver mais
+          </button>
         </div>
       </div>
     </Styled.Container>

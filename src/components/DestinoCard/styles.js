@@ -20,18 +20,31 @@ export const Container = styled.div`
         align-items: center;
         justify-content: center;
 
-        padding: 1rem;
+        padding: 2rem;
 
         .title {
           font-size: 2rem;
           color: ${theme.colors.secundaryColor};
+          margin: 0;
         }
 
         .description {
           display: flex;
           align-items: center;
           text-align: justify;
+          justify-content: center;
           color: ${theme.colors.thirdColor};
+
+          height: 10rem;
+          padding: 0;
+        }
+
+        button {
+          width: 100%;
+          height: 2rem;
+
+
+          border: none;
         }
       }
     }

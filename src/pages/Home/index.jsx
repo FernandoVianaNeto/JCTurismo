@@ -14,7 +14,7 @@ import { DestinoCard } from '../../components/DestinoCard';
 export const Home = () => {
   return (
     <Styled.Container>
-      <img className="image-background" src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628110983/julian-tilgenkamp-J6L2uT15K1o-unsplash_vr53t0.jpg" alt="background-image" />
+      <img className="image-background" src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628110983/julian-tilgenkamp-J6L2uT15K1o-unsplash_vr53t0.jpg" alt="background" />
 
       <div className="content">
         <header>
