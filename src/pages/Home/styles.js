@@ -63,12 +63,8 @@ export const Container = styled.div`
       }
 
       main {
-        padding: 5rem;
-
-        .destiny-container {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          grid-gap: 5rem;
+        .ad-container {
+          padding: 5rem;
         }
       }
     }

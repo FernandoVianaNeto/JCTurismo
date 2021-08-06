@@ -92,11 +92,19 @@ export const Container = styled.div`
             background-color: ${theme.colors.secundaryColor};
             color: ${theme.colors.thirdColor};
             border: 1px solid ${theme.colors.thirdColor};
-
-            font-weight: bold;
           }
         }
       }
     }
+
+    border: 2px solid ${theme.colors.thirdColor};
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+
+    cursor: pointer;
+    &:hover {
+      border: 2px solid ${theme.colors.secundaryColor};
+    }
+
   `}
 `;

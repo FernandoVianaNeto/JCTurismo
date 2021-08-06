@@ -13,6 +13,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 
 //import { useHistory } from 'react-router-dom';
 import { Presentations } from '../../subpages/Presentations';
+import { ADCard } from '../../components/ADCard';
 
 
 export const Home = () => {
@@ -62,6 +63,13 @@ export const Home = () => {
         <main>
           <WhatsappButton />
           <a href=" " name="passeios"> </a>
+
+          <div className="ad-container">
+            <h1>Promoções de passeios que cabem no seu bolso</h1>
+            <ADCard />
+          </div>
+
+
           <Presentations
             title="Passeios com os melhores preços"
             smallDescription="Conheça o melhor da Bahia. Com estilo."
@@ -111,22 +119,28 @@ export const Home = () => {
               bestSeller
             />
             <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628176149/pexels-mario-pais-cie-4172523_hdxyw4.jpg"
+              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200321/WhatsApp_Image_2021-08-05_at_18.51.51_ii5qlq.jpg"
               title="Imbassaí e Itacimirim"
               subtitle="A partir de "
               price="450,00"
             />
             <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628176149/pexels-mario-pais-cie-4172523_hdxyw4.jpg"
+              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200266/WhatsApp_Image_2021-08-05_at_18.50.54_jf00rc.jpg"
               title="Passeio de Lancha"
               subtitle="A partir de "
               price="600,00"
             />
             <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628176149/pexels-mario-pais-cie-4172523_hdxyw4.jpg"
-              title="Praia do Forte"
+              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200208/WhatsApp_Image_2021-08-05_at_18.49.57_ehjfpe.jpg"
+              title="Passeio Ilha dos Frades Itaparica"
               subtitle="A partir de "
               price="70,00"
+            />
+            <PresentationCard
+              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628176149/pexels-mario-pais-cie-4172523_hdxyw4.jpg"
+              title="CityTour"
+              subtitle="A partir de "
+              price="250,00"
             />
           </Presentations>
         </main>

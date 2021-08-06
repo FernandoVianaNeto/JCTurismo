@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${({ theme, invert }) => css`
     height: 100vh;
-    width: 100%;
 
+    padding: 5rem;
     .content {
       height: 100%;
       width: 100%;
