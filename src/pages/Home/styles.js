@@ -17,8 +17,8 @@ export const Container = styled.div`
         height: 100vh;
 
         .title-container {
-
           padding: 5rem;
+
           .title {
             font-size: 5rem;
             color: ${theme.colors.thirdColor};
@@ -63,17 +63,47 @@ export const Container = styled.div`
       }
 
       main {
-
         .ad-container {
           padding: 5rem;
           flex-direction: column;
 
+          border-bottom: 1px solid lightgray;
 
+          max-width: 120rem;
+          margin: auto;
           .option-container {
             display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            justify-content: space-between;
 
+            .children {
+              display: flex;
+              flex-direction: column;
+
+              button {
+                margin-top: 2rem;
+                border-radius: 8rem;
+
+                border: 0;
+                padding: 0.5rem 0rem 0.5rem 0rem ;
+
+                color: ${theme.colors.secundaryColor};
+                border: 1px solid ${theme.colors.secundaryColor};
+
+                font-weight: bold;
+
+                cursor: pointer;
+
+                &:hover {
+                  border: 1px solid ${theme.colors.thirdColor};
+                  background-color: ${theme.colors.secundaryColor};
+                  color: ${theme.colors.thirdColor};
+                }
+              }
+
+              .children-desconto {
+                font-size: 1rem;
+              }
+            }
 
             .options {
               display: flex;

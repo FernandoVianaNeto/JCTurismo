@@ -15,6 +15,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { Presentations } from '../../subpages/Presentations';
 import { ADCard } from '../../components/ADCard';
 import { SelectIcon } from '../../icons/SelectIcon';
+import { ADCardSmall } from '../../components/ADCardSmall';
 
 
 export const Home = () => {
@@ -67,11 +68,43 @@ export const Home = () => {
           <div className="ad-container">
             <h1>Promoções de passeios que cabem no seu bolso</h1>
             <div className="option-container">
-              <ADCard />
-              <div className="options">
-                <SelectIcon id="option1"/>
-                <SelectIcon id="option2"/>
-              </div>
+              <ADCard
+                title="Transfer"
+                subtitle="Aeroporto - Hotel"
+                imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628278707/WhatsApp_Image_2021-08-06_at_16.38.05_fulolx.jpg"
+                imgAlt="Aeroporto de Salvador"
+              >
+                <p className="children">
+                  Mais conforto e segurança para a sua viagem
+                  <br />
+                  <br />
+                  <span className="children-desconto">
+                    *Desconto de 10% a vista
+                  </span>
+
+                  <button>
+                    Reserve agora
+                  </button>
+                </p>
+              </ADCard>
+              <ADCardSmall
+                title="Transfer"
+                subtitle="Aeroporto - Hotel"
+                imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628278707/WhatsApp_Image_2021-08-06_at_16.38.05_fulolx.jpg"
+                imgAlt="Aeroporto de Salvador"
+              >
+                <p className="children">
+                  Mais conforto e segurança para a sua viagem
+                  <br />
+                  <br />
+                  <span className="children-desconto">
+                    *Desconto de 10% a vista
+                  </span>
+                  <button>
+                    Reserve agora
+                  </button>
+                </p>
+              </ADCardSmall>
             </div>
           </div>
 

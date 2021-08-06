@@ -5,25 +5,34 @@ export const Container = styled.div`
     .container {
       display: flex;
       height: 30rem;
+      width: 30rem;
 
       margin-top: 2rem;
 
-      background-color: ${theme.colors.primaryColor};
-
       border-radius: 8px;
 
+      img {
+        flex: 1;
+        max-width: 30rem;
+        height: 30rem;
+        border-radius: 10px;
+        size: cover;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.5
+      }
+
       .p-container {
+        z-index: 1;
         flex: 1;
         display: flex;
         flex-direction: column;
 
-        width: 25rem;
+        width: 30rem;
 
         padding: 2rem;
 
         border-radius: 10px;
-        background-color: ${theme.colors.primaryColor};
-
 
         .title {
           font-size: 2rem;
@@ -54,15 +63,9 @@ export const Container = styled.div`
         }
 
         .children {
-          color: ${theme.colors.thirdColor};
+          color: ${theme.colors.primaryColor};
           margin-top: 3rem;
         }
-      }
-
-      img {
-        flex: 1;
-        max-width: 50rem;
-        border-radius: 10px;
       }
     }
   `}
