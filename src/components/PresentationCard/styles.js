@@ -11,8 +11,8 @@ export const Container = styled.div`
       display: flex;
       flex-direction: column;
 
-
       ${bestSeller && handleBestSeller(bestSeller)}
+
       img {
         width: 20rem;
         height: 20rem;
@@ -69,6 +69,31 @@ export const Container = styled.div`
             font-weight: bold;
             font-size: 2rem;
             color: ${theme.colors.secundaryColor};
+          }
+        }
+
+        .see-more {
+          margin: 2rem;
+          background-color: ${theme.thirdColor};
+
+          border: 1px solid ${theme.colors.secundaryColor};
+          border-radius: 8px;
+
+          color: ${theme.colors.secundaryColor};
+
+          font-family: ${theme.font.family.texts};
+          font-weight: bold;
+
+          transition: ease-in-out all 300ms;
+
+          cursor: pointer;
+
+          &:hover {
+            background-color: ${theme.colors.secundaryColor};
+            color: ${theme.colors.thirdColor};
+            border: 1px solid ${theme.colors.thirdColor};
+
+            font-weight: bold;
           }
         }
       }

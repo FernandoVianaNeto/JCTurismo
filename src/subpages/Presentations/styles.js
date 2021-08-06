@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({ theme }) => css`
+  ${({ theme, invert }) => css`
     height: 100vh;
     width: 100%;
 

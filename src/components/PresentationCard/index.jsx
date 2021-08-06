@@ -15,6 +15,9 @@ export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, best
           <p className="title">{title}</p>
           <p className="subtitle">{subtitle}</p>
           <p className="price">R$ <span>{price}</span></p>
+          <button className="see-more">
+            Ver Mais
+          </button>
         </div>
       </div>
     </Styled.Container>
