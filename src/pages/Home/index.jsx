@@ -14,6 +14,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 //import { useHistory } from 'react-router-dom';
 import { Presentations } from '../../subpages/Presentations';
 import { ADCard } from '../../components/ADCard';
+import { SelectIcon } from '../../icons/SelectIcon';
 
 
 export const Home = () => {
@@ -64,9 +65,19 @@ export const Home = () => {
           <WhatsappButton />
           <a href=" " name="passeios"> </a>
 
+
           <div className="ad-container">
             <h1>Promoções de passeios que cabem no seu bolso</h1>
-            <ADCard />
+
+            <div className="option-container">
+              <ADCard />
+
+              <div className="options">
+                <SelectIcon id="option1"/>
+                <SelectIcon id="option2"/>
+              </div>
+
+            </div>
           </div>
 
 
@@ -147,4 +158,7 @@ export const Home = () => {
       </div>
     </Styled.Container>
   );
+
+  document.getElementById('option1').style.backgroundColor = 'darkgray';
+  document.getElementById('option1').style.borderColor = 'darkgray';
 };

@@ -65,6 +65,23 @@ export const Container = styled.div`
       main {
         .ad-container {
           padding: 5rem;
+          flex-direction: column;
+
+
+          .option-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            width: 55rem;
+
+            .options {
+              display: flex;
+              gap: 1rem;
+            }
+          }
         }
       }
     }
