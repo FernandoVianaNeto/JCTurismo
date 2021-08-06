@@ -11,12 +11,12 @@ import { FiPackage } from 'react-icons/fi';
 import { AiOutlineSchedule } from 'react-icons/ai';
 import { AiOutlineHome } from 'react-icons/ai';
 
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 import { Presentations } from '../../subpages/Presentations';
 
 
 export const Home = () => {
-  const history = useHistory();
+  //const history = useHistory();
 
   return (
     <Styled.Container>
