@@ -64,22 +64,16 @@ export const Home = () => {
         <main>
           <WhatsappButton />
           <a href=" " name="passeios"> </a>
-
-
           <div className="ad-container">
             <h1>Promoções de passeios que cabem no seu bolso</h1>
-
             <div className="option-container">
               <ADCard />
-
               <div className="options">
                 <SelectIcon id="option1"/>
                 <SelectIcon id="option2"/>
               </div>
-
             </div>
           </div>
-
 
           <Presentations
             title="Passeios com os melhores preços"
@@ -159,6 +153,5 @@ export const Home = () => {
     </Styled.Container>
   );
 
-  document.getElementById('option1').style.backgroundColor = 'darkgray';
-  document.getElementById('option1').style.borderColor = 'darkgray';
+
 };

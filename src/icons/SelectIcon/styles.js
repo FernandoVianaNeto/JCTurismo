@@ -9,6 +9,9 @@ export const Container = styled.div`
     height: 0.5rem;
 
     border-radius: 50%;
+
+    cursor: pointer;
+
     .inside-circle {
       background-color: lightGray;
       width: 0.5rem;

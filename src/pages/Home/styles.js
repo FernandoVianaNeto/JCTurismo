@@ -63,6 +63,7 @@ export const Container = styled.div`
       }
 
       main {
+
         .ad-container {
           padding: 5rem;
           flex-direction: column;
@@ -70,15 +71,15 @@ export const Container = styled.div`
 
           .option-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
             flex-direction: column;
             gap: 0.5rem;
 
-            width: 55rem;
 
             .options {
               display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 70rem;
               gap: 1rem;
             }
           }

@@ -2,37 +2,41 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({theme}) => css`
-    display: flex;
-    height: 20rem;
-    width: 55rem;
-
-    margin-top: 2rem;
-
-    .p-container {
-      background-color: ${theme.colors.primaryColor};
-      padding: 3rem;
-      width: 40%;
-
+    .container {
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      height: 30rem;
+      width: 70rem;
 
-      border-radius: 10px;
+      margin-top: 2rem;
 
-      p {
-        color: ${theme.colors.thirdColor};
-        font-family: ${theme.font.family.texts};
+      background-color: ${theme.colors.primaryColor};
 
-        span {
-          font-size: 2rem;
-          font-weight: bold;
-          color: ${theme.colors.secundaryColor};
+      .p-container {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 10px;
+        background-color: ${theme.colors.primaryColor};
+
+        p {
+          margin: 3rem;
+          color: ${theme.colors.thirdColor};
+          font-family: ${theme.font.family.texts};
+
+          span {
+            font-size: 2rem;
+            font-weight: bold;
+            color: ${theme.colors.secundaryColor};
+          }
         }
       }
-    }
 
-    .img-container {
-      background-color: ${theme.colors.secundaryColor};
+      img {
+        flex: 4;
+        max-width: 50rem;
+        border-radius: 10px;
+      }
     }
   `}
 `;
