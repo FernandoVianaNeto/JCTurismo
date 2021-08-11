@@ -65,6 +65,7 @@ export const Container = styled.div`
           color: ${theme.colors.thirdColor};
 
           height: 2rem;
+
           span {
             font-weight: bold;
             font-size: 2rem;
@@ -77,16 +78,21 @@ export const Container = styled.div`
           background-color: ${theme.thirdColor};
 
           border: 1px solid ${theme.colors.secundaryColor};
-          border-radius: 8px;
+          border-radius: 8rem;
 
           color: ${theme.colors.secundaryColor};
 
           font-family: ${theme.font.family.texts};
           font-weight: bold;
+          font-size: 1.4rem;
 
           transition: ease-in-out all 300ms;
 
           cursor: pointer;
+
+          text-decoration: none;
+
+          text-align: center;
 
           &:hover {
             background-color: ${theme.colors.secundaryColor};

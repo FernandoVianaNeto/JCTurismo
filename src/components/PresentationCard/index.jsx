@@ -1,7 +1,7 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, bestSeller = false}) => {
+export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, bestSeller = false, link }) => {
   return (
     <Styled.Container bestSeller={bestSeller}>
       <div className="content">
@@ -15,9 +15,9 @@ export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, best
           <p className="title">{title}</p>
           <p className="subtitle">{subtitle}</p>
           <p className="price">R$ <span>{price}</span></p>
-          <button className="see-more">
+          <a href={link} className="see-more">
             Ver Mais
-          </button>
+          </a>
         </div>
       </div>
     </Styled.Container>
@@ -30,4 +30,5 @@ PresentationCard.propTypes = {
   price: P.string.isRequired,
   imgLink: P.string.isRequired,
   bestSeller: P.bool,
+  link: P.string,
 }

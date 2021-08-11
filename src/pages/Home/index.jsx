@@ -118,6 +118,7 @@ export const Home = () => {
               subtitle="A partir de "
               price="450,00"
               bestSeller
+              link="/litoralnorte"
             />
             <PresentationCard
               imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200321/WhatsApp_Image_2021-08-05_at_18.51.51_ii5qlq.jpg"
