@@ -71,9 +71,17 @@ export const Container = styled.div`
 
           max-width: 120rem;
           margin: auto;
+
+          h1 {
+            color: ${theme.colors.primaryColor};
+          }
+
           .option-container {
             display: flex;
             justify-content: space-between;
+            gap: 2rem;
+            max-width: 120rem;
+            overflow-x: auto;
 
             .children {
               display: flex;

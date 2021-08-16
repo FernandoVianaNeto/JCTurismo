@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${({theme}) => css`
     height: 100vh;
+
     .content {
       margin: 0 auto;
       padding-top: 3rem;
@@ -17,6 +18,7 @@ export const Container = styled.div`
         margin-top: 7rem;
         max-width: 40rem;
         margin: 0 auto;
+
         .title {
           font-family: ${theme.font.family.title};
           font-weight: bold;

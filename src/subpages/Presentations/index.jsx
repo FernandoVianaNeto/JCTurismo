@@ -1,12 +1,12 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-export const Presentations = ({ invert = false, children, title, smallDescription, icon }) => {
+export const Presentations = ({ invert = false, children, title, smallDescription, background = false }) => {
   return (
-      <Styled.Container>
+      <Styled.Container background={background}>
         {invert ? (
-          <div className="content" invert={invert}>
-            <div className="column2">
+          <div className="content" invert={invert} >
+            <div className="column2" background={background}>
               {children}
             </div>
             <div className="column1">
@@ -35,4 +35,5 @@ Presentations.propTypes = {
   children: P.node.isRequired,
   title: P.string.isRequired,
   smallDescription: P.string.isRequired,
+  background: P.bool,
 }

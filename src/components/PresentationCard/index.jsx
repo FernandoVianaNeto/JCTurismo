@@ -1,9 +1,9 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, bestSeller = false, link }) => {
+export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, bestSeller = false, link, background = false }) => {
   return (
-    <Styled.Container bestSeller={bestSeller}>
+    <Styled.Container bestSeller={bestSeller} background={background}>
       <div className="content">
         {bestSeller && (
           <>
@@ -31,4 +31,5 @@ PresentationCard.propTypes = {
   imgLink: P.string.isRequired,
   bestSeller: P.bool,
   link: P.string,
+  background: P.bool,
 }

@@ -1,10 +1,23 @@
 import styled, { css } from 'styled-components';
 
+const handleContainerBackground = (theme) => css`
+  background-color: ${theme.colors.primaryColor};
+`;
+
+const handleColorBackground = (theme) => css`
+  color: ${theme.colors.thirdColor};
+`;
+
 export const Container = styled.div`
-  ${({ theme, invert }) => css`
+  ${({ theme, background }) => css`
     height: 100vh;
 
+    ${background && handleContainerBackground(theme)};
+
     padding: 5rem;
+
+    box-shadow: 0 0 2rem ${theme.colors.primaryColor};
+
     .content {
       height: 100%;
       width: 100%;
@@ -16,6 +29,8 @@ export const Container = styled.div`
       .column1 {
         display: flex;
         flex-direction: column;
+
+        ${background && handleColorBackground(theme)};
 
         h1 {
           width: 100%;

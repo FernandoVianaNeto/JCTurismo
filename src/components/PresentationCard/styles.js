@@ -4,8 +4,17 @@ const handleBestSeller = (bestSeller) => css`
   margin-top: 0rem;
 `;
 
+const handleBackground = (theme) => css`
+  background-color: ${theme.colors.thirdColor};
+`;
+
+const colorBackground = (theme) => css`
+  color: ${theme.colors.primaryColor};
+`;
+
+
 export const Container = styled.div`
-  ${({ theme, bestSeller }) => css`
+  ${({ theme, bestSeller, background }) => css`
 
     .content {
       display: flex;
@@ -41,12 +50,15 @@ export const Container = styled.div`
         width: 20rem;
 
         background-color: ${theme.colors.primaryColor};
+        ${background && handleBackground(theme)};
 
         .title {
           margin-bottom: 2rem;
           margin-top: 2rem;
           margin-left: 1rem;
           color: ${theme.colors.thirdColor};
+
+          ${background && colorBackground(theme)};
 
           font-size: 1.8rem;
           height: 3rem;
@@ -57,12 +69,16 @@ export const Container = styled.div`
           margin-top: 4rem;
           color: ${theme.colors.thirdColor};
 
+          ${background && colorBackground(theme)}
+
           height: 2rem;
         }
 
         .price {
           margin-left: 1rem;
           color: ${theme.colors.thirdColor};
+
+          ${background && colorBackground(theme)}
 
           height: 2rem;
 
