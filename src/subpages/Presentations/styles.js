@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 const handleContainerBackground = (theme) => css`
   background-color: ${theme.colors.primaryColor};
+  box-shadow: 0 0 3rem ${theme.colors.primaryColor};
 `;
 
 const handleColorBackground = (theme) => css`
@@ -12,11 +13,11 @@ export const Container = styled.div`
   ${({ theme, background }) => css`
     height: 100vh;
 
-    ${background && handleContainerBackground(theme)};
-
     padding: 5rem;
 
-    box-shadow: 0 0 2rem ${theme.colors.primaryColor};
+    box-shadow: 0 0 2rem ${theme.colors.thirdColor};
+    ${background && handleContainerBackground(theme)};
+
 
     .content {
       height: 100%;
