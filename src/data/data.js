@@ -8,7 +8,6 @@ export const data = {
       subtitle: "A partir de ",
       price: "450,00",
       bestSeller: true,
-      background: true,
       link: "/litoralnorte",
     },
     {
@@ -17,7 +16,7 @@ export const data = {
       title: "Imbassaí e Itacimirim",
       subtitle: "A partir de ",
       price: "450,00",
-      background: true,
+      link: "/litoralnorte",
     },
     {
       id: Math.random()*100,
@@ -25,7 +24,7 @@ export const data = {
       title: "Passeio de Lancha",
       subtitle: "A partir de ",
       price: "600,00",
-      background: true,
+      link: "/litoralnorte",
     },
     {
       id: Math.random()*100,
@@ -33,7 +32,7 @@ export const data = {
       title: "Passeio Ilha dos Frades Itaparica",
       subtitle: "A partir de ",
       price: "70,00",
-      background: true,
+      link: "/litoralnorte",
     },
     {
       id: Math.random()*100,
@@ -41,7 +40,15 @@ export const data = {
       title: "CityTour",
       subtitle: "A partir de ",
       price: "250,00",
-      background: true,
+      link: "/litoralnorte",
+    },
+    {
+      id: Math.random()*100,
+      imgLink: "https://res.cloudinary.com/dh84pxwgu/image/upload/v1630440293/WhatsApp_Image_2021-08-31_at_17.04.42_ry7oci.jpg",
+      title: "Mangue Seco",
+      subtitle: "A partir de ",
+      price: "700,00",
+      link: "/litoralnorte",
     },
   ]
 }
