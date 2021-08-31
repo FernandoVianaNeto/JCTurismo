@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components';
 
-const menuVisible = (theme) => css`
-  height: 100vh;
-`;
-
 export const Container = styled.div`
   ${({theme, expansed}) => css`
     height: auto;
@@ -61,6 +57,10 @@ export const Container = styled.div`
 
         padding: 2rem 1rem 2rem 2rem;
 
+        .flex-left {
+          text-align: center;
+        }
+
         .flex-right {
           display: flex;
           flex-direction: column;
@@ -83,7 +83,9 @@ export const Container = styled.div`
         .show-options {
           display: flex;
           align-items: center;
+          justify-content: space-around;
           gap: 1rem;
+          margin-bottom: 1rem;
 
           visibility: visible;
           position: relative;
