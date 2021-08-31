@@ -11,7 +11,7 @@ import { FiPackage } from 'react-icons/fi';
 import { AiOutlineSchedule } from 'react-icons/ai';
 import { AiOutlineHome } from 'react-icons/ai';
 
-//import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Presentations } from '../../subpages/Presentations';
 import { ADCard } from '../../components/ADCard';
 import { ADCardSmall } from '../../components/ADCardSmall';
@@ -19,10 +19,9 @@ import { ADCardSmall } from '../../components/ADCardSmall';
 import { data } from '../../data/data';
 
 export const Home = () => {
-  //const history = useHistory();
+  const history = useHistory();
 
   const data1 = data
-  console.log(data1)
 
   return (
     <Styled.Container>
@@ -115,80 +114,41 @@ export const Home = () => {
             smallDescription="Conheça o melhor da Bahia. Com estilo."
             background
           >
-            <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628197030/ignacio-aguilar-S7KooAJPyxk-unsplash_i9kn1v.jpg"
-              title="Litoral Norte"
-              subtitle="A partir de "
-              price="450,00"
-              bestSeller
-              background
-              link="/litoralnorte"
-            />
-            <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200321/WhatsApp_Image_2021-08-05_at_18.51.51_ii5qlq.jpg"
-              title="Imbassaí e Itacimirim"
-              subtitle="A partir de "
-              price="450,00"
-              background
-            />
-            <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200266/WhatsApp_Image_2021-08-05_at_18.50.54_jf00rc.jpg"
-              title="Passeio de Lancha"
-              subtitle="A partir de "
-              price="600,00"
-              background
-            />
-            <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200208/WhatsApp_Image_2021-08-05_at_18.49.57_ehjfpe.jpg"
-              title="Passeio Ilha dos Frades Itaparica"
-              subtitle="A partir de "
-              price="70,00"
-              background
-            />
-            <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628176149/pexels-mario-pais-cie-4172523_hdxyw4.jpg"
-              title="CityTour"
-              subtitle="A partir de "
-              price="250,00"
-              background
-            />
+            {
+              data1.destinos.map((card) => {
+                return (
+                  <PresentationCard
+                    key={card.id}
+                    imgLink={card.imgLink}
+                    title={card.title}
+                    subtitle={card.subtitle}
+                    bestSeller={card.bestSeller}
+                    price={card.price}
+                  />
+                )
+              })
+            }
           </Presentations>
+
           <Presentations
             title="Passeios com os melhores preços"
             smallDescription="Conheça o melhor da Bahia. Com estilo."
             invert
           >
-            <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628197030/ignacio-aguilar-S7KooAJPyxk-unsplash_i9kn1v.jpg"
-              title="Litoral Norte"
-              subtitle="A partir de "
-              price="450,00"
-              bestSeller
-            />
-            <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200321/WhatsApp_Image_2021-08-05_at_18.51.51_ii5qlq.jpg"
-              title="Imbassaí e Itacimirim"
-              subtitle="A partir de "
-              price="450,00"
-            />
-            <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200266/WhatsApp_Image_2021-08-05_at_18.50.54_jf00rc.jpg"
-              title="Passeio de Lancha"
-              subtitle="A partir de "
-              price="600,00"
-            />
-            <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200208/WhatsApp_Image_2021-08-05_at_18.49.57_ehjfpe.jpg"
-              title="Passeio Ilha dos Frades Itaparica"
-              subtitle="A partir de "
-              price="70,00"
-            />
-            <PresentationCard
-              imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628176149/pexels-mario-pais-cie-4172523_hdxyw4.jpg"
-              title="CityTour"
-              subtitle="A partir de "
-              price="250,00"
-            />
+            {
+              data1.destinos.map((card) => {
+                return (
+                  <PresentationCard
+                    key={card.id}
+                    imgLink={card.imgLink}
+                    title={card.title}
+                    subtitle={card.subtitle}
+                    bestSeller={card.bestSeller}
+                    price={card.price}
+                  />
+                )
+              })
+            }
           </Presentations>
         </main>
       </div>

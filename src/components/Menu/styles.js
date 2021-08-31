@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({theme, expansed}) => css`
+  ${({theme}) => css`
     height: auto;
     padding: 2rem;
     border-bottom: 1px solid ${theme.colors.thirdColor};
@@ -49,6 +49,8 @@ export const Container = styled.div`
 
     @media ${theme.media.lteMedium} {
       padding: 0;
+      position: fixed;
+      width: 100%;
 
       .container {
         display: flex;

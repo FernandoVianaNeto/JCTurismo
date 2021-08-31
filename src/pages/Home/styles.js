@@ -130,6 +130,7 @@ export const Container = styled.div`
         header {
           .title-container {
             .title {
+              margin-top: 10rem;
               font-size: 4rem;
             }
           }
