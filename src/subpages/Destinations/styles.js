@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({theme}) => css`
-    height: 100vh;
+
 
     .content {
       margin: 0 auto;
@@ -33,7 +33,6 @@ export const Container = styled.div`
 
       main {
         display: flex;
-        align-items: center;
         justify-content: space-between;
 
         width: 100rem;
@@ -42,17 +41,40 @@ export const Container = styled.div`
         margin-top: 10rem;
 
         .column1 {
-
           img {
             width: 40rem;
             height: 40rem;
+
+            border-radius: 18px;
+          }
+
+          p {
+            font-family: ${theme.font.family.texts};
           }
         }
 
         .column2 {
-          background-color: white;
           display: flex;
           justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 1rem;
+
+          height: 100%;
+          width: 50rem;
+
+          font-family: ${theme.font.family.texts};
+
+          h1 {
+            width: 100%;
+          }
+
+          .passeio-description {
+            padding: 2rem;
+            background-color: lightgray;
+            text-align: justify;
+            border-radius: 18px;
+          }
         }
       }
     }
