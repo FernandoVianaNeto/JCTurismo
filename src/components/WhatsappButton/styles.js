@@ -9,7 +9,7 @@ export const Container = styled.div`
       justify-content: center;
 
       position: fixed;
-      bottom: 2rem;
+      bottom: 10rem;
       color: white;
       background-color: green;
       padding: 0.6rem;

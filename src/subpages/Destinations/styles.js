@@ -20,7 +20,7 @@ export const Container = styled.div`
         margin: 0 auto;
 
         .title {
-          font-family: ${theme.font.family.title};
+          font-family: ${theme.font.family.texts};
           font-weight: bold;
           font-size: 4rem;
           color: ${theme.colors.titleColor};
@@ -41,6 +41,10 @@ export const Container = styled.div`
         margin-top: 10rem;
 
         .column1 {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
           img {
             width: 40rem;
             height: 40rem;
@@ -67,13 +71,16 @@ export const Container = styled.div`
 
           h1 {
             width: 100%;
+            color: ${theme.colors.secundaryColor};
           }
 
           .passeio-description {
             padding: 2rem;
-            background-color: lightgray;
+
             text-align: justify;
             border-radius: 18px;
+
+            color: ${theme.colors.primaryColor};
           }
         }
       }

@@ -1,4 +1,5 @@
 import P from 'prop-types';
+import { Button } from '../../components/Button';
 import * as Styled from './styles';
 
 export const Destinations = () => {
@@ -12,13 +13,19 @@ export const Destinations = () => {
           <div className="column1">
             <img src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628197030/ignacio-aguilar-S7KooAJPyxk-unsplash_i9kn1v.jpg" alt="litoral norte" />
             <p className="image-description">Descrição da imagem</p>
+            <Button>Adicionar esse passeio ao carrinho</Button>
           </div>
           <div className="column2">
-            <h1>Como será o nosso passeio</h1>
+            <h1>Como será o nosso passeio?</h1>
             <p className="passeio-description">
-            Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus, ullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec.
+            Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus,
+            <br />
+            <br />
+            ullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec.
             </p>
+
           </div>
+
         </main>
       </div>
     </Styled.Container>

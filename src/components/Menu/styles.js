@@ -33,10 +33,21 @@ export const Container = styled.div`
         .phone {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: 1rem;
           font-family: ${theme.font.family.texts};
 
           color: ${theme.colors.secundaryColor};
+
+          button {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+
+            color: ${theme.colors.thirdColor};
+            font-size: 2rem;
+            cursor: pointer;
+          }
         }
       }
 
