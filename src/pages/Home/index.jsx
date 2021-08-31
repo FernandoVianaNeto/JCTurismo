@@ -16,9 +16,13 @@ import { Presentations } from '../../subpages/Presentations';
 import { ADCard } from '../../components/ADCard';
 import { ADCardSmall } from '../../components/ADCardSmall';
 
+import { data } from '../../data/data';
 
 export const Home = () => {
   //const history = useHistory();
+
+  const data1 = data
+  console.log(data1)
 
   return (
     <Styled.Container>
