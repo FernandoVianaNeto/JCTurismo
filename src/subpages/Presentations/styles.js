@@ -14,10 +14,7 @@ export const Container = styled.div`
     height: 100vh;
 
     padding: 5rem;
-
-    box-shadow: 0 0 2rem ${theme.colors.thirdColor};
     ${background && handleContainerBackground(theme)};
-
 
     .content {
       height: 100%;

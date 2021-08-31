@@ -66,7 +66,7 @@ export const Home = () => {
           <a href=" " name="passeios"> </a>
           <div className="ad-container">
             <h1>Promoções de passeios que cabem no seu bolso</h1>
-            <div className="option-container">
+            {/* <div className="option-container">
               <ADCard
                 title="Transfer"
                 subtitle="Aeroporto - Hotel"
@@ -104,7 +104,7 @@ export const Home = () => {
                   </button>
                 </p>
               </ADCardSmall>
-            </div>
+            </div>*/}
           </div>
 
           <Presentations

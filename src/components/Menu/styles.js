@@ -1,7 +1,11 @@
 import styled, { css } from 'styled-components';
 
+const menuVisible = (theme) => css`
+  height: 100vh;
+`;
+
 export const Container = styled.div`
-  ${({theme}) => css`
+  ${({theme, expansed}) => css`
     height: auto;
     padding: 2rem;
     border-bottom: 1px solid ${theme.colors.thirdColor};
@@ -14,6 +18,11 @@ export const Container = styled.div`
     .container {
       display: flex;
       flex-direction: column;
+
+      .show-options {
+        visibility: hidden;
+        position: absolute;
+      }
 
       .flex-left {
         text-align: right;
@@ -42,6 +51,48 @@ export const Container = styled.div`
       }
     }
 
+    @media ${theme.media.lteMedium} {
+      padding: 0;
 
+      .container {
+        display: flex;
+        flex-direction: column;
+        background-color: ${theme.colors.primaryColor};
+
+        padding: 2rem 1rem 2rem 2rem;
+
+        .flex-right {
+          display: flex;
+          flex-direction: column;
+
+          img {
+            visibility: hidden;
+            position: absolute;
+            gap: 1rem;
+          }
+
+          .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: left;
+          }
+        }
+
+
+        .show-options {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          visibility: visible;
+          position: relative;
+
+          background-color: transparent;
+          border: none;
+          color: white;
+        }
+      }
+    }
   `}
 `;

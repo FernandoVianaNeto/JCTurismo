@@ -10,5 +10,8 @@ export const theme = {
     secundaryColor: "#ED1E79",
     thirdColor: "#FFF",
     titleColor: '#463f3a',
-  }
+  },
+  media: {
+    lteMedium: '(max-width: 768px)',
+  },
 }
