@@ -64,5 +64,21 @@ export const Container = styled.div`
         }
       }
     }
+
+    @media ${theme.media.lteMedium} {
+      .content {
+        display: flex;
+        flex-direction: column;
+
+        .column1 {
+          margin-bottom: 2rem;
+        }
+
+        .column2 {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
   `}
 `;
