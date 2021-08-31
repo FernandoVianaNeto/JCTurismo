@@ -16,9 +16,9 @@ export const Menu = ({ children, background = false }) => {
         <button className="show-options" onClick={() => setExpansed(!expansed)}>
           <img src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1626980792/WhatsApp_Image_2021-07-22_at_15.41.41-removebg-preview_hydex1.png" alt="logo" />
           {expansed ? (
-            <p><BiUpArrow /></p>
+            <p>Ver menos<BiUpArrow /></p>
           ) : (
-            <p><BiDownArrow /></p>
+            <p> Ver mais<BiDownArrow /></p>
           )}
         </button>
         { expansed &&

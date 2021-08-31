@@ -103,6 +103,14 @@ export const Container = styled.div`
           background-color: transparent;
           border: none;
           color: white;
+
+          p {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            font-family: ${theme.font.family.texts};
+          }
         }
       }
     }
