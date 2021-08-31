@@ -124,5 +124,17 @@ export const Container = styled.div`
         }
       }
     }
+
+    @media ${theme.media.lteMedium} {
+      .content {
+        header {
+          .title-container {
+            .title {
+              font-size: 4rem;
+            }
+          }
+        }
+      }
+    }
   `}
 `;

@@ -22,7 +22,6 @@ export const Home = () => {
 
   return (
     <Styled.Container>
-
       <div className="content">
         <header>
         <img className="image-background" id="background2" src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628110983/julian-tilgenkamp-J6L2uT15K1o-unsplash_vr53t0.jpg" alt="background" />
