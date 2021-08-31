@@ -1,7 +1,19 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
+import { useHistory } from 'react-router-dom';
+import { useDestination } from '../../hooks/useDestination';
+
 export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, bestSeller = false, link, background = false }) => {
+  const history = useHistory()
+
+  const { handleSendInformation } = useDestination()
+
+  function callHandleSendData({ imgLink, imgAlt, price, title, subtitle, bestSeller, link }) {
+    history.push(`${link}`)
+    handleSendInformation({ imgLink, imgAlt, price, title, subtitle, bestSeller, link });
+  }
+
   return (
     <Styled.Container bestSeller={bestSeller} background={background}>
       <div className="content">
@@ -15,9 +27,9 @@ export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, best
           <p className="title">{title}</p>
           <p className="subtitle">{subtitle}</p>
           <p className="price">R$ <span>{price}</span></p>
-          <a href={link} className="see-more">
+          <button className="see-more" onClick={() => callHandleSendData({ imgLink, imgAlt, price, title, subtitle, bestSeller, link })}>
             Ver Mais
-          </a>
+          </button>
         </div>
       </div>
     </Styled.Container>

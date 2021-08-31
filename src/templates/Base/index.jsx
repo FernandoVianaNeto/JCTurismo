@@ -2,7 +2,7 @@ import P from 'prop-types';
 import { WhatsappButton } from '../../components/WhatsappButton';
 import * as Styled from './styles';
 
-import { MenuPages } from '../../components/MenuPages';
+import { Menu } from '../../components/Menu';
 import { MenuLink } from '../../components/MenuLink';
 
 import { AiOutlineHome } from 'react-icons/ai';
@@ -11,7 +11,7 @@ export const Base = () => {
   return (
     <Styled.Container>
       <Styled.MenuContainer>
-        <MenuPages>
+        <Menu background>
           <MenuLink link="/">
             <AiOutlineHome />
             Home
@@ -20,7 +20,7 @@ export const Base = () => {
             <AiOutlineHome />
             Home
           </MenuLink>
-        </MenuPages>
+        </Menu>
       </Styled.MenuContainer>
       <WhatsappButton />
     </Styled.Container>

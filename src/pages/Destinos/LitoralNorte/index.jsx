@@ -13,7 +13,6 @@ export const LitoralNorte = () => {
   return (
     <Styled.Container>
       <Base />
-
       <Destinations />
     </Styled.Container>
   );

@@ -9,6 +9,7 @@ export const data = {
       price: "450,00",
       bestSeller: true,
       link: "/litoralnorte",
+      description: ""
     },
     {
       id: Math.random()*100,
@@ -17,6 +18,7 @@ export const data = {
       subtitle: "A partir de ",
       price: "450,00",
       link: "/litoralnorte",
+      description: ""
     },
     {
       id: Math.random()*100,
@@ -25,6 +27,7 @@ export const data = {
       subtitle: "A partir de ",
       price: "600,00",
       link: "/litoralnorte",
+      description: ""
     },
     {
       id: Math.random()*100,
@@ -33,6 +36,7 @@ export const data = {
       subtitle: "A partir de ",
       price: "70,00",
       link: "/litoralnorte",
+      description: ""
     },
     {
       id: Math.random()*100,
@@ -41,6 +45,7 @@ export const data = {
       subtitle: "A partir de ",
       price: "250,00",
       link: "/litoralnorte",
+      description: ""
     },
     {
       id: Math.random()*100,
@@ -49,6 +54,7 @@ export const data = {
       subtitle: "A partir de ",
       price: "700,00",
       link: "/litoralnorte",
+      description: ""
     },
   ]
 }

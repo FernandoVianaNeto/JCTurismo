@@ -39,21 +39,41 @@ export const Container = styled.div`
         width: 100rem;
         margin: 0 auto;
 
-        background-color: blue;
         margin-top: 10rem;
-        aside {
-          flex: 1;
+
+        .column1 {
+
           img {
             width: 40rem;
             height: 40rem;
           }
         }
 
-        section {
-          flex: 1;
+        .column2 {
           background-color: white;
           display: flex;
           justify-content: center;
+        }
+      }
+    }
+
+    @media ${theme.media.lteMedium} {
+
+      .content {
+
+
+        main {
+
+          display: flex;
+          flex-direction: column;
+          max-width: 100%;
+
+          .column1 {
+            img {
+              width: 30rem;
+              height: 30rem;
+            }
+          }
         }
       }
     }

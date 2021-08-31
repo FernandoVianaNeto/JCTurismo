@@ -9,12 +9,12 @@ export const Destinations = () => {
           <h1 className="title">Litoral Norte</h1>
         </header>
         <main>
-          <aside>
+          <div className="column1">
             <img src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628197030/ignacio-aguilar-S7KooAJPyxk-unsplash_i9kn1v.jpg" alt="litoral norte" />
-          </aside>
-          <section>
+          </div>
+          <div className="column2">
             <h1>Como será o passeio</h1>
-          </section>
+          </div>
         </main>
         <footer>
 

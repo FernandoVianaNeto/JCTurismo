@@ -146,6 +146,7 @@ export const Home = () => {
                     subtitle={card.subtitle}
                     bestSeller={card.bestSeller}
                     price={card.price}
+                    link={card.link}
                   />
                 )
               })
