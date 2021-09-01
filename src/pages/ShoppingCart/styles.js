@@ -19,22 +19,30 @@ export const Container = styled.div`
         margin-top: 3rem;
         .products-container {
           display: flex;
+          flex-direction: column;
           border: 1px solid ${theme.colors.secundaryColor};
+
           .product {
             text-align: center;
             width: 30rem;
           }
 
-          h1 {
-            padding: 2rem 10rem 2rem 10rem;
-            background-color: ${theme.colors.primaryColor};
+          .title-container {
+            display: flex;
 
-            border: 1px solid ${theme.colors.secundaryColor};
-            color: ${theme.colors.secundaryColor};
+            h1 {
+              padding: 2rem 10rem 2rem 10rem;
+              background-color: ${theme.colors.primaryColor};
 
-            font-family: ${theme.font.family.texts};
-            font-size: 1.7rem;
+              border: 1px solid ${theme.colors.secundaryColor};
+              color: ${theme.colors.secundaryColor};
+
+              font-family: ${theme.font.family.texts};
+              font-size: 1.7rem;
+            }
           }
+
+
         }
       }
     }
