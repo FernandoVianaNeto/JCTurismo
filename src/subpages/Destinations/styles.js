@@ -69,6 +69,16 @@ export const Container = styled.div`
 
           font-family: ${theme.font.family.texts};
 
+          .price {
+            margin-top: 3rem;
+            color: ${theme.colors.secundaryColor};
+            text-align: right;
+
+            span {
+              font-weight: bold;
+            }
+          }
+
           h1 {
             width: 100%;
             color: ${theme.colors.secundaryColor};
@@ -87,20 +97,26 @@ export const Container = styled.div`
     }
 
     @media ${theme.media.lteMedium} {
-
       .content {
-
-
         main {
-
           display: flex;
           flex-direction: column;
-          max-width: 100%;
+          gap: 5rem;
+          max-width: 30rem;
 
           .column1 {
             img {
               width: 30rem;
               height: 30rem;
+            }
+          }
+
+          .column2 {
+            h1 {
+              width: 30rem;
+            }
+            .passeio-description {
+              width: 30rem;
             }
           }
         }
@@ -109,8 +125,4 @@ export const Container = styled.div`
   `}
 `;
 
-export const MenuContainer = styled.div`
-  ${({theme}) => css`
 
-  `}
-`;

@@ -11,13 +11,12 @@ export const useDestination = () => {
   const data = useSelector(state => state);
   console.log(data);
 
-  function handleSendInformation({ imgLink, price, title, subtitle, bestSeller, link, description }) {
+  function handleSendInformation({ imgLink, price, title, subtitle, link, description }) {
     dispatch(sendDestinyData({
       imgLink: imgLink,
       title: title,
       price: price,
       subtitle: subtitle,
-      bestSeller: bestSeller,
       link: link,
       description: description,
     }))

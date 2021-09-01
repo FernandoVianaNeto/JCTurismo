@@ -8,6 +8,5 @@ export const Container = styled.div`
 
 export const MenuContainer = styled.div`
   ${({theme}) => css`
-
   `}
 `;

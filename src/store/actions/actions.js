@@ -1,11 +1,10 @@
-export const sendDestinyData = ({ imgLink, price, title, subtitle, bestSeller, link, description }) => ({
+export const sendDestinyData = ({ imgLink, price, title, subtitle, link, description }) => ({
   type: 'SEND_DESTINY_DATA',
   payload: {
     imgLink: imgLink,
     title: title,
     price: price,
     subtitle: subtitle,
-    bestSeller: bestSeller,
     link: link,
     description: description,
   },

@@ -129,7 +129,6 @@ export const Home = () => {
               })
             }
           </Presentations>
-
           <Presentations
             title="Passeios com os melhores preços"
             smallDescription="Conheça o melhor da Bahia. Com estilo."
