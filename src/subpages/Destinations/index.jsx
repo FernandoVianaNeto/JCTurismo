@@ -23,9 +23,7 @@ export const Destinations = () => {
             <br />
             ullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec.
             </p>
-
           </div>
-
         </main>
       </div>
     </Styled.Container>

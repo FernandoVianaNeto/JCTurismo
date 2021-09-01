@@ -13,8 +13,6 @@ import { AiOutlineHome } from 'react-icons/ai';
 
 import { useHistory } from 'react-router-dom';
 import { Presentations } from '../../subpages/Presentations';
-import { ADCard } from '../../components/ADCard';
-import { ADCardSmall } from '../../components/ADCardSmall';
 
 import { data } from '../../data/data';
 
@@ -125,6 +123,7 @@ export const Home = () => {
                     bestSeller={card.bestSeller}
                     price={card.price}
                     link={card.link}
+                    description={card.description}
                   />
                 )
               })
@@ -147,6 +146,7 @@ export const Home = () => {
                     bestSeller={card.bestSeller}
                     price={card.price}
                     link={card.link}
+                    description={card.description}
                   />
                 )
               })
