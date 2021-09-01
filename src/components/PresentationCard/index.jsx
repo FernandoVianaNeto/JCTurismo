@@ -4,14 +4,14 @@ import * as Styled from './styles';
 import { useHistory } from 'react-router-dom';
 import { useDestination } from '../../hooks/useDestination';
 
-export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, bestSeller = false, link, background = false, description }) => {
+export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, bestSeller = false, link, background = false, description, id }) => {
   const history = useHistory()
 
   const { handleSendInformation } = useDestination()
 
-  function callHandleSendData({ imgLink, imgAlt, price, title, subtitle, bestSeller, link, description }) {
+  function callHandleSendData({ imgLink, imgAlt, price, title, subtitle, bestSeller, link, description, id }) {
     history.push(`${link}`)
-    handleSendInformation({ imgLink, imgAlt, price, title, subtitle, bestSeller, link, description });
+    handleSendInformation({ imgLink, imgAlt, price, title, subtitle, bestSeller, link, description, id });
   }
 
   return (
@@ -27,7 +27,7 @@ export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, best
           <p className="title">{title}</p>
           <p className="subtitle">{subtitle}</p>
           <p className="price">R$ <span>{price}</span></p>
-          <button className="see-more" onClick={() => callHandleSendData({ imgLink, imgAlt, price, title, subtitle, bestSeller, link, description })}>
+          <button className="see-more" onClick={() => callHandleSendData({ imgLink, imgAlt, price, title, subtitle, bestSeller, link, description, id })}>
             Ver Mais
           </button>
         </div>

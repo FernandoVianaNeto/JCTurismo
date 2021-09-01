@@ -20,6 +20,7 @@ export const Home = () => {
   const history = useHistory();
 
   const data1 = data
+  console.log(data1);
 
   return (
     <Styled.Container>
@@ -117,6 +118,7 @@ export const Home = () => {
                 return (
                   <PresentationCard
                     key={card.id}
+                    id={card.id}
                     imgLink={card.imgLink}
                     title={card.title}
                     subtitle={card.subtitle}
@@ -138,6 +140,7 @@ export const Home = () => {
               data1.destinos.map((card) => {
                 return (
                   <PresentationCard
+                    id={card.id}
                     key={card.id}
                     imgLink={card.imgLink}
                     title={card.title}

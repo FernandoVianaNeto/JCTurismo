@@ -33,7 +33,7 @@ export const Destinations = () => {
           </div>
         </main>
         <div className="btn-container">
-          <Button onClick={() => addNewItem({ imgLink: dataStore.destinyData.imgLink, title: dataStore.destinyData.title, price: dataStore.destinyData.price })}>Adicionar esse passeio ao carrinho</Button>
+          <Button onClick={() => addNewItem({ imgLink: dataStore.destinyData.imgLink, title: dataStore.destinyData.title, price: dataStore.destinyData.price, id: dataStore.destinyData.id })}>Adicionar esse passeio ao carrinho</Button>
         </div>
 
       </div>

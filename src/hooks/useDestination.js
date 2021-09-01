@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -9,10 +7,11 @@ export const useDestination = () => {
   const dispatch = useDispatch();
 
   const data = useSelector(state => state);
-  console.log(data);
 
-  function handleSendInformation({ imgLink, price, title, subtitle, link, description }) {
+  function handleSendInformation({ imgLink, price, title, subtitle, link, description, id }) {
+    console.log(id)
     dispatch(sendDestinyData({
+      id: id,
       imgLink: imgLink,
       title: title,
       price: price,
@@ -22,5 +21,5 @@ export const useDestination = () => {
     }))
   }
 
-  return { handleSendInformation }
+  return { handleSendInformation };
 }

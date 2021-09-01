@@ -5,12 +5,14 @@ const initialState = {
   subtitle: null,
   link: null,
   description: null,
+  id: null,
 }
 
 export function sendDestinyData(state = initialState, action) {
   switch(action.type) {
     case 'SEND_DESTINY_DATA':
       return {
+        id: action.payload.id,
         imgLink: action.payload.imgLink,
         title: action.payload.title,
         price: action.payload.price,
