@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux';
 
 export const ShoppingCart = () => {
   const dataStore = useSelector(state => state);
-  console.log(dataStore);
-
+  console.log(dataStore.shoppingItems);
+  const shoppingItems = dataStore.shoppingItems;
 
   return (
     <Styled.Container>
@@ -30,7 +30,18 @@ export const ShoppingCart = () => {
             </div>
 
             <div className="products">
-              <ProductCard />
+              {
+                shoppingItems.map((card) => {
+                  return (
+                    <ProductCard
+                      key={card.id}
+                      imgLink={card.imgLink}
+                      title={card.title}
+                      price={card.price}
+                    />
+                  )
+                }
+              )}
             </div>
           </div>
         </main>

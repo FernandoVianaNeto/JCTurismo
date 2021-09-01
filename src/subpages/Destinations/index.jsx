@@ -10,7 +10,7 @@ export const Destinations = () => {
   const { addNewItem } = useAddItem()
 
   const dataStore = useSelector(state => state);
-  console.log(dataStore.destinyData);
+  console.log(dataStore);
 
   return (
     <Styled.Container>
