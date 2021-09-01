@@ -7,6 +7,7 @@ import { AiFillPhone } from 'react-icons/ai';
 import { BiDownArrow } from 'react-icons/bi';
 import { BiUpArrow } from 'react-icons/bi';
 import { AiFillInstagram } from 'react-icons/ai'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 export const Menu = ({ children, background = false }) => {
   const [expansed, setExpansed] = useState(true);
@@ -30,6 +31,12 @@ export const Menu = ({ children, background = false }) => {
               <AiFillPhone />
               <p>Fale Conosco: (71) 99999-9999</p>
               <button> <AiFillInstagram /> </button>
+            </div>
+            <div className="shopping-cart">
+              <a href="/carrinhodecompras">
+                <AiOutlineShoppingCart />
+                <p>Carrinho de Compras</p>
+              </a>
             </div>
           </div>
           <div className="flex-right">

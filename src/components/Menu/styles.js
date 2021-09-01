@@ -28,7 +28,25 @@ export const Container = styled.div`
       }
 
       .flex-left {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         text-align: right;
+
+        .shopping-cart {
+          margin-right: 1rem;
+
+          a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+
+            color: ${theme.colors.thirdColor};
+            font-size: 1.5rem;
+            font-family: ${theme.font.family.texts};
+          }
+        }
 
         .phone {
           display: flex;
