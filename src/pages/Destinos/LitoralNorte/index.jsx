@@ -15,5 +15,4 @@ export const LitoralNorte = () => {
 };
 
 LitoralNorte.propTypes = {
-  children: P.node.isRequired,
 }

@@ -14,6 +14,13 @@ export const Container = styled.div`
       flex-direction: column;
       text-align: center;
 
+      .btn-container {
+        width: 70rem;
+        margin: 0 auto;
+
+        margin-top: 2rem;
+      }
+
       header {
         margin-top: 7rem;
         max-width: 40rem;
@@ -98,11 +105,24 @@ export const Container = styled.div`
 
     @media ${theme.media.lteMedium} {
       .content {
+        .btn-container {
+          width: 30rem;
+          margin: 0 auto;
+
+          margin-top: 2rem;
+          margin-bottom: 10rem;
+        }
+
+        header {
+          margin-top: 10rem;
+        }
+
         main {
           display: flex;
           flex-direction: column;
           gap: 5rem;
           max-width: 30rem;
+
 
           .column1 {
             img {

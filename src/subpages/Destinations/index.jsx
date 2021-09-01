@@ -4,7 +4,10 @@ import * as Styled from './styles';
 
 import { useSelector } from 'react-redux';
 
+import { useAddItem } from '../../hooks/useAddItem';
+
 export const Destinations = () => {
+  const { addNewItem } = useAddItem()
 
   const dataStore = useSelector(state => state);
   console.log(dataStore.destinyData);
@@ -19,7 +22,7 @@ export const Destinations = () => {
           <div className="column1">
             <img src={dataStore.destinyData.imgLink} alt="descrição" />
             <p className="image-description">Descrição da imagem</p>
-            <Button>Adicionar esse passeio ao carrinho</Button>
+
           </div>
           <div className="column2">
             <h1>Como será o nosso passeio?</h1>
@@ -29,11 +32,14 @@ export const Destinations = () => {
             </p>
           </div>
         </main>
+        <div className="btn-container">
+          <Button onClick={addNewItem}>Adicionar esse passeio ao carrinho</Button>
+        </div>
+
       </div>
     </Styled.Container>
   );
 };
 
 Destinations.propTypes = {
-  children: P.node.isRequired,
 }
