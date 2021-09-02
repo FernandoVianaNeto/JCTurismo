@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${({theme}) => css`
     .content {
+      max-width: 120rem;
+      margin: 0 auto;
       padding: 2rem;
 
       header {
@@ -24,14 +26,27 @@ export const Container = styled.div`
 
           .product {
             text-align: center;
-            width: 30rem;
+            width: 26rem;
           }
 
           .title-container {
             display: flex;
 
+            .price {
+
+            }
+
+            .amount {
+
+            }
+
+            .total {
+              text-align: center;
+              width: 14.05rem;
+            }
+
             h1 {
-              padding: 2rem 10rem 2rem 10rem;
+              padding: 2rem 8rem 2rem 8rem;
               background-color: ${theme.colors.primaryColor};
 
               border: 1px solid ${theme.colors.secundaryColor};
@@ -41,8 +56,6 @@ export const Container = styled.div`
               font-size: 1.7rem;
             }
           }
-
-
         }
       }
     }

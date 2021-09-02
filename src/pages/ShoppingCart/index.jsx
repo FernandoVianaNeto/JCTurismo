@@ -24,9 +24,9 @@ export const ShoppingCart = () => {
           <div className="products-container">
             <div className="title-container">
               <h1 className="product">Produto</h1>
-              <h1>Preço</h1>
-              <h1>Quantidade</h1>
-              <h1>Total</h1>
+              <h1 className="price">Preço</h1>
+              <h1 className="amount">Quantidade</h1>
+              <h1 className="total">Total</h1>
             </div>
 
             <div className="products">
