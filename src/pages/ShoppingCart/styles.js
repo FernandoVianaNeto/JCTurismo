@@ -9,7 +9,6 @@ export const Container = styled.div`
 
       header {
         h1 {
-
           font-family: ${theme.font.family.texts};
           color: ${theme.colors.primaryColor};
 
@@ -19,14 +18,15 @@ export const Container = styled.div`
 
       main {
         margin-top: 3rem;
+
         .products-container {
           display: flex;
           flex-direction: column;
-          border: 1px solid ${theme.colors.secundaryColor};
 
-          .product {
-            text-align: center;
-            width: 26rem;
+          .products {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
           }
 
           .title-container {
@@ -62,8 +62,42 @@ export const Container = styled.div`
 
     @media ${theme.media.lteMedium} {
       .content {
-        header {
-          margin-top: 10rem;
+        width: 100vw;
+        padding: 2rem 0rem 0rem 0rem;
+
+        header   {
+          padding: 0;
+          margin: 10rem 2rem 2rem 2rem;
+
+          h1 {
+            padding: 0;
+          }
+        }
+
+        main {
+          margin: 2rem;
+          border: none;
+
+          .products-container {
+            margin: 0;
+          }
+
+          .products {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            border: none;
+          }
+
+          .title-container {
+            visibility: hidden;
+            position: absolute;
+            border: none;
+
+            h1 {
+              border: none;
+            }
+          }
         }
       }
     }

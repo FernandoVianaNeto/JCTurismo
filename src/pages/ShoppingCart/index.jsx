@@ -22,13 +22,6 @@ export const ShoppingCart = () => {
         </header>
         <main>
           <div className="products-container">
-            <div className="title-container">
-              <h1 className="product">Produto</h1>
-              <h1 className="price">Preço</h1>
-              <h1 className="amount">Quantidade</h1>
-              <h1 className="total">Total</h1>
-            </div>
-
             <div className="products">
               {
                 shoppingItems.map((card) => {

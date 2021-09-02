@@ -19,21 +19,30 @@ export const ProductCard = ({ imgLink, title, price }) => {
     <Styled.Container>
       <div className="details">
         <img src={imgLink} alt="productImage" />
-        <p>Passeio:
-        <br />
-        <span>{title}</span></p>
+        <p>
+          Passeio:
+          <br />
+          <span>
+            {title}
+          </span>
+        </p>
       </div>
       <div className="price">
-        <p>R$ {price}</p>
+        <p>
+          Preço: R$ {price}
+        </p>
       </div>
       <div className="amount">
-        {counter !== 1 && (<button className="alterate-counter" onClick={() => setCounter(counter - 1)}><AiOutlineMinus /> </button>)}
+        <div className="name">Quantidade:</div>
+        <div>{counter !== 1 && (<button className="alterate-counter" onClick={() => setCounter(counter - 1)}><AiOutlineMinus /> </button>)}
         <p>{counter}</p>
-        <button className="alterate-counter" onClick={() => setCounter(counter + 1)}> <AiOutlinePlus /> </button>
+        <button className="alterate-counter" onClick={() => setCounter(counter + 1)}> <AiOutlinePlus /> </button></div>
+
+
       </div>
 
       <div className="total">
-        R$ {total}
+        Total: R$ {total}
       </div>
     </Styled.Container>
   );
