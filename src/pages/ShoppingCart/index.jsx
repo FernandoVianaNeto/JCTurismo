@@ -38,6 +38,11 @@ export const ShoppingCart = () => {
             </div>
           </div>
         </main>
+        <footer>
+          <div className="subtotal">
+            <h1>Subtotal</h1>
+          </div>
+        </footer>
       </div>
     </Styled.Container>
   );

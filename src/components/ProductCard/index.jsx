@@ -1,20 +1,25 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
-import { useEffect } from 'react';
 
 export const ProductCard = ({ imgLink, title, price }) => {
   const [counter, setCounter] = useState(1);
-  const [total, setTotal] = useState()
+  const [total, setTotal] = useState();
+  const [subtotal, setSubtotal] = useState();
 
   useEffect(() => {
-    setTotal(price * counter + ",00")
+    setTotal(price * counter)
   }, [counter])
 
+  useEffect(() => {
+    console.log(total)
+  }, [subtotal])
+
+  console.log(subtotal);
   return (
     <Styled.Container>
       <div className="details">
@@ -33,17 +38,22 @@ export const ProductCard = ({ imgLink, title, price }) => {
         </p>
       </div>
       <div className="amount">
-        <div className="name">Quantidade:</div>
-        <div>{counter !== 1 && (<button className="alterate-counter" onClick={() => setCounter(counter - 1)}><AiOutlineMinus /> </button>)}
-        <p>{counter}</p>
-        <button className="alterate-counter" onClick={() => setCounter(counter + 1)}> <AiOutlinePlus /> </button></div>
-
-
+        <div className="header">
+          <div className="name">Quantidade:</div>
+          <div>
+            {counter !== 1 && (<button className="alterate-counter" onClick={() => setCounter(counter - 1)}><AiOutlineMinus /> </button>)}
+            <p>{counter}</p>
+            <button className="alterate-counter" onClick={() => setCounter(counter + 1)}> <AiOutlinePlus /> </button>
+          </div>
+        </div>
+        <button className="delete-item">
+          Excluir item
+        </button>
       </div>
-
       <div className="total">
-        Total: R$ {total}
+        Total: R$ {total+",00"}
       </div>
+
     </Styled.Container>
   );
 };

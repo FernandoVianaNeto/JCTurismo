@@ -58,6 +58,22 @@ export const Container = styled.div`
           }
         }
       }
+
+      footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 10rem;
+
+        width: 100%;
+
+        .subtotal {
+          display: flex;
+          flex-direction: column;
+          width: 30rem;
+          height: 40rem;
+        }
+      }
     }
 
     @media ${theme.media.lteMedium} {

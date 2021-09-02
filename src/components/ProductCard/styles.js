@@ -50,9 +50,9 @@ export const Container = styled.div`
 
     .amount {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 2rem;
 
       width: 26.2rem;
       height: 19rem;
@@ -72,7 +72,7 @@ export const Container = styled.div`
         gap: 2rem;
       }
 
-      button {
+      .alterate-counter {
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -97,11 +97,29 @@ export const Container = styled.div`
       font-family: ${theme.font.family.texts};
     }
 
+    .delete-item {
+      margin-top: 1rem;
+      padding: 0.5rem 2rem 0.5rem 2rem;
+
+      font-family: ${theme.font.family.texts};
+      color: ${theme.colors.primaryColor};
+      text-decoration: underline;
+
+      background: transparent;
+
+      border: none;
+
+      cursor: pointer;
+
+    }
+
     @media ${theme.media.lteMedium} {
       display: flex;
       flex-direction: column;
       border: none;
       padding: 0;
+
+      border: 1px solid ${theme.colors.secundaryColor};
 
       .details {
         display: flex;
@@ -128,12 +146,18 @@ export const Container = styled.div`
         height: 3rem;
         width: 100%;
 
+        margin-top: 2rem;
+
         border: none;
+
+        div {
+          flex: 0;
+        }
       }
 
       .total {
+        margin-top: 2rem;
         width: 100%;
-        border-bottom: 1px solid ${theme.colors.secundaryColor};
       }
     }
   `}
