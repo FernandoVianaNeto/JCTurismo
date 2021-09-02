@@ -5,24 +5,15 @@ import { useState } from 'react';
 
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
+import { useEffect } from 'react';
 
 export const ProductCard = ({ imgLink, title, price }) => {
   const [counter, setCounter] = useState(1);
-  const [total, setTotal] = useState(price)
+  const [total, setTotal] = useState()
 
-  console.log(total)
-
-  async function plus() {
-    setCounter(counter + 1);
-    console.log(counter)
-    setTotal(price*counter+",00");
-  }
-
-  function minus() {
-    setCounter(counter - 1);
-    setTotal(price*counter+",00")
-
-  }
+  useEffect(() => {
+    setTotal(price * counter + ",00")
+  }, [counter])
 
   return (
     <Styled.Container>
@@ -36,9 +27,9 @@ export const ProductCard = ({ imgLink, title, price }) => {
         <p>R$ {price}</p>
       </div>
       <div className="amount">
-        {counter !== 1 && (<button className="alterate-counter" onClick={() => minus()}><AiOutlineMinus /> </button>)}
+        {counter !== 1 && (<button className="alterate-counter" onClick={() => setCounter(counter - 1)}><AiOutlineMinus /> </button>)}
         <p>{counter}</p>
-        <button className="alterate-counter" onClick={() => plus()}> <AiOutlinePlus /> </button>
+        <button className="alterate-counter" onClick={() => setCounter(counter + 1)}> <AiOutlinePlus /> </button>
       </div>
 
       <div className="total">
