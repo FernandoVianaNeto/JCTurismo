@@ -61,7 +61,13 @@ export const ShoppingCart = () => {
         </main>
         <footer>
           <div className="subtotal">
-            <h1>Subtotal</h1>
+            <h3>
+              Subtotal:
+              <span> R$ {total},00</span>
+            </h3>
+            <button>
+              Seguir para o pagamento
+            </button>
           </div>
         </footer>
       </div>

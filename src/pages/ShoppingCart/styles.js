@@ -62,16 +62,44 @@ export const Container = styled.div`
       footer {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        margin-top: 10rem;
-
+        margin-top: 3rem;
         width: 100%;
 
         .subtotal {
           display: flex;
           flex-direction: column;
-          width: 30rem;
-          height: 40rem;
+
+          text-align: right;
+          padding: 2rem;
+
+          font-family: ${theme.font.family.texts};
+
+          h3 {
+            color: ${theme.colors.primaryColor};
+
+            span {
+              color: ${theme.colors.secundaryColor};
+            }
+          }
+
+          button {
+            margin-top: 3rem;
+            background-color: ${theme.colors.secundaryColor};
+
+            padding: 1rem 0rem 1rem 0rem;
+            border: 1px solid ${theme.colors.secundaryColor};
+            border-radius:  18px;
+
+            cursor: pointer;
+            color: ${theme.colors.thirdColor};
+
+            font-family: ${theme.font.family.texts};
+
+            &:hover {
+              background-color: ${theme.colors.thirdColor};
+              color: ${theme.colors.secundaryColor};
+            }
+          }
         }
       }
     }

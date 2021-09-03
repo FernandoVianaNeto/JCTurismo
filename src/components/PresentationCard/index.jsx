@@ -26,7 +26,7 @@ export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, best
         <div className="description">
           <p className="title">{title}</p>
           <p className="subtitle">{subtitle}</p>
-          <p className="price">R$ <span>{price}</span></p>
+          <p className="price">R$ <span>{price},00</span></p>
           <button className="see-more" onClick={() => callHandleSendData({ imgLink, imgAlt, price, title, subtitle, bestSeller, link, description, id })}>
             Ver Mais
           </button>
