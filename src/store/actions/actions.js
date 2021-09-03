@@ -20,3 +20,10 @@ export const addNewDestiny = ({ imgLink, price, title, id }) => ({
     price: price
   }
 })
+
+export const setNewSubtotal = (subtotal) => ({
+  type: 'SET_NEW_SUBTOTAL',
+  payload: {
+    subtotal: subtotal
+  }
+})

@@ -4,7 +4,7 @@ export const Container = styled.div`
   ${({theme}) => css`
     display: flex;
     align-items: center;
-    border: 1px solid ${theme.colors.secundaryColor};
+    border: 1px solid ${theme.colors.primaryColor};
     border-radius: 18px;
 
    .details {
@@ -16,7 +16,7 @@ export const Container = styled.div`
 
       padding: 2rem;
 
-      border-right: 1px solid ${theme.colors.secundaryColor};
+      border-right: 1px solid ${theme.colors.primaryColor};
 
       img {
         width: 15rem;
@@ -45,7 +45,7 @@ export const Container = styled.div`
 
       font-family: ${theme.font.family.texts};
 
-      border-right: 1px solid ${theme.colors.secundaryColor};
+      border-right: 1px solid ${theme.colors.primaryColor};
     }
 
     .amount {
@@ -57,7 +57,7 @@ export const Container = styled.div`
       width: 26.2rem;
       height: 19rem;
 
-      border-right: 1px solid ${theme.colors.secundaryColor};
+      border-right: 1px solid ${theme.colors.primaryColor};
 
       font-family: ${theme.font.family.texts};
 
@@ -88,11 +88,12 @@ export const Container = styled.div`
     }
 
     .total {
-      width: 30rem;
-
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      width: 30rem;
 
       font-family: ${theme.font.family.texts};
     }
@@ -119,7 +120,7 @@ export const Container = styled.div`
       border: none;
       padding: 0;
 
-      border: 1px solid ${theme.colors.secundaryColor};
+      border: 1px solid ${theme.colors.primaryColor};
 
       .details {
         display: flex;
