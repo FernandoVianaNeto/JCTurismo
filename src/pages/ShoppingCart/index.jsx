@@ -14,7 +14,7 @@ export const ShoppingCart = () => {
   const shoppingItems = dataStore.shoppingItems;
   console.log(dataStore)
   const items = dataStore.shoppingItems.items;
-
+  console.log(items)
   let subtotal = [0]
 
   useEffect(() => {
@@ -38,7 +38,9 @@ export const ShoppingCart = () => {
         <main>
           <div className="products-container">
             <div className="products">
-              {
+              {items.length === 0 ? (
+                <h4>Adicione algum item ao carrinho...</h4>
+              ) : (
                 items.map((card) => {
                   return (
                     <ProductCard
@@ -50,19 +52,26 @@ export const ShoppingCart = () => {
                     />
                   )
                 }
-              )}
+              )
+            )}
+
             </div>
           </div>
         </main>
         <footer>
           <div className="subtotal">
-            <h3>
-              Subtotal:
-              <span> R$ {total},00</span>
-            </h3>
-            <button>
-              Seguir para o pagamento
-            </button>
+            {items.length > 0 && (
+              <>
+              <h3>
+                Subtotal:
+                <span> R$ {total},00</span>
+              </h3>
+              <button>
+                Seguir para o pagamento
+              </button>
+              </>
+            )}
+
           </div>
         </footer>
       </div>

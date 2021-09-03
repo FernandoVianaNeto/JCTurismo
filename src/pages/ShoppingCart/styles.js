@@ -27,6 +27,11 @@ export const Container = styled.div`
             display: flex;
             flex-direction: column;
             gap: 2rem;
+
+            h4 {
+              font-family: ${theme.font.family.texts};
+              color: ${theme.colors.secundaryColor};
+            }
           }
 
           .title-container {

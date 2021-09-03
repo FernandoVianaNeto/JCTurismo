@@ -15,15 +15,9 @@ export const useRemoveItem = () => {
 
   function handleRemoveItem({ id }) {
     if(window.confirm('Gostaria mesmo de remover esse item?')) {
-      setFilteredDestinys(items.filter((card) => card.id !== id));
+      dispatch(removeDestiny(items.filter((card) => card.id !== id)));
     }
   }
-
-  useEffect(() => {
-    console.log(filteredDestinys)
-    dispatch(removeDestiny({filteredDestinys}));
-    console.log(data)
-  }, [filteredDestinys])
 
   return { handleRemoveItem };
 }
