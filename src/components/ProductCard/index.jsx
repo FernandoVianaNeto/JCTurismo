@@ -2,9 +2,6 @@ import P from 'prop-types';
 import * as Styled from './styles';
 
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { setNewSubtotal } from '../../store/actions/actions';
 
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
@@ -12,26 +9,10 @@ import { AiOutlineMinus } from 'react-icons/ai';
 export const ProductCard = ({ imgLink, title, price }) => {
   const [counter, setCounter] = useState(1);
   const [total, setTotal] = useState(0);
-  const [subtotal1, setSubtotal1] = useState(0)
-
-  const data = useSelector(state => state);
-  const items = data.shoppingItems.items;
-  const subtotal = data.shoppingItems.subtotal.subtotal
-  const dispatch = useDispatch();
 
   useEffect(() => {
     setTotal(price * counter)
   }, [counter, price])
-
-
-  function handle() {
-    items.map((card) => {
-      setSubtotal1(card.price)
-    })
-
-    console.log(subtotal)
-  }
-
 
   return (
     <Styled.Container>

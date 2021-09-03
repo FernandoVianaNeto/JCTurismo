@@ -21,9 +21,17 @@ export const addNewDestiny = ({ imgLink, price, title, id }) => ({
   }
 })
 
+export const removeDestiny = (destinys) => ({
+  type: 'REMOVE_ITEM',
+  payload: {
+    destinys
+  }
+})
+
 export const setNewSubtotal = (subtotal) => ({
   type: 'SET_NEW_SUBTOTAL',
   payload: {
     subtotal: subtotal
   }
 })
+
