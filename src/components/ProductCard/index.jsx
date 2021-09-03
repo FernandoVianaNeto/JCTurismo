@@ -3,12 +3,16 @@ import * as Styled from './styles';
 
 import { useState, useEffect } from 'react';
 
+import { useRemoveItem } from '../../hooks/useRemoveItem';
+
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
 
-export const ProductCard = ({ imgLink, title, price }) => {
+export const ProductCard = ({ imgLink, title, price, id }) => {
   const [counter, setCounter] = useState(1);
   const [total, setTotal] = useState(0);
+
+  const { handleRemoveItem } = useRemoveItem()
 
   useEffect(() => {
     setTotal(price * counter)
@@ -44,7 +48,7 @@ export const ProductCard = ({ imgLink, title, price }) => {
       </div>
       <div className="total">
         <p>Total: R$ {total+",00"}</p>
-        <button className="delete-item">
+        <button className="delete-item" onClick={() => handleRemoveItem({ id })}>
           Excluir item
         </button>
       </div>

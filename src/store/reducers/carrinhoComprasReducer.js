@@ -19,11 +19,17 @@ export function shoppingCart(state = initialState, action) {
         ]
       }
 
-      case 'SET_NEW_SUBTOTAL':
-        return {
-          ...state,
-          subtotal: action.payload
-        }
+    case 'SET_NEW_SUBTOTAL':
+      return {
+        ...state,
+        subtotal: action.destinys
+      }
+
+    case 'REMOVE_ITEM':
+      return {
+        ...state,
+        items: action.destinys
+      }
   }
 
   return state;

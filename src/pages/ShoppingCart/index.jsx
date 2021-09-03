@@ -11,26 +11,20 @@ export const ShoppingCart = () => {
   const [total, setTotal] = useState(0);
 
   const dataStore = useSelector(state => state);
-  console.log(dataStore.shoppingItems);
   const shoppingItems = dataStore.shoppingItems;
-
+  console.log(dataStore)
   const items = dataStore.shoppingItems.items;
-  console.log(items);
 
-  let subtotal = []
+  let subtotal = [0]
 
   useEffect(() => {
     items.map((card) => {
       subtotal.push(card.price)
     })
 
-    console.log(subtotal)
     let total1 = subtotal.reduce((total, element) => total + element)
-    console.log(total1)
     setTotal(total1)
   })
-
-  console.log(total)
 
   return (
     <Styled.Container>
@@ -45,13 +39,14 @@ export const ShoppingCart = () => {
           <div className="products-container">
             <div className="products">
               {
-                shoppingItems.items.map((card) => {
+                items.map((card) => {
                   return (
                     <ProductCard
                       key={card.id}
                       imgLink={card.imgLink}
                       title={card.title}
                       price={card.price}
+                      id={card.id}
                     />
                   )
                 }
