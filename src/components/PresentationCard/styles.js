@@ -19,6 +19,7 @@ export const Container = styled.div`
     .content {
       display: flex;
       flex-direction: column;
+      background-color: ${theme.colors.primaryColor};
 
       ${bestSeller && handleBestSeller(bestSeller)}
 
@@ -31,11 +32,14 @@ export const Container = styled.div`
       }
 
       .best-seller {
-        position: relative;
+        position: absolute;
         background-color: ${theme.colors.secundaryColor};
-        padding:  0.5rem 1rem 0.5rem 1rem;
+        padding: 0.5rem 1rem 0.5rem 1rem;
 
-        margin-bottom: -3.5rem;
+        text-align: center;
+
+        top: 1;
+
         border-radius: 8rem;
 
         color: ${theme.colors.thirdColor};
@@ -54,7 +58,6 @@ export const Container = styled.div`
 
         .title {
           margin-bottom: 2rem;
-          margin-top: 2rem;
           margin-left: 1rem;
           color: ${theme.colors.thirdColor};
 

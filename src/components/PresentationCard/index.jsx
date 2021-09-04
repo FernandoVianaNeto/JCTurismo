@@ -39,7 +39,7 @@ export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, best
 PresentationCard.propTypes = {
   title: P.string.isRequired,
   subtitle: P.string.isRequired,
-  price: P.number.isRequired,
+  price: P.string.isRequired,
   imgLink: P.string.isRequired,
   bestSeller: P.bool,
   link: P.string,

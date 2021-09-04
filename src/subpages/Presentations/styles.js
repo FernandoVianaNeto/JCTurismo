@@ -21,16 +21,20 @@ export const Container = styled.div`
       width: 100%;
 
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 7rem;
 
       .column1 {
         display: flex;
         flex-direction: column;
+        width: 100%;
 
         ${background && handleColorBackground(theme)};
 
         h1 {
+          padding: 0;
           width: 100%;
           margin: 0px;
           margin-top: 5rem;
@@ -38,8 +42,8 @@ export const Container = styled.div`
       }
 
       .column2 {
-        max-width: 50rem;
-        overflow-y: auto;
+        max-width: 100%;
+        overflow-x: auto;
         display: flex;
         align-items: center;
         gap: 1rem;
