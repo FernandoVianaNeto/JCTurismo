@@ -4,6 +4,7 @@ import * as Styled from './styles';
 import { useState, useEffect } from 'react';
 
 import { useRemoveItem } from '../../hooks/useRemoveItem';
+import { useChangeAmount } from '../../hooks/useChangeAmount';
 
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
@@ -14,9 +15,21 @@ export const ProductCard = ({ imgLink, title, price, id }) => {
 
   const { handleRemoveItem } = useRemoveItem();
 
+  const { removeAmout, addAmount } = useChangeAmount();
+
   useEffect(() => {
     setTotal(price * counter)
   }, [counter, price])
+
+  function handleAddAmount() {
+    setCounter(counter + 1)
+    addAmount({counter})
+  }
+
+  function handleRemoveAmount() {
+    setCounter(counter - 1)
+    removeAmout({counter})
+  }
 
   return (
     <Styled.Container>
@@ -39,9 +52,9 @@ export const ProductCard = ({ imgLink, title, price, id }) => {
         <div className="header">
           <div className="name">Quantidade:</div>
           <div>
-            {counter !== 1 && (<button className="alterate-counter" onClick={() => setCounter(counter - 1)}><AiOutlineMinus /> </button>)}
+            {counter !== 1 && (<button className="alterate-counter" onClick={() => handleRemoveAmount()}><AiOutlineMinus /> </button>)}
             <p>{counter}</p>
-            <button className="alterate-counter" onClick={() => setCounter(counter + 1)}> <AiOutlinePlus /> </button>
+            <button className="alterate-counter" onClick={() => handleAddAmount()}> <AiOutlinePlus /> </button>
           </div>
         </div>
 
