@@ -65,49 +65,6 @@ export const Home = () => {
         <main>
           <WhatsappButton />
           <a href=" " name="passeios"> </a>
-          <div className="ad-container">
-            <h1>Promoções de passeios que cabem no seu bolso</h1>
-            {/* <div className="option-container">
-              <ADCard
-                title="Transfer"
-                subtitle="Aeroporto - Hotel"
-                imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628278707/WhatsApp_Image_2021-08-06_at_16.38.05_fulolx.jpg"
-                imgAlt="Aeroporto de Salvador"
-              >
-                <p className="children">
-                  Mais conforto e segurança para a sua viagem
-                  <br />
-                  <br />
-                  <span className="children-desconto">
-                    *Desconto de 10% a vista
-                  </span>
-
-                  <button>
-                    Reserve agora
-                  </button>
-                </p>
-              </ADCard>
-              <ADCardSmall
-                title="Transfer"
-                subtitle="Aeroporto - Hotel"
-                imgLink="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628278707/WhatsApp_Image_2021-08-06_at_16.38.05_fulolx.jpg"
-                imgAlt="Aeroporto de Salvador"
-              >
-                <p className="children">
-                  Mais conforto e segurança para a sua viagem
-                  <br />
-                  <br />
-                  <span className="children-desconto">
-                    *Desconto de 10% a vista
-                  </span>
-                  <button>
-                    Reserve agora
-                  </button>
-                </p>
-              </ADCardSmall>
-            </div>*/}
-          </div>
-
           <Presentations
             title="Passeios com os melhores preços"
             smallDescription="Conheça o melhor da Bahia. Com estilo."
@@ -134,7 +91,6 @@ export const Home = () => {
           <Presentations
             title="Passeios com os melhores preços"
             smallDescription="Conheça o melhor da Bahia. Com estilo."
-            invert
           >
             {
               data1.destinos.map((card) => {

@@ -14,7 +14,8 @@ export function shoppingCart(state = initialState, action) {
             id: action.payload.id,
             imgLink: action.payload.imgLink,
             title: action.payload.title,
-            price: action.payload.price
+            price: action.payload.price,
+            amount: action.payload.amount
           }
         ]
       }
@@ -22,7 +23,7 @@ export function shoppingCart(state = initialState, action) {
     case 'SET_NEW_SUBTOTAL':
       return {
         ...state,
-        subtotal: action.destinys
+        subtotal: action.subtotals
       }
 
     case 'REMOVE_ITEM':

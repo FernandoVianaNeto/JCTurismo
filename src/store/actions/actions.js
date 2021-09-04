@@ -11,13 +11,14 @@ export const sendDestinyData = ({ imgLink, price, title, subtitle, link, descrip
   },
 })
 
-export const addNewDestiny = ({ imgLink, price, title, id }) => ({
+export const addNewDestiny = ({ imgLink, price, title, id, amount }) => ({
   type: 'ADD_NEW_ITEM',
   payload: {
     id: id,
     imgLink: imgLink,
     title: title,
-    price: price
+    price: price,
+    amount: amount
   }
 })
 

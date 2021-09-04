@@ -12,7 +12,7 @@ export const ProductCard = ({ imgLink, title, price, id }) => {
   const [counter, setCounter] = useState(1);
   const [total, setTotal] = useState(0);
 
-  const { handleRemoveItem } = useRemoveItem()
+  const { handleRemoveItem } = useRemoveItem();
 
   useEffect(() => {
     setTotal(price * counter)

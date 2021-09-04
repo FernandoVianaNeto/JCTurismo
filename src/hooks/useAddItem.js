@@ -7,14 +7,16 @@ export const useAddItem = () => {
   const dispatch = useDispatch();
 
   const dataStore = useSelector(state => state);
+  //const items = dataStore.shoppingItems.items;
 
-  function addNewItem({ imgLink, title, price, id }) {
+  function addNewItem({ imgLink, title, price, id, amount }) {
     console.log(dataStore);
     dispatch(addNewDestiny({
       id: id,
       imgLink: imgLink,
       title: title,
-      price: price
+      price: price,
+      amount: amount,
     }))
   }
 
