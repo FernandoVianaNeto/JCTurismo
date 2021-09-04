@@ -22,7 +22,7 @@ export const Container = styled.div`
         width: 15rem;
         height: 15rem;
 
-        border-radius: 50%;
+        border-radius: 18px;
       }
 
       p {
