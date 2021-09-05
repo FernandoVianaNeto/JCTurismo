@@ -9,13 +9,20 @@ import { useChangeAmount } from '../../hooks/useChangeAmount';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
 
-export const ProductCard = ({ imgLink, title, price, id }) => {
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
+export const ProductCard = ({ imgLink, title, price, id, amount }) => {
   const [counter, setCounter] = useState(1);
   const [total, setTotal] = useState(0);
 
   const { handleRemoveItem } = useRemoveItem();
 
-  const { removeAmout, addAmount } = useChangeAmount();
+  const { removeAmount, addAmount } = useChangeAmount();
+
+  const dataStore = useSelector(state => state);
+  const items = dataStore.shoppingItems.items;
+  console.log(items);
 
   useEffect(() => {
     setTotal(price * counter)
@@ -23,12 +30,12 @@ export const ProductCard = ({ imgLink, title, price, id }) => {
 
   function handleAddAmount() {
     setCounter(counter + 1)
-    addAmount({counter})
+    addAmount({counter, imgLink, price, id})
   }
 
   function handleRemoveAmount() {
     setCounter(counter - 1)
-    removeAmout({counter})
+    removeAmount({counter, imgLink, price, id})
   }
 
   return (
@@ -52,8 +59,8 @@ export const ProductCard = ({ imgLink, title, price, id }) => {
         <div className="header">
           <div className="name">Quantidade:</div>
           <div>
-            {counter !== 1 && (<button className="alterate-counter" onClick={() => handleRemoveAmount()}><AiOutlineMinus /> </button>)}
-            <p>{counter}</p>
+            {amount !== 1 && (<button className="alterate-counter" onClick={() => handleRemoveAmount()}><AiOutlineMinus /> </button>)}
+            <p>{amount}</p>
             <button className="alterate-counter" onClick={() => handleAddAmount()}> <AiOutlinePlus /> </button>
           </div>
         </div>

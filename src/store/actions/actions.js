@@ -34,3 +34,10 @@ export const setNewSubtotal = (subtotal) => ({
   }
 })
 
+export const setNewAmount = (amount) => ({
+  type: 'SET_NEW_AMOUNT',
+  payload: {
+    amount: amount
+  }
+})
+

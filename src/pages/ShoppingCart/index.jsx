@@ -11,10 +11,7 @@ export const ShoppingCart = () => {
   const [total, setTotal] = useState(0);
 
   const dataStore = useSelector(state => state);
-  const shoppingItems = dataStore.shoppingItems;
-  console.log(dataStore)
   const items = dataStore.shoppingItems.items;
-  console.log(items)
   let subtotal = [0]
 
   useEffect(() => {
@@ -49,6 +46,7 @@ export const ShoppingCart = () => {
                       title={card.title}
                       price={card.price}
                       id={card.id}
+                      amount={card.amount}
                     />
                   )
                 }

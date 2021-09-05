@@ -31,6 +31,12 @@ export function shoppingCart(state = initialState, action) {
         ...state,
         items: action.destinys
       }
+
+    case 'SET_NEW_AMOUNT':
+      return {
+        ...state,
+        items: action.payload.amount
+      }
   }
 
   return state;
