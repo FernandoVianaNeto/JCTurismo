@@ -11,12 +11,13 @@ export const ShoppingCart = () => {
   const [total, setTotal] = useState(0);
 
   const dataStore = useSelector(state => state);
+  console.log(dataStore)
   const items = dataStore.shoppingItems.items;
   let subtotal = [0]
 
   useEffect(() => {
     items.map((card) => {
-      subtotal.push(card.price)
+      subtotal.push(card.price * card.amount)
     })
 
     let total1 = subtotal.reduce((total, element) => total + element)

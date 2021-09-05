@@ -1,18 +1,41 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
+import { setNewAmount } from "../store/actions/actions";
 
 export const useChangeAmount = () => {
-  const [counter, setCounter] = useState(1);
+  const [newObject, setNewObject] = useState({})
 
-  function addAmount({ counter, imgLink, price, id }) {
-    console.log(counter, imgLink, price, id)
+  const dispatch = useDispatch();
+  const dataStore = useSelector(state => state);
+
+  const items = dataStore.shoppingItems.items;
+  console.log(dataStore)
+
+  function addAmount({ id, amount }) {
+    items.map((obj) => {
+      if (obj.id === id) {
+        obj.amount = amount+1
+        console.log(obj)
+      }
+    })
+
+    dispatch(setNewAmount(items))
   }
 
-  function removeAmount({ counter, imgLink, price, id }) {
-    console.log(counter, imgLink, price, id)
+  console.log(items)
+
+  function removeAmount({ id, amount }) {
+    items.map((obj) => {
+      if (obj.id === id) {
+        obj.amount = amount-1
+        console.log(obj)
+      }
+    })
+
+    dispatch(setNewAmount(items))
   }
 
   return { addAmount, removeAmount }

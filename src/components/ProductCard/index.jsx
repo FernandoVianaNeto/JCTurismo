@@ -9,7 +9,6 @@ import { useChangeAmount } from '../../hooks/useChangeAmount';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
 
-import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 export const ProductCard = ({ imgLink, title, price, id, amount }) => {
@@ -20,22 +19,18 @@ export const ProductCard = ({ imgLink, title, price, id, amount }) => {
 
   const { removeAmount, addAmount } = useChangeAmount();
 
-  const dataStore = useSelector(state => state);
-  const items = dataStore.shoppingItems.items;
-  console.log(items);
-
   useEffect(() => {
-    setTotal(price * counter)
+    setTotal(price * amount)
   }, [counter, price])
 
   function handleAddAmount() {
     setCounter(counter + 1)
-    addAmount({counter, imgLink, price, id})
+    addAmount({ counter, imgLink, price, id, amount })
   }
 
   function handleRemoveAmount() {
     setCounter(counter - 1)
-    removeAmount({counter, imgLink, price, id})
+    removeAmount({ counter, imgLink, price, id, amount })
   }
 
   return (
