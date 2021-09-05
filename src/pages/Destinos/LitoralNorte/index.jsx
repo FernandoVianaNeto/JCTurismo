@@ -1,7 +1,5 @@
-import P from 'prop-types';
 import * as Styled from './styles';
 
-import {  } from 'react-icons'
 import { Destinations } from '../../../subpages/Destinations';
 import { Base } from '../../../templates/Base';
 
@@ -13,6 +11,3 @@ export const LitoralNorte = () => {
     </Styled.Container>
   );
 };
-
-LitoralNorte.propTypes = {
-}

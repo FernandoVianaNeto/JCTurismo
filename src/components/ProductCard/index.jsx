@@ -9,8 +9,6 @@ import { useChangeAmount } from '../../hooks/useChangeAmount';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
 
-import { useSelector } from 'react-redux';
-
 export const ProductCard = ({ imgLink, title, price, id, amount }) => {
   const [counter, setCounter] = useState(1);
   const [total, setTotal] = useState(0);
@@ -21,7 +19,7 @@ export const ProductCard = ({ imgLink, title, price, id, amount }) => {
 
   useEffect(() => {
     setTotal(price * amount)
-  }, [counter, price])
+  }, [amount, price])
 
   function handleAddAmount() {
     setCounter(counter + 1)

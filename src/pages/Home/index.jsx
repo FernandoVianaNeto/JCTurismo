@@ -11,16 +11,12 @@ import { FiPackage } from 'react-icons/fi';
 import { AiOutlineSchedule } from 'react-icons/ai';
 import { AiOutlineHome } from 'react-icons/ai';
 
-import { useHistory } from 'react-router-dom';
 import { Presentations } from '../../subpages/Presentations';
 
 import { data } from '../../data/data';
 
 export const Home = () => {
-  const history = useHistory();
-
   const data1 = data
-  console.log(data1);
 
   return (
     <Styled.Container>

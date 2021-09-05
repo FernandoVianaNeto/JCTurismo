@@ -1,13 +1,9 @@
-import { useState, useEffect } from "react"
-
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 import { setNewAmount } from "../store/actions/actions";
 
 export const useChangeAmount = () => {
-  const [newObject, setNewObject] = useState({})
-
   const dispatch = useDispatch();
   const dataStore = useSelector(state => state);
 
@@ -20,6 +16,8 @@ export const useChangeAmount = () => {
         obj.amount = amount+1
         console.log(obj)
       }
+
+      return items;
     })
 
     dispatch(setNewAmount(items))
@@ -33,6 +31,8 @@ export const useChangeAmount = () => {
         obj.amount = amount-1
         console.log(obj)
       }
+
+      return items;
     })
 
     dispatch(setNewAmount(items))

@@ -38,6 +38,5 @@ export function shoppingCart(state = initialState, action) {
         items: action.payload.amount
       }
   }
-
   return state;
 }

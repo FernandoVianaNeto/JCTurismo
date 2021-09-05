@@ -1,4 +1,3 @@
-//import P from 'prop-types';
 import * as Styled from './styles';
 
 import { Base } from '../../templates/Base';
@@ -11,18 +10,17 @@ export const ShoppingCart = () => {
   const [total, setTotal] = useState(0);
 
   const dataStore = useSelector(state => state);
-  console.log(dataStore)
   const items = dataStore.shoppingItems.items;
   let subtotal = [0]
 
   useEffect(() => {
     items.map((card) => {
       subtotal.push(card.price * card.amount)
-    })
 
-    let total1 = subtotal.reduce((total, element) => total + element)
-    setTotal(total1)
-  })
+      return items;
+    })
+    setTotal(subtotal.reduce((total, element) => total + element))
+  }, [items, subtotal])
 
   return (
     <Styled.Container>
@@ -70,14 +68,9 @@ export const ShoppingCart = () => {
               </button>
               </>
             )}
-
           </div>
         </footer>
       </div>
     </Styled.Container>
   );
 };
-
-ShoppingCart.propTypes = {
-
-}

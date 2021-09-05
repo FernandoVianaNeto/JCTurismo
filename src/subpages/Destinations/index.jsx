@@ -1,4 +1,3 @@
-import P from 'prop-types';
 import { Button } from '../../components/Button';
 import * as Styled from './styles';
 
@@ -21,8 +20,10 @@ export const Destinations = () => {
       if (obj.id === dataStore.destinyData.id) {
         setAdded(true);
       }
+
+      return items;
     })
-  }, [items])
+  }, [items, dataStore.destinyData.id])
 
   return (
     <Styled.Container>

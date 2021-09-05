@@ -1,12 +1,9 @@
-import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
 import { sendDestinyData } from '../store/actions/actions';
 
 export const useDestination = () => {
   const dispatch = useDispatch();
-
-  const data = useSelector(state => state);
 
   function handleSendInformation({ imgLink, price, title, subtitle, link, description, id }) {
     console.log(id)
