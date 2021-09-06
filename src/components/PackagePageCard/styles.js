@@ -57,6 +57,8 @@ export const Container = styled.div`
 
         cursor: pointer;
 
+        font-family: ${theme.font.family.texts};
+
         &:hover {
           background-color: ${theme.colors.thirdColor};
           color: ${theme.colors.secundaryColor};
