@@ -14,6 +14,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { Presentations } from '../../subpages/Presentations';
 
 import { data } from '../../data/data';
+import { PacoteCard } from '../../components/PacoteCard';
 
 export const Home = () => {
   const data1 = data
@@ -86,23 +87,27 @@ export const Home = () => {
             }
           </Presentations>
           <Presentations
-            title="Passeios com os melhores preços"
-            smallDescription="Conheça o melhor da Bahia. Com estilo."
+            title="Pacotes com os melhores preços"
+            smallDescription="Conheça a Bahia com os seus amigos e familiares."
           >
             {
-              data1.destinos.map((card) => {
+              data1.pacotes.map((card) => {
                 return (
-                  <PresentationCard
+                  <PacoteCard
                     id={card.id}
                     key={card.id}
                     imgLink={card.imgLink}
                     title={card.title}
                     subtitle={card.subtitle}
                     bestSeller={card.bestSeller}
-                    price={card.price}
+                    price1={card.price1}
+                    price2={card.price2}
+                    price={card.price3}
                     link={card.link}
                     description={card.description}
-                    categoria={card.categoria}
+                    categoria1={card.categoria1}
+                    categoria2={card.categoria2}
+                    categoria3={card.categoria3}
                   />
                 )
               })

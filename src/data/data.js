@@ -69,7 +69,6 @@ export const data = {
       imgLink: "https://res.cloudinary.com/dh84pxwgu/image/upload/v1628197030/ignacio-aguilar-S7KooAJPyxk-unsplash_i9kn1v.jpg",
       title: "Litoral Norte",
       subtitle: "A partir de ",
-      bestSeller: true,
       price1: 450.00,
       price2: 750.00,
       price3: 120.00,

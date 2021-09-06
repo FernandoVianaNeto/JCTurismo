@@ -127,6 +127,7 @@ export const Container = styled.div`
     border-top-left-radius: 2rem;
 
     cursor: pointer;
+
     &:hover {
       border: 2px solid ${theme.colors.secundaryColor};
     }
