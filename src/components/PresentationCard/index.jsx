@@ -28,7 +28,7 @@ export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, best
           <p className="subtitle">{subtitle}</p>
           <p className="price">R$ <span>{price},00</span></p>
           <button className="see-more" onClick={() => callHandleSendData({ imgLink, imgAlt, price, title, subtitle, bestSeller, link, description, id, categoria })}>
-            Ver Mais
+            Comprar este passeio
           </button>
         </div>
       </div>

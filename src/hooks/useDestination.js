@@ -18,7 +18,7 @@ export const useDestination = () => {
     }))
   }
 
-  function handleSendPackage() {
+  function handleSendPackage({ title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description }) {
 
   }
 

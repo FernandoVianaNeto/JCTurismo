@@ -11,6 +11,15 @@ export const Container = styled.div`
 
         border-bottom: 1px solid ${theme.colors.secundaryColor};
       }
+
+      .package-map {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        margin-top: 2rem;
+      }
+
     }
   `}
 `;

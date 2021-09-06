@@ -73,7 +73,7 @@ export const data = {
       price2: 750.00,
       price3: 120.00,
       link: "/destino",
-      categoria1: 'Até 3 pessoas',
+      categoria1: 'A partir de 3 pessoas',
       categoria2: '4 a 6 pessoas',
       categoria3: 'Acima de 8 pessoas',
       description: "Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus, sedullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec."
@@ -87,7 +87,7 @@ export const data = {
       price2: 700.00,
       price3: 120.00,
       link: "/destino",
-      categoria1: 'Até 3 pessoas',
+      categoria1: 'A partir de 3 pessoas',
       categoria2: '4 a 6 pessoas',
       categoria3: 'Acima de 8 pessoas',
       description: "Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus, sedullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec."
@@ -101,9 +101,9 @@ export const data = {
       price2: 450.00,
       price3: 120.00,
       link: "/destino",
-      categoria1: 'Até 9 passageiros',
-      categoria2: 'Até 10 passageiros',
-      categoria3: 'Até 11 passageiros',
+      categoria1: 'A partir de 9 pessoas',
+      categoria2: 'Até 10 pessoas',
+      categoria3: 'Até 11 pessoas',
       description: "Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus, sedullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec."
     },
     {
@@ -129,7 +129,7 @@ export const data = {
       price2: 400.00,
       price3: 80.00,
       link: "/destino",
-      categoria1: 'Até 3 pessoas',
+      categoria1: 'A partir de 3 pessoas',
       categoria2: '4 a 6 pessoas',
       categoria3: 'Acima de 8 pessoas',
       description: "Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus, sedullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec."
@@ -143,7 +143,7 @@ export const data = {
       price2: 450.00,
       price3: 120.00,
       link: "/destino",
-      categoria1: 'Até 3 pessoas',
+      categoria1: 'A partir de 3 pessoas',
       categoria2: '4 a 6 pessoas',
       categoria3: 'Acima de 8 pessoas',
       description: "Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus, sedullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec."
