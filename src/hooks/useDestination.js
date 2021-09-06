@@ -4,9 +4,12 @@ import { useSelector } from 'react-redux';
 import { sendDestinyData } from '../store/actions/actions';
 import { setPackageData } from '../store/actions/actions';
 
+import { useHistory } from 'react-router-dom';
+
 export const useDestination = () => {
   const dispatch = useDispatch();
   const data = useSelector(state => state);
+  const history = useHistory();
   console.log(data);
 
   function handleSendInformation({ imgLink, price, title, subtitle, link, description, id, categoria }) {
@@ -36,6 +39,8 @@ export const useDestination = () => {
       description: description,
       id: id
     }))
+
+    history.push('/pacote');
   }
 
   return { handleSendInformation, handleSendPackage };

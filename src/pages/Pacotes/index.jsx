@@ -20,6 +20,7 @@ export const Pacotes = () => {
             data1.pacotes.map((card) => {
               return (
                 <PackagePageCard
+                  key={card.id}
                   imgLink={card.imgLink}
                   title={card.title}
                   subtitle={card.subtitle}
@@ -41,7 +42,3 @@ export const Pacotes = () => {
     </Styled.Container>
   );
 };
-
-Pacotes.propTypes = {
-  children: P.node.isRequired,
-}

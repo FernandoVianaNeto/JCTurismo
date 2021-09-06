@@ -27,7 +27,7 @@ export const Base = () => {
             <GiModernCity />
             <p>CityTour</p>
           </MenuLink>
-          <MenuLink link="/">
+          <MenuLink link="/pacotes">
             <FiPackage />
             <p>Pacotes</p>
           </MenuLink>
