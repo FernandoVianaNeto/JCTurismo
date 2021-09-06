@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import { Home } from './pages/Home';
-import { LitoralNorte } from './pages/Destinos/LitoralNorte';
+import { Destino } from './pages/Destinos';
 import { ShoppingCart } from './pages/ShoppingCart';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/litoralnorte" exact component={LitoralNorte} />
+        <Route path="/destino" exact component={Destino} />
         <Route path="/carrinhodecompras" exact component={ShoppingCart} />
       </Switch>
     </BrowserRouter>
