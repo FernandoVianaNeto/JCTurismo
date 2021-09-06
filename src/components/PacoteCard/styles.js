@@ -54,7 +54,7 @@ export const Container = styled.div`
           margin-top: 1rem;
 
           font-family: ${theme.font.family.texts};
-          color: ${theme.colors.thirdColor};
+          color: ${theme.colors.secundaryColor};
         }
 
         .subtitle {

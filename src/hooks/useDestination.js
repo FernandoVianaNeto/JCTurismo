@@ -18,5 +18,9 @@ export const useDestination = () => {
     }))
   }
 
-  return { handleSendInformation };
+  function handleSendPackage() {
+
+  }
+
+  return { handleSendInformation, handleSendPackage };
 }
