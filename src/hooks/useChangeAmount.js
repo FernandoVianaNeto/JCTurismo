@@ -14,7 +14,6 @@ export const useChangeAmount = () => {
     items.map((obj) => {
       if (obj.id === id) {
         obj.amount = amount+1
-        console.log(obj)
       }
 
       return items;
@@ -22,8 +21,6 @@ export const useChangeAmount = () => {
 
     dispatch(setNewAmount(items))
   }
-
-  console.log(items)
 
   function removeAmount({ id, amount }) {
     items.map((obj) => {

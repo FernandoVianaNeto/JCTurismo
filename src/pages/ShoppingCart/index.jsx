@@ -46,6 +46,7 @@ export const ShoppingCart = () => {
                       price={card.price}
                       id={card.id}
                       amount={card.amount}
+                      categoria={card.categoria}
                     />
                   )
                 }

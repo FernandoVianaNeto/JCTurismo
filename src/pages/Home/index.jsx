@@ -79,6 +79,7 @@ export const Home = () => {
                     price={card.price}
                     link={card.link}
                     description={card.description}
+                    categoria={card.categoria}
                   />
                 )
               })
@@ -101,6 +102,7 @@ export const Home = () => {
                     price={card.price}
                     link={card.link}
                     description={card.description}
+                    categoria={card.categoria}
                   />
                 )
               })

@@ -35,7 +35,7 @@ export const Menu = ({ children, background = false }) => {
             <div className="shopping-cart">
               <a href="/carrinhodecompras">
                 <AiOutlineShoppingCart />
-                <p>Carrinho de Compras</p>
+                <p>Meu carrinho</p>
               </a>
             </div>
           </div>

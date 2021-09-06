@@ -1,4 +1,4 @@
-export const sendDestinyData = ({ imgLink, price, title, subtitle, link, description, id }) => ({
+export const sendDestinyData = ({ imgLink, price, title, subtitle, link, description, id, categoria }) => ({
   type: 'SEND_DESTINY_DATA',
   payload: {
     id: id,
@@ -8,17 +8,19 @@ export const sendDestinyData = ({ imgLink, price, title, subtitle, link, descrip
     subtitle: subtitle,
     link: link,
     description: description,
+    categoria: categoria
   },
 })
 
-export const addNewDestiny = ({ imgLink, price, title, id, amount }) => ({
+export const addNewDestiny = ({ imgLink, price, title, id, amount, categoria }) => ({
   type: 'ADD_NEW_ITEM',
   payload: {
     id: id,
     imgLink: imgLink,
     title: title,
     price: price,
-    amount: amount
+    amount: amount,
+    categoria: categoria
   }
 })
 

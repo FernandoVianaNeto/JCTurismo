@@ -5,8 +5,7 @@ import { sendDestinyData } from '../store/actions/actions';
 export const useDestination = () => {
   const dispatch = useDispatch();
 
-  function handleSendInformation({ imgLink, price, title, subtitle, link, description, id }) {
-    console.log(id)
+  function handleSendInformation({ imgLink, price, title, subtitle, link, description, id, categoria }) {
     dispatch(sendDestinyData({
       id: id,
       imgLink: imgLink,
@@ -15,6 +14,7 @@ export const useDestination = () => {
       subtitle: subtitle,
       link: link,
       description: description,
+      categoria: categoria
     }))
   }
 

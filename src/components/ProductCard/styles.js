@@ -18,6 +18,16 @@ export const Container = styled.div`
 
       border-right: 1px solid ${theme.colors.primaryColor};
 
+      .title-category {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        height: 15rem;
+
+
+      }
+
       img {
         width: 15rem;
         height: 15rem;

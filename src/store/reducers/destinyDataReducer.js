@@ -6,6 +6,7 @@ const initialState = {
   link: null,
   description: null,
   id: null,
+  categoria: null
 }
 
 export function sendDestinyData(state = initialState, action) {
@@ -19,6 +20,7 @@ export function sendDestinyData(state = initialState, action) {
         subtitle: action.payload.subtitle,
         link: action.payload.link,
         description: action.payload.description,
+        categoria: action.payload.categoria
       }
   }
 

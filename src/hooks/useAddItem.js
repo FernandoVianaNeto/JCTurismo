@@ -7,9 +7,8 @@ export const useAddItem = () => {
   const dispatch = useDispatch();
 
   const dataStore = useSelector(state => state);
-  //const items = dataStore.shoppingItems.items;
 
-  function addNewItem({ imgLink, title, price, id, amount }) {
+  function addNewItem({ imgLink, title, price, id, amount, categoria }) {
     console.log(dataStore);
     dispatch(addNewDestiny({
       id: id,
@@ -17,6 +16,7 @@ export const useAddItem = () => {
       title: title,
       price: price,
       amount: amount,
+      categoria: categoria
     }))
   }
 

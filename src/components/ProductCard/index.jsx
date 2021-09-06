@@ -9,7 +9,7 @@ import { useChangeAmount } from '../../hooks/useChangeAmount';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
 
-export const ProductCard = ({ imgLink, title, price, id, amount }) => {
+export const ProductCard = ({ imgLink, title, price, id, amount, categoria }) => {
   const [counter, setCounter] = useState(1);
   const [total, setTotal] = useState(0);
 
@@ -23,25 +23,31 @@ export const ProductCard = ({ imgLink, title, price, id, amount }) => {
 
   function handleAddAmount() {
     setCounter(counter + 1)
-    addAmount({ counter, imgLink, price, id, amount })
+    addAmount({ counter, imgLink, price, id, amount, categoria })
   }
 
   function handleRemoveAmount() {
     setCounter(counter - 1)
-    removeAmount({ counter, imgLink, price, id, amount })
+    removeAmount({ counter, imgLink, price, id, amount, categoria })
   }
 
   return (
     <Styled.Container>
       <div className="details">
         <img src={imgLink} alt="productImage" />
-        <p>
-          Passeio:
-          <br />
-          <span>
-            {title}
-          </span>
-        </p>
+        <div className="title-category">
+          <p>
+            Passeio:
+            <br />
+            <span>
+              {title}
+            </span>
+          </p>
+          <p>
+            Categoria: <span>{categoria}</span>
+          </p>
+        </div>
+
       </div>
       <div className="price">
         <p>

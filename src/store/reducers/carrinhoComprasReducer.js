@@ -15,7 +15,8 @@ export function shoppingCart(state = initialState, action) {
             imgLink: action.payload.imgLink,
             title: action.payload.title,
             price: action.payload.price,
-            amount: action.payload.amount
+            amount: action.payload.amount,
+            categoria: action.payload.categoria
           }
         ]
       }
