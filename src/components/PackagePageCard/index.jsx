@@ -3,7 +3,7 @@ import * as Styled from './styles';
 
 import { useDestination } from '../../hooks/useDestination';
 
-export const PackagePageCard = ({ title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description }) => {
+export const PackagePageCard = ({ id, title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description }) => {
   const { handleSendPackage } = useDestination();
 
   return (
@@ -19,7 +19,7 @@ export const PackagePageCard = ({ title, subtitle, categoria1, categoria2, categ
           <p><span>Descrição:</span> {description}</p>
         </div>
       </div>
-      <div className="footer" onClick={() => handleSendPackage({ title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description })}>
+      <div className="footer" onClick={() => handleSendPackage({ title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description, id })}>
         <button>Comprar esse passeio</button>
       </div>
 

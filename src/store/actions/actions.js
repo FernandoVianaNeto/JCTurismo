@@ -43,9 +43,19 @@ export const setNewAmount = (amount) => ({
   }
 })
 
-export const setPackageData = (package) => ({
+export const setPackageData = ({ title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description, id }) => ({
   type: 'SEND_PACKAGE_DATA',
   payload: {
-    package: package
+    id: id,
+    categoria1: categoria1,
+    categoria2: categoria2,
+    categoria3: categoria3,
+    price1: price1,
+    price2: price2,
+    price3: price3,
+    title: title,
+    subtitle: subtitle,
+    description: description,
+    imgLink: imgLink
   }
 })

@@ -22,9 +22,15 @@ export const Pacotes = () => {
                 <PackagePageCard
                   imgLink={card.imgLink}
                   title={card.title}
+                  subtitle={card.subtitle}
                   categoria1={card.categoria1}
+                  categoria2={card.categoria2}
+                  categoria3={card.categoria3}
                   description={card.description}
                   price1={card.price1}
+                  price2={card.price2}
+                  price3={card.price3}
+                  id={card.id}
                 />
               )
             })
