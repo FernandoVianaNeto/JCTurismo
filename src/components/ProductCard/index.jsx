@@ -47,7 +47,6 @@ export const ProductCard = ({ imgLink, title, price, id, amount, categoria }) =>
             Categoria: <span>{categoria}</span>
           </p>
         </div>
-
       </div>
       <div className="price">
         <p>
