@@ -3,6 +3,8 @@ import * as Styled from './styles';
 
 import { Base } from '../../templates/Base';
 
+import { Button } from '../../components/Button';
+
 import { useSelector } from 'react-redux';
 
 export const Pacote = ({  }) => {
@@ -13,20 +15,25 @@ export const Pacote = ({  }) => {
   return (
     <Styled.Container>
       <Base />
-      <h1>{packageData.title}</h1>
-      <div className="content">
+      <div className="container-items">
+        <h1>{packageData.title}</h1>
+        <div className="content">
+          <section>
+            <div className="img-container">
+              <img src={packageData.imgLink} alt="imagem" />
+              <p>img descriptions</p>
+            </div>
 
-        <section>
-
-          <img src={packageData.imgLink} alt="imagem" />
-          <div className="description">
-
-          </div>
-
-        </section>
-        <aside>
-          <h1>Detalhes</h1>
-        </aside>
+            <div className="description">
+              <h2>Como será o nosso passeio?</h2>
+              <p>{packageData.description}</p>
+            </div>
+          </section>
+          <aside>
+            <h3>Detalhes do passeio</h3>
+          </aside>
+        </div>
+        <Button>Adicionar esse passeio ao carrinho</Button>
       </div>
     </Styled.Container>
   );
