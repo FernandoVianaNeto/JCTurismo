@@ -87,6 +87,50 @@ export const Container = styled.div`
 
         background-color: #F3EFF5;
         flex: 2;
+
+        .pacote-container {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          div {
+            display: flex;
+            gap: 1rem;
+          }
+        }
+
+        .acrescer {
+          div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            button {
+              background: transparent;
+              border: none;
+
+              display:flex;
+              align-items: center;
+
+            }
+          }
+        }
+
+        p {
+          font-family: ${theme.font.family.texts};
+        }
+
+        button {
+          background-color: ${theme.colors.thirdColor};
+          border: 1px solid ${theme.colors.primaryColor};
+
+          font-family: ${theme.font.family.texts};
+          gap: 1rem;
+
+          cursor: pointer;
+        }
+
       }
     }
   `}
