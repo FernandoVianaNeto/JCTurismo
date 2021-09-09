@@ -15,10 +15,22 @@ import { AiOutlinePlus } from 'react-icons/ai';
 export const Pacote = ({  }) => {
   const [pacote, setPacote] = useState('')
   const [counter, setCounter] = useState(0);
+  const [subtotal, setSubtotal] = useState(0);
 
   const dataStore = useSelector(state => state)
   const packageData = dataStore.packageData;
   console.log(packageData);
+
+  function callSetPlus() {
+    setCounter(counter + 1)
+    setSubtotal(subtotal + 120)
+  }
+
+  function callSetMinus() {
+    setCounter(counter - 1)
+
+    setSubtotal(subtotal - 120)
+  }
 
   return (
     <Styled.Container>
@@ -56,12 +68,15 @@ export const Pacote = ({  }) => {
             <div className="acrescer">
               <p>Quantas pessoas a mais?</p>
               <div>
-                <button><AiOutlineMinus /></button>
+                {counter > 0 && (
+                  <button onClick={() => callSetMinus()}><AiOutlineMinus /></button>
+                )}
                 <p>{counter}</p>
-                <button><AiOutlinePlus /></button>
+                <button onClick={() => callSetPlus()}><AiOutlinePlus /></button>
               </div>
 
             </div>
+            <p>Subtotal: <span>R$ {subtotal},00</span></p>
           </aside>
         </div>
         <Button>Adicionar esse passeio ao carrinho</Button>

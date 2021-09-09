@@ -81,6 +81,10 @@ export const Container = styled.div`
       }
 
       aside {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
         padding: 2rem;
 
         border-radius: 18px;
@@ -119,6 +123,10 @@ export const Container = styled.div`
 
         p {
           font-family: ${theme.font.family.texts};
+
+          span {
+            color: ${theme.colors.secundaryColor};
+          }
         }
 
         button {
