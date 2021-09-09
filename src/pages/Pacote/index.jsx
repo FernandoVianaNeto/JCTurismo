@@ -17,9 +17,31 @@ export const Pacote = ({  }) => {
   const [counter, setCounter] = useState(0);
   const [subtotal, setSubtotal] = useState(0);
 
+  const [categ1, setCateg1] = useState(true);
+  const [categ2, setCateg2] = useState(false);
+  const [categ3, setCateg3] = useState(false);
+
   const dataStore = useSelector(state => state)
   const packageData = dataStore.packageData;
   console.log(packageData);
+
+  function categ1Set() {
+    setCateg1(true);
+    setCateg2(false);
+    setCateg3(false);
+  }
+
+  function categ2Set() {
+    setCateg1(false);
+    setCateg2(true);
+    setCateg3(false);
+  }
+
+  function categ3Set() {
+    setCateg1(false);
+    setCateg2(false);
+    setCateg3(true);
+  }
 
   function callSetPlus() {
     setCounter(counter + 1)
@@ -46,35 +68,28 @@ export const Pacote = ({  }) => {
             <div className="description">
               <h2>Como será o nosso passeio?</h2>
               <p>{packageData.description}</p>
+              <p className="subtotal-description">A partir de <span>R$ {packageData.price1},00</span> </p>
             </div>
           </section>
           <aside>
             <h3>Detalhes do passeio</h3>
-
-            <div className="pacote-container">
-              <p>Quantidade de pessoas:</p>
-              <select name="" id="">
-                <option value="1">{packageData.categoria1}</option>
-                <option value="2">{packageData.categoria2}</option>
-                <option value="3">{packageData.categoria3}</option>
-              </select>
-
-              {/* <div>
-                <button onClick={}>{packageData.categoria1}</button>
-                <button>{packageData.categoria2}</button>
-                <button>{packageData.categoria3}</button>
-              </div> */}
-            </div>
-            <div className="acrescer">
-              <p>Quantas pessoas a mais?</p>
-              <div>
-                {counter > 0 && (
-                  <button onClick={() => callSetMinus()}><AiOutlineMinus /></button>
-                )}
-                <p>{counter}</p>
-                <button onClick={() => callSetPlus()}><AiOutlinePlus /></button>
+            <div className="content-container">
+              <div className="pacote-container">
+                <p>Quantidade de pessoas:</p>
+                <button className={categ1 && 'selected'} onClick={() => categ1Set()}>{packageData.categoria1}</button>
+                <button className={categ2 && 'selected'} onClick={() => categ2Set()}>{packageData.categoria2}</button>
+                <button className={categ3 && 'selected'} onClick={() => categ3Set()}>{packageData.categoria3}</button>
               </div>
-
+              <div className="acrescer">
+                <p>Quantas pessoas a mais?</p>
+                <div>
+                  {counter > 0 && (
+                    <button onClick={() => callSetMinus()}><AiOutlineMinus /></button>
+                  )}
+                  <p>{counter}</p>
+                  <button onClick={() => callSetPlus()}><AiOutlinePlus /></button>
+                </div>
+              </div>
             </div>
             <p>Subtotal: <span>R$ {subtotal},00</span></p>
           </aside>

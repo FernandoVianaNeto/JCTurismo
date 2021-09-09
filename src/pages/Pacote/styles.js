@@ -76,13 +76,25 @@ export const Container = styled.div`
             text-align: justify;
 
             padding: 1rem;
+
+            span {
+              color: ${theme.colors.secundaryColor};
+              font-weight: bold;
+            }
           }
+
+          .subtotal-description {
+            text-align: right;
+          }
+
         }
       }
 
       aside {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         gap: 2rem;
 
         padding: 2rem;
@@ -91,6 +103,12 @@ export const Container = styled.div`
 
         background-color: #F3EFF5;
         flex: 2;
+
+        .content-container {
+          display: flex;
+          flex-direction: column;
+          gap: 4rem;
+        }
 
         .pacote-container {
           display: flex;
@@ -116,7 +134,6 @@ export const Container = styled.div`
 
               display:flex;
               align-items: center;
-
             }
           }
         }
@@ -131,12 +148,28 @@ export const Container = styled.div`
 
         button {
           background-color: ${theme.colors.thirdColor};
+
           border: 1px solid ${theme.colors.primaryColor};
+          border-radius: 18px;
 
           font-family: ${theme.font.family.texts};
           gap: 1rem;
 
           cursor: pointer;
+
+          &:hover {
+            background-color: ${theme.colors.primaryColor};
+            color: ${theme.colors.thirdColor};
+          }
+        }
+
+        .selected {
+          background-color: ${theme.colors.secundaryColor};
+          color: ${theme.colors.thirdColor};
+
+          &:hover {
+            background-color: ${theme.colors.secundaryColor};
+          }
         }
 
       }
