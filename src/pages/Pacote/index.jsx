@@ -12,10 +12,8 @@ import { useSelector } from 'react-redux';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { AiOutlinePlus } from 'react-icons/ai';
 
-export const Pacote = ({  }) => {
-  const [pacote, setPacote] = useState('')
-  const [counter, setCounter] = useState(0);
-  const [subtotal, setSubtotal] = useState(0);
+export const Pacote = () => {
+  const [counter, setCounter] = useState(0);;
 
   const [categ1, setCateg1] = useState(true);
   const [categ2, setCateg2] = useState(false);
@@ -23,24 +21,30 @@ export const Pacote = ({  }) => {
 
   const dataStore = useSelector(state => state)
   const packageData = dataStore.packageData;
-  console.log(packageData);
+
+  const [subtotal, setSubtotal] = useState(packageData.price1);
+
+  console.log(packageData)
 
   function categ1Set() {
     setCateg1(true);
     setCateg2(false);
     setCateg3(false);
+    setSubtotal(packageData.price1 + counter*120);
   }
 
   function categ2Set() {
     setCateg1(false);
     setCateg2(true);
     setCateg3(false);
+    setSubtotal(packageData.price2 + counter*120);
   }
 
   function categ3Set() {
     setCateg1(false);
     setCateg2(false);
     setCateg3(true);
+    setSubtotal(packageData.price3  + counter*120);
   }
 
   function callSetPlus() {
