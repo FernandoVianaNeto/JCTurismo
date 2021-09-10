@@ -1,14 +1,16 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-export const Button = ({ children, onClick }) => {
+export const Button = ({ children, onClick, desabilitado }) => {
   return (
-    <Styled.Container >
-      <button onClick={onClick}>{children}</button>
+    <Styled.Container desabilitado={desabilitado}>
+      <button onClick={onClick} className={desabilitado ? 'disabled' : ''}>{children}</button>
     </Styled.Container>
   );
 };
 
 Button.propTypes = {
   children: P.node.isRequired,
+  onClick: P.node,
+  desabilitado: P.bool,
 }

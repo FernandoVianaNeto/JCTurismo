@@ -22,5 +22,15 @@ export const Container = styled.div`
         color: ${theme.colors.thirdColor};
       }
     }
+
+    .disabled {
+      color: ${theme.colors.primaryColor};
+      background-color: lightgray;
+
+      &:hover {
+        color: ${theme.colors.primaryColor};
+        background-color: lightgray;
+      }
+    }
   `}
 `;

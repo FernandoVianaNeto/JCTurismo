@@ -119,7 +119,7 @@ export const Pacote = () => {
           </aside>
         </div>
         { added ? (
-          <Button disabled>Você já adicionou esse passeio</Button>
+          <Button disabled desabilitado>Você já adicionou esse passeio</Button>
         ) : (
           <Button onClick={() => addNewItem({ id: packageData.id, imgLink: packageData.imgLink, categoria, title: packageData.title, price, amount: 1 })}>Adicionar esse passeio ao carrinho</Button>
         ) }

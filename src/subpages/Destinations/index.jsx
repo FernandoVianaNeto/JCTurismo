@@ -47,7 +47,7 @@ export const Destinations = () => {
         <div className="btn-container">
           {
             added ? (
-              <Button disabled>Você já adicionou esse passeio</Button>
+              <Button  desabilitado disabled>Você já adicionou esse passeio</Button>
             ) : (
               <Button onClick={() => addNewItem({ imgLink: dataStore.destinyData.imgLink, title: dataStore.destinyData.title, price: dataStore.destinyData.price, id: dataStore.destinyData.id, amount: 1, categoria: dataStore.destinyData.categoria })}>Adicionar esse passeio ao carrinho</Button>
             )
