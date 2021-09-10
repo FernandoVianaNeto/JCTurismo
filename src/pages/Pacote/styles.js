@@ -171,7 +171,32 @@ export const Container = styled.div`
             background-color: ${theme.colors.secundaryColor};
           }
         }
+      }
+    }
 
+    @media ${theme.media.lteMedium} {
+      .container-items {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        padding-top: 12rem;
+
+        .footer {
+          margin-bottom: 7rem;
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+
+          margin: 0;
+
+          section {
+            display: flex;
+            flex-direction: column;
+          }
+        }
       }
     }
   `}

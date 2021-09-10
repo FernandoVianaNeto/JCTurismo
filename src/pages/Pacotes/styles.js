@@ -21,5 +21,16 @@ export const Container = styled.div`
       }
 
     }
+
+    @media ${theme.media.lteMedium} {
+      .content {
+        margin: 0;
+        padding: 2rem;
+
+        h1 {
+          margin-top: 10rem;
+        }
+      }
+    }
   `}
 `;

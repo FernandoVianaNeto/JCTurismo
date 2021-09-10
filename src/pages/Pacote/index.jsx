@@ -120,11 +120,13 @@ export const Pacote = () => {
             <p>Subtotal: <span>R$ {subtotal},00</span></p>
           </aside>
         </div>
-        { added ? (
-          <Button disabled desabilitado>Você já adicionou esse passeio</Button>
-        ) : (
-          <Button onClick={() => addNewItem({ id: packageData.id, imgLink: packageData.imgLink, categoria, title: packageData.title, price, amount: 1 })}>Adicionar esse passeio ao carrinho</Button>
-        ) }
+        <div className="footer">
+          { added ? (
+            <Button disabled desabilitado>Você já adicionou esse passeio</Button>
+          ) : (
+            <Button onClick={() => addNewItem({ id: packageData.id, imgLink: packageData.imgLink, categoria, title: packageData.title, price, amount: 1 })}>Adicionar esse passeio ao carrinho</Button>
+          ) }
+        </div>
       </div>
     </Styled.Container>
   );
