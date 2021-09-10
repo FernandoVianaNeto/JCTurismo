@@ -180,7 +180,7 @@ export const Container = styled.div`
         flex-direction: column;
         gap: 3rem;
 
-        padding-top: 12rem;
+        padding: 12rem 2rem 2rem  2rem;
 
         .footer {
           margin-bottom: 7rem;
