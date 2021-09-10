@@ -1,36 +1,51 @@
-import P from 'prop-types';
 import * as Styled from './styles';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Base } from '../../templates/Base';
 
 import { Button } from '../../components/Button';
 
 import { useSelector } from 'react-redux';
+import { useAddItem } from '../../hooks/useAddItem';
 
 import { AiOutlineMinus } from 'react-icons/ai';
 import { AiOutlinePlus } from 'react-icons/ai';
 
 export const Pacote = () => {
-  const [counter, setCounter] = useState(0);;
+  const { addNewItem } = useAddItem()
+
+  const [counter, setCounter] = useState(0);
 
   const [categ1, setCateg1] = useState(true);
   const [categ2, setCateg2] = useState(false);
   const [categ3, setCateg3] = useState(false);
+  const [added, setAdded] = useState(false);
 
   const dataStore = useSelector(state => state)
+  console.log(dataStore)
   const packageData = dataStore.packageData;
 
   const [subtotal, setSubtotal] = useState(packageData.price1);
+  const [categoria, setCategoria] = useState(packageData.categoria1);
+  const [price, setPrice] = useState(packageData.price1)
 
-  console.log(packageData)
+  useEffect(() => {
+    dataStore.shoppingItems.items.map((obj) => {
+      if (obj.id === packageData.id) {
+        setAdded(true);
+      }
+    })
+  }, [dataStore])
 
   function categ1Set() {
     setCateg1(true);
     setCateg2(false);
     setCateg3(false);
     setSubtotal(packageData.price1 + counter*120);
+
+    setCategoria(packageData.categoria1);
+    setPrice(packageData.price1)
   }
 
   function categ2Set() {
@@ -38,6 +53,9 @@ export const Pacote = () => {
     setCateg2(true);
     setCateg3(false);
     setSubtotal(packageData.price2 + counter*120);
+
+    setCategoria(packageData.categoria2);
+    setPrice(packageData.price2)
   }
 
   function categ3Set() {
@@ -45,6 +63,9 @@ export const Pacote = () => {
     setCateg2(false);
     setCateg3(true);
     setSubtotal(packageData.price3  + counter*120);
+
+    setCategoria(packageData.categoria3);
+    setPrice(packageData.price3)
   }
 
   function callSetPlus() {
@@ -54,7 +75,6 @@ export const Pacote = () => {
 
   function callSetMinus() {
     setCounter(counter - 1)
-
     setSubtotal(subtotal - 120)
   }
 
@@ -98,12 +118,12 @@ export const Pacote = () => {
             <p>Subtotal: <span>R$ {subtotal},00</span></p>
           </aside>
         </div>
-        <Button>Adicionar esse passeio ao carrinho</Button>
+        { added ? (
+          <Button disabled>Você já adicionou esse passeio</Button>
+        ) : (
+          <Button onClick={() => addNewItem({ id: packageData.id, imgLink: packageData.imgLink, categoria, title: packageData.title, price, amount: 1 })}>Adicionar esse passeio ao carrinho</Button>
+        ) }
       </div>
     </Styled.Container>
   );
 };
-
-Pacote.propTypes = {
-
-}
