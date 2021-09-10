@@ -63,67 +63,7 @@ export const Container = styled.div`
       }
 
       main {
-        .ad-container {
-          padding: 5rem;
-          flex-direction: column;
-
-          border-bottom: 1px solid lightgray;
-
-          max-width: 120rem;
-          margin: auto;
-
-          h1 {
-            color: ${theme.colors.primaryColor};
-          }
-
-          .option-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            max-width: 120rem;
-            overflow-x: auto;
-
-            .children {
-              display: flex;
-              flex-direction: column;
-
-              button {
-                margin-top: 2rem;
-                border-radius: 8rem;
-
-                border: 0;
-                padding: 0.5rem 0rem 0.5rem 0rem ;
-
-                color: ${theme.colors.secundaryColor};
-                border: 1px solid ${theme.colors.secundaryColor};
-
-                font-weight: bold;
-
-                cursor: pointer;
-
-                &:hover {
-                  border: 1px solid ${theme.colors.thirdColor};
-                  background-color: ${theme.colors.secundaryColor};
-                  color: ${theme.colors.thirdColor};
-                }
-              }
-
-              .children-desconto {
-                font-size: 1rem;
-              }
-            }
-
-            .options {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: 70rem;
-              gap: 1rem;
-            }
-          }
-        }
       }
-    }
 
     @media ${theme.media.lteMedium} {
       .content {

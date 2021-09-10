@@ -43,7 +43,8 @@ export const Container = styled.div`
 
       .column2 {
         max-width: 100%;
-        overflow-x: auto;
+
+        overflow: auto;
         display: flex;
         align-items: center;
         gap: 1rem;

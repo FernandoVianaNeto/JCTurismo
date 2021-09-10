@@ -15,6 +15,9 @@ const colorBackground = (theme) => css`
 
 export const Container = styled.div`
   ${({ theme, bestSeller, background }) => css`
+    border: 2px solid ${theme.colors.thirdColor};
+
+    cursor: pointer;
 
     .content {
       display: flex;
@@ -26,19 +29,13 @@ export const Container = styled.div`
       img {
         width: 20rem;
         height: 20rem;
-
-        border-top-left-radius: 2rem;
-        border-top-right-radius: 2rem;
       }
 
       .best-seller {
-        position: absolute;
         background-color: ${theme.colors.secundaryColor};
         padding: 0.5rem 1rem 0.5rem 1rem;
 
         text-align: center;
-
-        top: 1;
 
         border-radius: 8rem;
 
@@ -121,12 +118,6 @@ export const Container = styled.div`
         }
       }
     }
-
-    border: 2px solid ${theme.colors.thirdColor};
-    border-top-right-radius: 2rem;
-    border-top-left-radius: 2rem;
-
-    cursor: pointer;
 
     &:hover {
       border: 2px solid ${theme.colors.secundaryColor};

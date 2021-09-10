@@ -17,13 +17,13 @@ export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, best
   return (
     <Styled.Container bestSeller={bestSeller} background={background}>
       <div className="content">
-        {bestSeller && (
-          <>
-            <p className="best-seller">Mais Vendido!</p>
-          </>
-        )}
         <img src={imgLink} alt={imgAlt} />
         <div className="description">
+          {bestSeller && (
+            <>
+              <p className="best-seller">Mais Vendido!</p>
+            </>
+          )}
           <p className="title">{title}</p>
           <p className="subtitle">{subtitle}</p>
           <p className="price">R$ <span>{price},00</span></p>
