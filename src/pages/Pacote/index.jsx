@@ -35,6 +35,8 @@ export const Pacote = () => {
       if (obj.id === packageData.id) {
         setAdded(true);
       }
+
+      return dataStore;
     })
   }, [dataStore])
 

@@ -65,5 +65,34 @@ export const Container = styled.div`
         }
       }
     }
+
+    @media ${theme.media.lteMedium} {
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .details {
+          .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+
+          p {
+            margin-top: 1rem;
+          }
+        }
+
+
+      }
+      .footer {
+          text-align: center;
+          margin: 0;
+          margin-bottom: 2rem;
+        }
+    }
   `}
 `;
