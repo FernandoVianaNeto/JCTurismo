@@ -6,9 +6,12 @@ import { ProductCard } from '../../components/ProductCard';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
+import { useHistory } from 'react-router';
+
 export const ShoppingCart = () => {
   const [total, setTotal] = useState(0);
-  // const [subtotal, setSubtotal] = useState([]);
+
+  const history = useHistory();
 
   const dataStore = useSelector(state => state);
   const items = dataStore.shoppingItems.items;
@@ -72,7 +75,7 @@ export const ShoppingCart = () => {
                 Subtotal:
                 <span> R$ {total},00</span>
               </h3>
-              <button>
+              <button onClick={() => history.push('/pagamento')}>
                 Seguir para o pagamento
               </button>
               </>
