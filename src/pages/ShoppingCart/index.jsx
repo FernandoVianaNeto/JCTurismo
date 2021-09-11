@@ -8,10 +8,16 @@ import { useEffect, useState } from 'react';
 
 export const ShoppingCart = () => {
   const [total, setTotal] = useState(0);
+  // const [subtotal, setSubtotal] = useState([]);
 
   const dataStore = useSelector(state => state);
   const items = dataStore.shoppingItems.items;
-  let subtotal = [0]
+
+  useEffect(() => {
+    setTotal(0)
+  }, [items])
+
+  // let subtotal = [0]
 
   // useEffect(() => {
   //   items.map((card) => {
