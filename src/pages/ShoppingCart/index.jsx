@@ -17,18 +17,18 @@ export const ShoppingCart = () => {
     setTotal(0)
   }, [items])
 
-  // let subtotal = [0]
+  let subtotal = [0]
 
-  // useEffect(() => {
-  //   items.map((card) => {
-  //     subtotal.push(card.price * card.amount)
-  //     return items;
-  //   })
+  useEffect(() => {
+    items.map((card) => {
+      subtotal.push(card.price * card.amount)
+      return items;
+    })
 
-  //   setTotal(subtotal.reduce((total, element) => total + element))
+    setTotal(subtotal.reduce((total, element) => total + element))
 
-  //   return subtotal;
-  // }, [items, subtotal])
+    return subtotal;
+  }, [items, subtotal])
 
   return (
     <Styled.Container>
