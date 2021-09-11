@@ -30,7 +30,7 @@ export const Menu = ({ children, background = false }) => {
             <div className="phone">
               <AiFillPhone />
               <p>Fale Conosco: (71) 99999-9999</p>
-              <button> <AiFillInstagram /> </button>
+              <a href="https://www.instagram.com/jctturismo.ba/" className="instagram-link"> <AiFillInstagram /> </a>
             </div>
             <div className="shopping-cart">
               <a href="/carrinhodecompras">

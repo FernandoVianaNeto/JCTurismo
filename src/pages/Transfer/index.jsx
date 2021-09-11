@@ -1,14 +1,10 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-export const Transfer = (children) => {
+export const Transfer = () => {
   return (
     <Styled.Container>
-      {children}
+      <h1>TransferPage</h1>
     </Styled.Container>
   );
 };
-
-Transfer.propTypes = {
-  children: P.node.isRequired,
-}

@@ -1,14 +1,10 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-export const CityTour = (children) => {
+export const CityTour = () => {
   return (
     <Styled.Container>
-      {children}
+      <h1>CityTourPage</h1>
     </Styled.Container>
   );
 };
-
-CityTour.propTypes = {
-  children: P.node.isRequired,
-}

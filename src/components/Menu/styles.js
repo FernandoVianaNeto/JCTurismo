@@ -11,6 +11,7 @@ export const Container = styled.div`
     padding: 2rem;
     border-bottom: 1px solid ${theme.colors.thirdColor};
 
+
     ${background && setBackground(theme)};
 
     img {
@@ -35,6 +36,7 @@ export const Container = styled.div`
 
         .shopping-cart {
           margin-right: 1rem;
+          margin-bottom: 1rem;
 
           a {
             display: flex;
@@ -56,7 +58,7 @@ export const Container = styled.div`
 
           color: ${theme.colors.secundaryColor};
 
-          button {
+          a {
             display: flex;
             align-items: center;
             background-color: transparent;

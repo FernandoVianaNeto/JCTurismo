@@ -1,14 +1,10 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-export const PaymentPage = (children) => {
+export const PaymentPage = () => {
   return (
     <Styled.Container>
-      {children}
+      <h1>PaymentPage</h1>
     </Styled.Container>
   );
 };
-
-PaymentPage.propTypes = {
-  children: P.node.isRequired,
-}

@@ -19,11 +19,11 @@ export const Base = () => {
           <AiOutlineHome />
             <p>Home</p>
           </MenuLink>
-          <MenuLink link="/">
+          <MenuLink link="/transfer">
             <FaShuttleVan />
             <p>Transfer</p>
           </MenuLink>
-          <MenuLink link="/">
+          <MenuLink link="/citytour">
             <GiModernCity />
             <p>CityTour</p>
           </MenuLink>

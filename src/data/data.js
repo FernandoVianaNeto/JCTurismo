@@ -148,5 +148,11 @@ export const data = {
       categoria3: 'Acima de 8 pessoas',
       description: "Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus, sedullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec."
     },
+  ],
+  transfer: [
+
+  ],
+  cityTour: [
+
   ]
 }
