@@ -13,14 +13,16 @@ export const ShoppingCart = () => {
   const items = dataStore.shoppingItems.items;
   let subtotal = [0]
 
-  useEffect(() => {
-    items.map((card) => {
-      subtotal.push(card.price * card.amount)
+  // useEffect(() => {
+  //   items.map((card) => {
+  //     subtotal.push(card.price * card.amount)
+  //     return items;
+  //   })
 
-      return items;
-    })
-    setTotal(subtotal.reduce((total, element) => total + element))
-  }, [items, subtotal])
+  //   setTotal(subtotal.reduce((total, element) => total + element))
+
+  //   return subtotal;
+  // }, [items, subtotal])
 
   return (
     <Styled.Container>
