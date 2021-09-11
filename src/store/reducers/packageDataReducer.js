@@ -27,7 +27,7 @@ export function sendPackageData(state = initialState, action) {
         description: action.payload.description,
         imgLink: action.payload.imgLink
       }
+      default:
+        return state;
   }
-
-  return state;
 }

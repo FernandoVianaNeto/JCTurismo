@@ -38,6 +38,9 @@ export function shoppingCart(state = initialState, action) {
         ...state,
         items: action.payload.amount
       }
+
+      default:
+        return state;
   }
-  return state;
+
 }

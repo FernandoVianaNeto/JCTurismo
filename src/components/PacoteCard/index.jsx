@@ -1,11 +1,9 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-import { useHistory } from 'react-router';
 import { useDestination } from '../../hooks/useDestination';
 
 export const PacoteCard = ({ price1, price2, price3, categoria1, categoria2, categoria3, title, subtitle, imgLink, id, link, description }) => {
-  const history = useHistory();
   const { handleSendPackage } = useDestination();
 
   function callHandleSendData() {

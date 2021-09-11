@@ -22,7 +22,10 @@ export function sendDestinyData(state = initialState, action) {
         description: action.payload.description,
         categoria: action.payload.categoria
       }
+
+      default:
+        return state;
   }
 
-  return state;
+
 }

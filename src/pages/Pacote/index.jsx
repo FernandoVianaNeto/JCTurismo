@@ -38,7 +38,7 @@ export const Pacote = () => {
 
       return dataStore;
     })
-  }, [dataStore])
+  }, [dataStore, packageData.id])
 
   function categ1Set() {
     setCateg1(true);
