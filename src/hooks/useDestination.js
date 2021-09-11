@@ -10,7 +10,6 @@ export const useDestination = () => {
   const dispatch = useDispatch();
   const data = useSelector(state => state);
   const history = useHistory();
-  console.log(data);
 
   function handleSendInformation({ imgLink, price, title, subtitle, link, description, id, categoria }) {
     dispatch(sendDestinyData({

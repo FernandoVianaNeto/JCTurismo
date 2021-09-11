@@ -1,4 +1,3 @@
-import P from 'prop-types';
 import * as Styled from './styles';
 
 import { useDestination } from '../../hooks/useDestination';
@@ -27,6 +26,3 @@ export const PackagePageCard = ({ id, title, subtitle, categoria1, categoria2, c
   );
 };
 
-PackagePageCard.propTypes = {
-
-}
