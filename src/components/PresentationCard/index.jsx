@@ -15,20 +15,16 @@ export const PresentationCard = ({ imgLink, imgAlt, price, title, subtitle, best
   }
 
   return (
-    <Styled.Container bestSeller={bestSeller} background={background}>
+    <Styled.Container background={background}>
       <div className="content">
         <img src={imgLink} alt={imgAlt} />
         <div className="description">
-          {bestSeller && (
-            <>
-              <p className="best-seller">Mais Vendido!</p>
-            </>
-          )}
           <p className="title">{title}</p>
+          <p className="categoria">{categoria}</p>
           <p className="subtitle">{subtitle}</p>
           <p className="price">R$ <span>{price},00</span></p>
           <button className="see-more" onClick={() => callHandleSendData({ imgLink, imgAlt, price, title, subtitle, bestSeller, link, description, id, categoria })}>
-            Comprar este passeio
+            Ver mais
           </button>
         </div>
       </div>

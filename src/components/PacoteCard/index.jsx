@@ -21,7 +21,7 @@ export const PacoteCard = ({ price1, price2, price3, categoria1, categoria2, cat
           <p className="subtitle">{subtitle}</p>
           <p className="price">R$ <span>{price1},00</span></p>
           <button className="see-more" onClick={() => callHandleSendData({ imgLink, price1, price2, price3, title, subtitle, link, description, id, categoria1, categoria2, categoria3 })}>
-            Ver Mais
+            Comprar esse passeio
           </button>
         </div>
     </Styled.Container>
