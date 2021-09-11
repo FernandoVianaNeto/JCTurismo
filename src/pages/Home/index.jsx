@@ -9,7 +9,6 @@ import { FaShuttleVan } from 'react-icons/fa';
 import { GiModernCity } from 'react-icons/gi';
 import { FiPackage } from 'react-icons/fi';
 import { AiOutlineSchedule } from 'react-icons/ai';
-import { AiOutlineHome } from 'react-icons/ai';
 
 import { Presentations } from '../../subpages/Presentations';
 

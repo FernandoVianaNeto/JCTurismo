@@ -149,10 +149,19 @@ export const data = {
       description: "Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus, sedullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec."
     },
   ],
-  transfer: [
+  transfer: {
 
-  ],
-  cityTour: [
-
-  ]
+  },
+  cityTour: {
+    title: 'City Tour',
+    description: 'Este passeio dura cerca de 5 horas e é um dos mais interessantes. Isso porque o guia irá te conduzir para uma viagem no tempo e te levará para conhecer cada cantinho dessa cidade fantástica. No percurso está incluso a Cidade Alta, o Largo do Pelourinho, Terreiro de Jesus, a Igreja de São Francisco (visita opcional), o Elevador Lacerda, a Igreja do Bonfim e o Mercado Modelo. Em todos os locais do roteiro haverá paradas para que você possa passear, tirar fotos e conhecer. É um passeio bem cultural e que vale a pena incluir em sua lista de o que fazer em Salvador',
+    id: 13,
+    imgLink: 'https://res.cloudinary.com/dh84pxwgu/image/upload/v1631383494/WhatsApp_Image_2021-09-11_at_15.04.19_fr08g1.jpg',
+    categoria1: '1 a 3 pessoas',
+    categoria2: '1 a 4 pessoas',
+    categoria3: 'Acima de 6 pessoas',
+    price1: 250,
+    price2: 400,
+    price3: 80,
+  }
 }
