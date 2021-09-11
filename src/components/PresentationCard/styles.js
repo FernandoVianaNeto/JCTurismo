@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${({ theme, bestSeller, background }) => css`
     border: 2px solid ${theme.colors.thirdColor};
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 
     cursor: pointer;
 
@@ -14,6 +16,9 @@ export const Container = styled.div`
       img {
         width: 20rem;
         height: 20rem;
+
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
       }
 
       .best-seller {
