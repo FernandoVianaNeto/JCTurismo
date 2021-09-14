@@ -163,5 +163,28 @@ export const data = {
     price1: 250,
     price2: 400,
     price3: 80,
-  }
+  },
+  chamadas: [
+    {
+      id: 14,
+      imgLink: 'https://res.cloudinary.com/dh84pxwgu/image/upload/v1630440293/WhatsApp_Image_2021-08-31_at_17.04.42_ry7oci.jpg',
+      title: 'Conheça o melhor do litoral baiano',
+      smallDescription: 'Este passeio dura cerca de 5 horas e é um dos mais interessantes. Isso porque o guia irá te conduzir para uma viagem no tempo e te levará para conhecer cada cantinho dessa cidade fantástica.',
+      invert: true,
+    },
+    {
+      id: 15,
+      imgLink: 'https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200208/WhatsApp_Image_2021-08-05_at_18.49.57_ehjfpe.jpg',
+      title: 'Viaje e aproveite o momento com sua família',
+      smallDescription: 'Este passeio dura cerca de 5 horas e é um dos mais interessantes. Isso porque o guia irá te conduzir para uma viagem no tempo e te levará para conhecer cada cantinho dessa cidade fantástica.',
+      invert: false,
+    },
+    {
+      id: 16,
+      imgLink: 'https://res.cloudinary.com/dh84pxwgu/image/upload/v1631383494/WhatsApp_Image_2021-09-11_at_15.04.19_fr08g1.jpg',
+      title: 'Conheça a cultura e a história da Bahia',
+      smallDescription: 'Este passeio dura cerca de 5 horas e é um dos mais interessantes. Isso porque o guia irá te conduzir para uma viagem no tempo e te levará para conhecer cada cantinho dessa cidade fantástica.',
+      invert: true,
+    }
+  ]
 }

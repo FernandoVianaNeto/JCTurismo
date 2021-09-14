@@ -12,9 +12,7 @@ export const CityTour = () => {
   return (
     <Styled.Container>
       <Base />
-      <div className="content">
-        <h1>{cityTour.title}</h1>
-      </div>
+
     </Styled.Container>
   );
 };

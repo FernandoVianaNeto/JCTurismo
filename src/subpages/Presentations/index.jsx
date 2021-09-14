@@ -4,7 +4,12 @@ import * as Styled from './styles';
 export const Presentations = ({ invert, children, title, smallDescription, background }) => {
   return (
       <Styled.Container background={background}>
-        {invert ? (
+        {children}
+        <div className="button">
+          <button>Quero conhecer mais</button>
+        </div>
+
+        {/* {invert ? (
           <div className="content" invert={invert} >
             <div className="column2" background={background}>
               {children}
@@ -24,7 +29,7 @@ export const Presentations = ({ invert, children, title, smallDescription, backg
               {children}
             </div>
           </div>
-        )}
+        )} */}
       </Styled.Container>
   );
 };

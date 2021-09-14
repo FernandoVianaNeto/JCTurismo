@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const handleContainerBackground = (theme) => css`
-  background-color: ${theme.colors.primaryColor};
+  background-color: ${theme.colors.backgroundColor};
   box-shadow: 0 0 3rem ${theme.colors.primaryColor};
 `;
 
@@ -11,10 +11,44 @@ const handleColorBackground = (theme) => css`
 
 export const Container = styled.div`
   ${({ theme, background }) => css`
-    height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 4rem;
+
+    ${background && handleContainerBackground(theme)};
+
+
+    .button {
+      text-align: left;
+      margin-top: -5rem;
+
+      button {
+        width: 20rem;
+        padding: 1rem;
+        border-radius: 20px;
+
+        font-family: ${theme.font.family.texts};
+
+        background-color: ${theme.colors.backgroundColor};
+        color: ${theme.colors.thirdColor};
+        border: 1px solid ${theme.colors.secundaryColor};
+
+        &:hover {
+          color: ${theme.colors.backgroundColor};
+          background-color: ${theme.colors.thirdColor};
+        }
+      }
+    }
+
+
+
+    /* height: 100vh;
 
     padding: 5rem;
-    ${background && handleContainerBackground(theme)};
+
 
     .content {
       height: 100%;
@@ -84,6 +118,6 @@ export const Container = styled.div`
           flex-direction: column;
         }
       }
-    }
+    } */
   `}
 `;

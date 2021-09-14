@@ -2,13 +2,47 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme, bestSeller, background }) => css`
-    border: 2px solid ${theme.colors.thirdColor};
+    /* border: 2px solid ${theme.colors.thirdColor};
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
 
-    cursor: pointer;
+    cursor: pointer; */
+
+    display: flex;
+    flex-direction: column;
 
     .content {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    h1 {
+      color: ${theme.colors.secundaryColor};
+      font-family: ${theme.font.family.texts};
+    }
+
+    img {
+      width: 25rem;
+      border-radius: 20px;
+    }
+
+    .btn-container {
+      text-align: right;
+    }
+
+    button {
+
+      width: 30rem;
+    }
+
+    .smallDescription-container {
+      p {
+        color: ${theme.colors.thirdColor};
+      }
+    }
+
+    /* .content {
       display: flex;
       flex-direction: column;
       background-color: ${theme.colors.primaryColor};
@@ -110,7 +144,7 @@ export const Container = styled.div`
 
     &:hover {
       border: 2px solid ${theme.colors.secundaryColor};
-    }
+    } */
 
   `}
 `;

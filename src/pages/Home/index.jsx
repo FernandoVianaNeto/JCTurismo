@@ -1,5 +1,7 @@
 import * as Styled from './styles';
 
+import { useState } from 'react';
+
 import { Menu } from '../../components/Menu';
 import { MenuLink } from '../../components/MenuLink';
 import { WhatsappButton } from '../../components/WhatsappButton'
@@ -17,6 +19,7 @@ import { PacoteCard } from '../../components/PacoteCard';
 
 export const Home = () => {
   const data1 = data
+  const [invert, setInvert] = useState(false)
 
   return (
     <Styled.Container>
@@ -58,30 +61,23 @@ export const Home = () => {
           <WhatsappButton />
           <a href=" " name="passeios"> </a>
           <Presentations
-            title="Passeios com os melhores preços"
-            smallDescription="Conheça o melhor da Bahia. Com estilo."
             background
           >
             {
-              data1.destinos.map((card) => {
+              data1.chamadas.map((card) => {
                 return (
                   <PresentationCard
-                    key={card.id}
-                    id={card.id}
-                    imgLink={card.imgLink}
                     title={card.title}
-                    subtitle={card.subtitle}
-                    bestSeller={card.bestSeller}
-                    price={card.price}
-                    link={card.link}
-                    description={card.description}
-                    categoria={card.categoria}
+                    key={card.id}
+                    smallDescription={card.smallDescription}
+                    imgLink={card.imgLink}
+                    invert={card.invert}
                   />
                 )
               })
             }
           </Presentations>
-          <Presentations
+          {/* <Presentations
             title="Pacotes com os melhores preços"
             smallDescription="Conheça a Bahia com os seus amigos e familiares."
           >
@@ -107,7 +103,7 @@ export const Home = () => {
                 )
               })
             }
-          </Presentations>
+          </Presentations> */}
         </main>
       </div>
     </Styled.Container>
