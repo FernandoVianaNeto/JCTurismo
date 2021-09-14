@@ -19,7 +19,6 @@ import { PacoteCard } from '../../components/PacoteCard';
 
 export const Home = () => {
   const data1 = data
-  const [invert, setInvert] = useState(false)
 
   return (
     <Styled.Container>
@@ -53,7 +52,7 @@ export const Home = () => {
               para os melhores destinos.
             </p>
             <a className="know-more" href="#passeios">
-              Conheça mais
+              Quero viajar
             </a>
           </div>
         </header>

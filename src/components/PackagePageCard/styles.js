@@ -2,22 +2,19 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({theme}) => css`
-    border: 1px solid ${theme.colors.primaryColor};
-    border-radius: 18px;
-
     .content {
       display: flex;
       gap: 2rem;
-      margin: 2rem;
 
       img {
-        width: 20rem;
-        height: 20rem;
+        flex: 1;
+        height: 40rem;
 
         border-radius: 18px;
       }
 
       .details {
+        flex: 1;
         font-family: ${theme.font.family.texts};
         color: ${theme.colors.primaryColor};
 
@@ -25,10 +22,18 @@ export const Container = styled.div`
         flex-direction: column;
         justify-content: space-around;
 
-
         .header {
           display: flex;
-          gap: 2rem;
+          flex-direction: column;
+
+          .title {
+            font-size: 3rem;
+            color: ${theme.colors.secundaryColor};
+          }
+
+          p {
+            color: ${theme.colors.backgroundColor};
+          }
         }
 
         p {
@@ -41,27 +46,31 @@ export const Container = styled.div`
     }
 
     .footer {
-      text-align: right;
+      text-align: left;
       margin-right: 2rem;
       margin-bottom: 2rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
       button {
         padding: 0.5rem 3rem 0.5rem 3rem;
 
-        border-radius: 18px;
-
-        background-color: ${theme.colors.secundaryColor};
+        background-color: ${theme.colors.thirdColor};
         border: 1px solid ${theme.colors.secundaryColor};
 
-        color: ${theme.colors.thirdColor};
+        color: ${theme.colors.secundaryColor};
 
         cursor: pointer;
 
         font-family: ${theme.font.family.texts};
 
+        transition: ease-out all 300ms;
+
         &:hover {
-          background-color: ${theme.colors.thirdColor};
-          color: ${theme.colors.secundaryColor};
+          background-color: ${theme.colors.secundaryColor};
+          color: ${theme.colors.thirdColor};
         }
       }
     }

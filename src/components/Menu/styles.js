@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const setBackground = (theme) => css`
-  background-color: ${theme.colors.primaryColor};
+  background-color: ${theme.colors.backgroundColor};
   box-shadow: 0 0 2rem ${theme.colors.primaryColor};
 `;
 

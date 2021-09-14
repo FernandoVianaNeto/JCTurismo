@@ -11,15 +11,15 @@ export const PackagePageCard = ({ id, title, subtitle, categoria1, categoria2, c
         <img src={imgLink} alt="imgAlt" />
         <div className="details">
           <div className="header">
-            <p>Passeio: <span>{title}</span></p>
-            <p>Pacote: <span>{categoria1}</span></p>
+            <p className="title">{title}</p>
+            <p>{categoria1}</p>
+          </div>
+          <p> {description}</p>
+          <div className="footer" onClick={() => handleSendPackage({ title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description, id })}>
+            <button>Comprar esse passeio</button>
             <p>A partir de <span>R$ {price1},00</span></p>
           </div>
-          <p><span>Descrição:</span> {description}</p>
         </div>
-      </div>
-      <div className="footer" onClick={() => handleSendPackage({ title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description, id })}>
-        <button>Comprar esse passeio</button>
       </div>
 
     </Styled.Container>
