@@ -38,7 +38,7 @@ export const Container = styled.div`
 
     .smallDescription-container {
       p {
-        color: ${theme.colors.thirdColor};
+        color: ${theme.colors.primaryColor};
       }
     }
 

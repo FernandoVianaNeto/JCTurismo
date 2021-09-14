@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const handleContainerBackground = (theme) => css`
-  background-color: ${theme.colors.backgroundColor};
+  background-color: ${theme.colors.thirdColor};
   box-shadow: 0 0 3rem ${theme.colors.primaryColor};
 `;
 
@@ -11,6 +11,7 @@ const handleColorBackground = (theme) => css`
 
 export const Container = styled.div`
   ${({ theme, background }) => css`
+  z-index: -1;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -32,13 +33,15 @@ export const Container = styled.div`
 
         font-family: ${theme.font.family.texts};
 
-        background-color: ${theme.colors.backgroundColor};
-        color: ${theme.colors.thirdColor};
+        background-color: ${theme.colors.thirdColor};
+        color: ${theme.colors.backgroundColor};
         border: 1px solid ${theme.colors.secundaryColor};
 
+        cursor: pointer;
+
         &:hover {
-          color: ${theme.colors.backgroundColor};
-          background-color: ${theme.colors.thirdColor};
+          color: ${theme.colors.thirdColor};
+          background-color: ${theme.colors.backgroundColor};
         }
       }
     }

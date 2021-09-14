@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({theme}) => css`
-
+    z-index: 100;
     a {
       display: flex;
       align-items: center;
