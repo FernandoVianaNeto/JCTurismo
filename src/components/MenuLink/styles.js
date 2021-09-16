@@ -15,7 +15,7 @@ export const Container = styled.div`
         padding: 1rem;
 
         border-radius: 8px;
-        border: 1px solid ${theme.colors.primaryColor};
+        border: 1px solid ${theme.colors.thirdColor};
 
         display: flex;
         align-items: center;

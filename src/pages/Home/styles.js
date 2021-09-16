@@ -63,6 +63,88 @@ export const Container = styled.div`
       }
 
       main {
+        .pacotes-container {
+          min-height: 100vh;
+          background-color: ${theme.colors.backgroundColor};
+          box-shadow: 0 0 2rem ${theme.colors.backgroundColor};
+
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          gap: 2rem;
+
+          padding: 2rem;
+
+          .left-column {
+            color: ${theme.colors.thirdColor};
+            flex: 1;
+
+            text-align: center;
+
+            h1 {
+              color: ${theme.colors.secundaryColor};
+            }
+
+            button {
+              margin-top: 5rem;
+              padding: 1rem 2rem 1rem 2rem;
+
+              background-color: ${theme.colors.thirdColor};
+              border: 1px solid ${theme.colors.secundaryColor};
+
+              color: ${theme.colors.secundaryColor};
+              font-family: ${theme.font.family.texts};
+
+              cursor: pointer;
+
+              transition: ease-in-out all 300ms;
+
+              &:hover {
+                background-color: ${theme.colors.secundaryColor};
+                color: ${theme.colors.thirdColor};
+              }
+            }
+          }
+
+          .right-column {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
+            align-items: center;
+            justify-content: center;
+
+            .pacote {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+
+              border-top-left-radius: 18px;
+              border-bottom-right-radius: 18px;
+
+              background-color: ${theme.colors.thirdColor};
+
+              img {
+                flex: 1;
+                width: 15rem;
+                height: 15rem;
+                border-top-left-radius: 18px;
+              }
+
+              .details {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+
+                .title {
+                  color: ${theme.colors.secundaryColor};
+                }
+              }
+            }
+          }
+
+        }
+
         .about-us {
           min-height: 100vh;
 

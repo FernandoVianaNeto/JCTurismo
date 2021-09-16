@@ -6,30 +6,12 @@ export const Presentations = ({ invert, children, title, smallDescription, backg
       <Styled.Container background={background}>
         {children}
         <div className="button">
-          <button>Quero conhecer mais</button>
+          <button>
+            <strong>
+              Quero conhecer mais
+            </strong>
+          </button>
         </div>
-
-        {/* {invert ? (
-          <div className="content" invert={invert} >
-            <div className="column2" background={background}>
-              {children}
-            </div>
-            <div className="column1">
-              <p>{title}</p>
-              <h1>{smallDescription}</h1>
-            </div>
-          </div>
-        ) : (
-          <div className="content" invert={invert}>
-            <div className="column1">
-              <p>{title}</p>
-              <h1>{smallDescription}</h1>
-            </div>
-            <div className="column2">
-              {children}
-            </div>
-          </div>
-        )} */}
       </Styled.Container>
   );
 };

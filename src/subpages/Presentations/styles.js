@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const handleContainerBackground = (theme) => css`
   background-color: ${theme.colors.thirdColor};
-  box-shadow: 0 0 3rem ${theme.colors.primaryColor};
+  box-shadow: 0 0 3rem ${theme.colors.thirdColor};
 `;
 
 export const Container = styled.div`
@@ -24,20 +24,19 @@ export const Container = styled.div`
 
       button {
         width: 20rem;
-        padding: 1rem;
-        border-radius: 20px;
+        padding: 1rem 2rem 1rem 2rem;
 
         font-family: ${theme.font.family.texts};
 
         background-color: ${theme.colors.thirdColor};
-        color: ${theme.colors.backgroundColor};
+        color: ${theme.colors.secundaryColor};
         border: 1px solid ${theme.colors.secundaryColor};
 
         cursor: pointer;
 
         &:hover {
           color: ${theme.colors.thirdColor};
-          background-color: ${theme.colors.backgroundColor};
+          background-color: ${theme.colors.secundaryColor};
         }
       }
     }
