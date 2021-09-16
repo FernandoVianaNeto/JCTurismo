@@ -34,6 +34,8 @@ export const Container = styled.div`
 
         cursor: pointer;
 
+        transition: ease-in-out all 300ms;
+
         &:hover {
           color: ${theme.colors.thirdColor};
           background-color: ${theme.colors.secundaryColor};

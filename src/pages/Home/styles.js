@@ -32,7 +32,7 @@ export const Container = styled.div`
           }
 
           .know-more {
-            padding: 1rem 3rem 1rem 3rem;
+            padding: 1rem 2rem 1rem 2rem;
 
             background-color: ${theme.colors.thirdColor};
             color: ${theme.colors.secundaryColor};
@@ -42,8 +42,7 @@ export const Container = styled.div`
             font-weight: bold;
             letter-spacing: 0.05em;
 
-            border-radius: 25px;
-            border: 2px solid ${theme.colors.secundaryColor};
+            border: 1px solid ${theme.colors.secundaryColor};
 
             cursor: pointer;
 
@@ -54,7 +53,6 @@ export const Container = styled.div`
             &:hover {
               background-color: ${theme.colors.secundaryColor};
               color: ${theme.colors.thirdColor};
-              border: 2px solid ${theme.colors.thirdColor};
 
               font-weight: bold;
             }
