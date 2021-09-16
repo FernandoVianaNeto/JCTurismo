@@ -1,7 +1,5 @@
 import * as Styled from './styles';
 
-import { useState } from 'react';
-
 import { Menu } from '../../components/Menu';
 import { MenuLink } from '../../components/MenuLink';
 import { WhatsappButton } from '../../components/WhatsappButton'
@@ -15,7 +13,6 @@ import { AiOutlineSchedule } from 'react-icons/ai';
 import { Presentations } from '../../subpages/Presentations';
 
 import { data } from '../../data/data';
-import { PacoteCard } from '../../components/PacoteCard';
 
 export const Home = () => {
   const data1 = data
@@ -52,7 +49,7 @@ export const Home = () => {
               para os melhores destinos.
             </p>
             <a className="know-more" href="#passeios">
-              Quero viajar
+              Quero conhecer a Bahia
             </a>
           </div>
         </header>
@@ -76,33 +73,13 @@ export const Home = () => {
               })
             }
           </Presentations>
-          {/* <Presentations
-            title="Pacotes com os melhores preços"
-            smallDescription="Conheça a Bahia com os seus amigos e familiares."
-          >
-            {
-              data1.pacotes.map((card) => {
-                return (
-                  <PacoteCard
-                    id={card.id}
-                    key={card.id}
-                    imgLink={card.imgLink}
-                    title={card.title}
-                    subtitle={card.subtitle}
-                    bestSeller={card.bestSeller}
-                    price1={card.price1}
-                    price2={card.price2}
-                    price={card.price3}
-                    link={card.link}
-                    description={card.description}
-                    categoria1={card.categoria1}
-                    categoria2={card.categoria2}
-                    categoria3={card.categoria3}
-                  />
-                )
-              })
-            }
-          </Presentations> */}
+          <div className="about-us">
+            <img src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1626980792/WhatsApp_Image_2021-07-22_at_15.41.41-removebg-preview_hydex1.png" alt="logo" />
+            <strong>Nós somos a JCT Turismo</strong>
+            <p>Empresa com gostinho baiano que vai proporcionar para você  os melhores passeios  que irá  encontrar na cidade.
+            <br />
+            Focada em excelência e satisfação, procuramos sempre mostrar como um cliente deve ser tratado.</p>
+          </div>
         </main>
       </div>
     </Styled.Container>

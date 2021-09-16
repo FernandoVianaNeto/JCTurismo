@@ -7,10 +7,10 @@ export const Container = styled.div`
       a {
         text-decoration: none;
 
-        color: ${theme.colors.thirdColor};
+        color: ${theme.colors.backgroundColor};
         font-family: ${theme.font.family.texts};
 
-        background-color: ${theme.colors.primaryColor};
+        background-color: ${theme.colors.thirdColor};
 
         padding: 1rem;
 
@@ -24,8 +24,8 @@ export const Container = styled.div`
         transition: ease-in-out all 200ms;
 
         &:hover {
-          background-color: ${theme.colors.thirdColor};
-          color: ${theme.colors.primaryColor};
+          background-color: ${theme.colors.backgroundColor};
+          color: ${theme.colors.thirdColor};
         }
       }
     }

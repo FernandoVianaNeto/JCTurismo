@@ -63,6 +63,42 @@ export const Container = styled.div`
       }
 
       main {
+        .about-us {
+          min-height: 100vh;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 3rem;
+
+          background-color: ${theme.colors.backgroundColor};
+
+          box-shadow: 0 0 2rem ${theme.colors.backgroundColor};
+
+          font-family: ${theme.font.family.texts};
+          color: ${theme.colors.thirdColor};
+
+          img {
+            width: 30rem;
+          }
+
+          strong {
+            font-size: 3rem;
+            font-style: italic;
+            font-family: ${theme.font.family.texts};
+
+            color: ${theme.colors.secundaryColor};
+          }
+
+          p {
+            text-align: center;
+            max-width: 100rem;
+
+            font-size: 2rem;
+          }
+        }
+
       }
 
     @media ${theme.media.lteMedium} {
