@@ -83,7 +83,7 @@ export const Home = () => {
           <div className="pacotes-container">
             <div className="left-column">
               <h1>Pacotes com gostinho baiano que cabem no seu bolso</h1>
-              <p>Essa sessão é exclusivamente desenvolvida para mostrar aos nossos clientes o carinho que temos em proporcionar pacotes para toda família por um preço ...</p>
+              <p>Essa sessão é exclusivamente desenvolvida para aqueles que querem conhecer a Bahia com a família sem gastar muito</p>
               <button>
                <strong>Conhecer todos os pacotes</strong>
               </button>
@@ -91,7 +91,7 @@ export const Home = () => {
             <div className="right-column">
               { data.pacotes.map((card) => {
                 return (
-                  <div className="pacote">
+                  <div className="pacote" key={card.id}>
                     <img src={card.imgLink} alt="" />
                     <div className="details">
                       <strong className="title">{card.title}</strong>

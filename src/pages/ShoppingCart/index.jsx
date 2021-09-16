@@ -20,9 +20,8 @@ export const ShoppingCart = () => {
     setTotal(0)
   }, [items])
 
-  let subtotal = [0]
-
   useEffect(() => {
+    let subtotal = [0]
     items.map((card) => {
       subtotal.push(card.price * card.amount)
       return items;
@@ -31,7 +30,7 @@ export const ShoppingCart = () => {
     setTotal(subtotal.reduce((total, element) => total + element))
 
     return subtotal;
-  }, [items, subtotal])
+  }, [items])
 
   return (
     <Styled.Container>

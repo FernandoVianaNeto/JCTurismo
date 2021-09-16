@@ -191,6 +191,16 @@ export const Container = styled.div`
             }
           }
         }
+
+        main {
+          display: flex;
+          flex-direction: column;
+
+          .pacotes-container {
+            display: flex;
+            flex-direction: column;
+          }
+        }
       }
     }
   `}
