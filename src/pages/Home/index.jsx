@@ -13,9 +13,11 @@ import { AiOutlineSchedule } from 'react-icons/ai';
 import { Presentations } from '../../subpages/Presentations';
 
 import { data } from '../../data/data';
+//import { useHistory } from 'react-router';
 
 export const Home = () => {
   const data1 = data
+  //const history = useHistory();
 
   return (
     <Styled.Container>
@@ -54,13 +56,6 @@ export const Home = () => {
           </div>
         </header>
         <main>
-          <div className="about-us">
-            <img src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1626980792/WhatsApp_Image_2021-07-22_at_15.41.41-removebg-preview_hydex1.png" alt="logo" />
-            <strong>Nós somos a JCT Turismo</strong>
-            <p>Empresa com gostinho baiano que vai proporcionar para você  os melhores passeios  que irá  encontrar na cidade.
-            <br />
-            Focada em excelência e satisfação, procuramos sempre mostrar como um cliente deve ser tratado.</p>
-          </div>
           <WhatsappButton />
           <a href=" " name="passeios"> </a>
           <Presentations
@@ -84,7 +79,7 @@ export const Home = () => {
             <div className="left-column">
               <h1>Pacotes com gostinho baiano que cabem no seu bolso</h1>
               <p>Essa sessão é exclusivamente desenvolvida para aqueles que querem conhecer a Bahia com a família sem gastar muito</p>
-              <button>
+              <button onClick={() => console.log('fernando')}>
                <strong>Conhecer todos os pacotes</strong>
               </button>
             </div>
@@ -96,11 +91,21 @@ export const Home = () => {
                     <div className="details">
                       <strong className="title">{card.title}</strong>
                       <p>{card.categoria1}</p>
+                      <p className="description">{card.description}</p>
+                      <strong className="price">a partir de R$
+                      <span>{card.price1},00</span></strong>
                     </div>
                   </div>
                 )
               }) }
             </div>
+          </div>
+          <div className="about-us">
+            <img src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1626980792/WhatsApp_Image_2021-07-22_at_15.41.41-removebg-preview_hydex1.png" alt="logo" />
+            <strong>Nós somos a JCT Turismo</strong>
+            <p>Empresa com gostinho baiano que vai proporcionar para você  os melhores passeios  que irá  encontrar na cidade.
+            <br />
+            Focada em excelência e satisfação, procuramos sempre mostrar como um cliente deve ser tratado.</p>
           </div>
         </main>
       </div>

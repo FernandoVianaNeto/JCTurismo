@@ -8,6 +8,7 @@ import { Pacote } from './pages/Pacote';
 import { PaymentPage } from './pages/PaymentPage';
 import { Transfer } from './pages/Transfer';
 import { CityTour } from './pages/CityTour';
+import { Passeios } from './pages/Passeios';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/pagamento" exact component={PaymentPage} />
         <Route path="/transfer" exact component={Transfer} />
         <Route path="/citytour" exact component={CityTour} />
+        <Route path="/passeios" exact component={Passeios} />
       </Switch>
     </BrowserRouter>
   )

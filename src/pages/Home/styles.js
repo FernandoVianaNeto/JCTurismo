@@ -105,28 +105,38 @@ export const Container = styled.div`
           }
 
           .right-column {
-            flex: 1;
+            flex: 2;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             grid-gap: 2rem;
             align-items: center;
             justify-content: center;
 
             .pacote {
               display: flex;
-              align-items: center;
+              flex-direction: column;
               gap: 1rem;
+
+              padding: 1rem;
+
+              width: 25rem;
 
               border-top-left-radius: 18px;
               border-bottom-right-radius: 18px;
 
               background-color: ${theme.colors.thirdColor};
 
+              cursor: pointer;
+
+
+
               img {
                 flex: 1;
-                width: 15rem;
-                height: 15rem;
+                width: 100%;
+                max-height: 25rem;
+                min-height: 25rem;
                 border-top-left-radius: 18px;
+                transition: ease-in-out all 300ms;
               }
 
               .details {
@@ -136,6 +146,40 @@ export const Container = styled.div`
 
                 .title {
                   color: ${theme.colors.secundaryColor};
+                  overflow: hidden;
+                }
+
+                p {
+                  display: flex;
+                  align-items: center;
+                  height: 5rem;
+                }
+
+                .description {
+                  overflow-y: hidden;
+                  text-align: justify;
+                  height: 7rem;
+                }
+
+                .price {
+                  width: 100%;
+                  text-align: right;
+                  color: ${theme.colors.secundaryColor};
+                  height: 5rem;
+
+                  display: flex;
+                  align-items: center;
+                  justify-content: right;
+
+                  span {
+                    font-size: 2rem;
+                  }
+                }
+              }
+
+              &:hover {
+                img {
+                  transform: scale(1.05)
                 }
               }
             }
