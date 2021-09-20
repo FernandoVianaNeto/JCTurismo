@@ -78,9 +78,9 @@ export const Home = () => {
           <div className="destinos-container">
             <div className="left-column">
               <h1>Destinos para você curtir o melhor da Bahia</h1>
-              <p>Conheça Salvador e a Bahia com os melhores destinos</p>
+              <p>Essa sessão é exclusivamente desenvolvida para aqueles que querem conhecer a Bahia sem gastar muito</p>
               <button onClick={() => console.log('fernando')}>
-               <strong>Conhecer todos os pacotes</strong>
+               <strong>Conhecer todos os destinos</strong>
               </button>
             </div>
             <div className="right-column">
@@ -102,32 +102,26 @@ export const Home = () => {
               }) }
             </div>
           </div>
-          <div className="pacotes-container">
-            <div className="left-column">
-              <h1>Pacotes com gostinho baiano que cabem no seu bolso</h1>
-              <p>Essa sessão é exclusivamente desenvolvida para aqueles que querem conhecer a Bahia com a família sem gastar muito</p>
-              <button onClick={() => console.log('fernando')}>
-               <strong>Conhecer todos os pacotes</strong>
-              </button>
-            </div>
-            <div className="right-column">
-              { data.pacotes.map((card) => {
+          <div className="services">
+            <h1>Confira nosso serviços</h1>
+            <h3>Temos de tudo para oferecer para você uma estadia em Salvador com muitos passeios, turismo, alegria e felicidade com os nossos clientes</h3>
+            <div className="services-container" >
+              { data1.serviços.map((service) => {
                 return (
-                  <div className="pacote" key={card.id} onClick={() => history.push('/pacotes')}>
-                    <img src={card.imgLink} alt="" />
-                    <div className="details">
-                      <strong className="title">{card.title}</strong>
-                      <p>{card.categoria1}</p>
-                      <p className="description">Descrição: {card.description}</p>
-                      <strong className="price">
-                        a partir de R$
-                        <span>{card.price1},00</span>
-                      </strong>
+                  <div className="service" key={service.id}>
+                    <div className="left-column">
+                      <img src={service.iconLink} alt="" />
+                    </div>
+                    <div className="right-column">
+                      <h2>{service.title}</h2>
+                      <p>{service.smallDescription}</p>
+                      <a href={service.link}>Ver mais</a>
                     </div>
                   </div>
                 )
-              }) }
+              })}
             </div>
+
           </div>
           <div className="about-us">
             <a href=" " name="chamada"> </a>
@@ -142,6 +136,4 @@ export const Home = () => {
       </div>
     </Styled.Container>
   );
-
-
 };

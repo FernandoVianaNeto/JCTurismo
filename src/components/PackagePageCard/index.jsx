@@ -2,7 +2,7 @@ import * as Styled from './styles';
 
 import { useDestination } from '../../hooks/useDestination';
 
-export const PackagePageCard = ({ id, title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description }) => {
+export const PackagePageCard = ({ id, title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description, invert }) => {
   const { handleSendPackage } = useDestination();
 
   return (

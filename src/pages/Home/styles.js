@@ -186,131 +186,92 @@ export const Container = styled.div`
           }
         }
 
-        .pacotes-container {
+        .services {
           min-height: 100vh;
-          background-color: ${theme.colors.thirdColor};
-          box-shadow: 0 0 2rem ${theme.colors.backgroundColor};
 
           display: flex;
-          justify-content: space-around;
+          flex-direction: column;
           align-items: center;
-          gap: 2rem;
+          justify-content: space-around;
+          gap: 5rem;
 
-          padding: 4rem 2rem 4rem 2rem;
+          padding: 5rem;
 
-          .left-column {
-            color: ${theme.colors.backgroundColor};
-            flex: 1;
-
-            text-align: center;
-
-            h1 {
-              color: ${theme.colors.secundaryColor};
-            }
-
-            button {
-              margin-top: 5rem;
-              padding: 1rem 2rem 1rem 2rem;
-
-              background-color: ${theme.colors.thirdColor};
-              border: 1px solid ${theme.colors.secundaryColor};
-
-              color: ${theme.colors.secundaryColor};
-              font-family: ${theme.font.family.texts};
-
-              cursor: pointer;
-
-              transition: ease-in-out all 300ms;
-
-              &:hover {
-                background-color: ${theme.colors.secundaryColor};
-                color: ${theme.colors.thirdColor};
-              }
-            }
+          h1 {
+            color: ${theme.colors.secundaryColor};
           }
 
-          .right-column {
-            flex: 2;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 2rem;
-            align-items: center;
-            justify-content: center;
+          h3 {
+            text-align: center;
+          }
 
-            color: ${theme.colors.thirdColor};
+          .services-container {
+            display: flex;
 
-            .pacote {
+            gap: 3rem;
+
+            p {
+              color: ${theme.colors.backgroundColor};
+            }
+
+            .service {
               display: flex;
-              flex-direction: column;
-              gap: 1rem;
+              align-items: center;
+              justify-content: center;
+              gap: 2rem;
 
-              padding: 1rem;
+              max-width: 30rem;
 
-              width: 25rem;
-
-              border-top-left-radius: 18px;
-              border-bottom-right-radius: 18px;
+              padding: 2rem;
 
               background-color: ${theme.colors.backgroundColor};
 
-              cursor: pointer;
+              color: ${theme.colors.thirdColor};
 
-              img {
-                flex: 1;
-                width: 100%;
-                max-height: 20rem;
-                min-height: 20rem;
-                border-top-left-radius: 18px;
-                transition: ease-in-out all 300ms;
+              h2 {
+                color: ${theme.colors.secundaryColor};
               }
 
-              .details {
+              .left-column {
+                background-color: lightgray;
                 flex: 1;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                height: 100%;
+              }
+
+              .right-column {
                 display: flex;
                 flex-direction: column;
-
-                .title {
-                  color: ${theme.colors.secundaryColor};
-                  overflow: hidden;
-                }
+                flex: 2;
 
                 p {
-                  display: flex;
-                  align-items: center;
-                  height: 5rem;
-                }
-
-                .description {
-
-                  text-align: justify;
-                  height: 10rem;
-                  overflow: auto;
-                }
-
-                .price {
-                  width: 100%;
-                  text-align: right;
                   color: ${theme.colors.thirdColor};
-                  height: 5rem;
+                }
 
-                  display: flex;
-                  align-items: center;
-                  justify-content: right;
+                a {
+                  margin-top: 2rem;
+                  text-align: right;
 
-                  span {
-                    font-size: 2rem;
-                    color: ${theme.colors.secundaryColor};
+                  cursor: pointer;
+
+                  color: ${theme.colors.secundaryColor};
+
+                  &:hover {
+                    color: ${theme.colors.thirdColor};
                   }
                 }
               }
 
-              &:hover {
-                img {
-                  transform: scale(1.05)
-                }
+              img {
+                width: 7rem;
               }
             }
           }
+
         }
 
         .about-us {
