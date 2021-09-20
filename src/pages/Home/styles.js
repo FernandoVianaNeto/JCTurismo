@@ -61,7 +61,7 @@ export const Container = styled.div`
       }
 
       main {
-        .pacotes-container {
+        .destinos-container {
           min-height: 100vh;
           background-color: ${theme.colors.backgroundColor};
           box-shadow: 0 0 2rem ${theme.colors.backgroundColor};
@@ -71,7 +71,7 @@ export const Container = styled.div`
           align-items: center;
           gap: 2rem;
 
-          padding: 2rem;
+          padding: 4rem 2rem 4rem 2rem;
 
           .left-column {
             color: ${theme.colors.thirdColor};
@@ -128,13 +128,11 @@ export const Container = styled.div`
 
               cursor: pointer;
 
-
-
               img {
                 flex: 1;
                 width: 100%;
-                max-height: 25rem;
-                min-height: 25rem;
+                max-height: 20rem;
+                min-height: 20rem;
                 border-top-left-radius: 18px;
                 transition: ease-in-out all 300ms;
               }
@@ -156,15 +154,16 @@ export const Container = styled.div`
                 }
 
                 .description {
-                  overflow-y: hidden;
+
                   text-align: justify;
-                  height: 7rem;
+                  height: 10rem;
+                  overflow: auto;
                 }
 
                 .price {
                   width: 100%;
                   text-align: right;
-                  color: ${theme.colors.secundaryColor};
+                  color: ${theme.colors.backgroundColor};
                   height: 5rem;
 
                   display: flex;
@@ -173,6 +172,7 @@ export const Container = styled.div`
 
                   span {
                     font-size: 2rem;
+                    color: ${theme.colors.secundaryColor};
                   }
                 }
               }
@@ -184,7 +184,133 @@ export const Container = styled.div`
               }
             }
           }
+        }
 
+        .pacotes-container {
+          min-height: 100vh;
+          background-color: ${theme.colors.thirdColor};
+          box-shadow: 0 0 2rem ${theme.colors.backgroundColor};
+
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          gap: 2rem;
+
+          padding: 4rem 2rem 4rem 2rem;
+
+          .left-column {
+            color: ${theme.colors.backgroundColor};
+            flex: 1;
+
+            text-align: center;
+
+            h1 {
+              color: ${theme.colors.secundaryColor};
+            }
+
+            button {
+              margin-top: 5rem;
+              padding: 1rem 2rem 1rem 2rem;
+
+              background-color: ${theme.colors.thirdColor};
+              border: 1px solid ${theme.colors.secundaryColor};
+
+              color: ${theme.colors.secundaryColor};
+              font-family: ${theme.font.family.texts};
+
+              cursor: pointer;
+
+              transition: ease-in-out all 300ms;
+
+              &:hover {
+                background-color: ${theme.colors.secundaryColor};
+                color: ${theme.colors.thirdColor};
+              }
+            }
+          }
+
+          .right-column {
+            flex: 2;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 2rem;
+            align-items: center;
+            justify-content: center;
+
+            color: ${theme.colors.thirdColor};
+
+            .pacote {
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
+
+              padding: 1rem;
+
+              width: 25rem;
+
+              border-top-left-radius: 18px;
+              border-bottom-right-radius: 18px;
+
+              background-color: ${theme.colors.backgroundColor};
+
+              cursor: pointer;
+
+              img {
+                flex: 1;
+                width: 100%;
+                max-height: 20rem;
+                min-height: 20rem;
+                border-top-left-radius: 18px;
+                transition: ease-in-out all 300ms;
+              }
+
+              .details {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+
+                .title {
+                  color: ${theme.colors.secundaryColor};
+                  overflow: hidden;
+                }
+
+                p {
+                  display: flex;
+                  align-items: center;
+                  height: 5rem;
+                }
+
+                .description {
+
+                  text-align: justify;
+                  height: 10rem;
+                  overflow: auto;
+                }
+
+                .price {
+                  width: 100%;
+                  text-align: right;
+                  color: ${theme.colors.thirdColor};
+                  height: 5rem;
+
+                  display: flex;
+                  align-items: center;
+                  justify-content: right;
+
+                  span {
+                    font-size: 2rem;
+                    color: ${theme.colors.secundaryColor};
+                  }
+                }
+              }
+
+              &:hover {
+                img {
+                  transform: scale(1.05)
+                }
+              }
+            }
+          }
         }
 
         .about-us {
