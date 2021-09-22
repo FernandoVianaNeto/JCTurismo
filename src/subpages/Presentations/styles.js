@@ -7,13 +7,16 @@ const handleContainerBackground = (theme) => css`
 
 export const Container = styled.div`
   ${({ theme, background }) => css`
-  z-index: -1;
+    z-index: -1;
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 
     padding: 4rem;
+
+    max-width: 140rem;
+    margin: 0 auto;
 
     ${background && handleContainerBackground(theme)};
 

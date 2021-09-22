@@ -5,13 +5,13 @@ export const Presentations = ({ children, background }) => {
   return (
       <Styled.Container background={background}>
         {children}
-        <div className="button">
+        {/* <div className="button">
           <button>
             <strong>
               Quero conhecer mais
             </strong>
           </button>
-        </div>
+        </div> */}
       </Styled.Container>
   );
 };

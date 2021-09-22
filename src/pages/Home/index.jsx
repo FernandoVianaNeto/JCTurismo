@@ -76,30 +76,32 @@ export const Home = () => {
             }
           </Presentations>
           <div className="destinos-container">
-            <div className="left-column">
-              <h1>Destinos para você curtir o melhor da Bahia</h1>
-              <p>Essa sessão é exclusivamente desenvolvida para aqueles que querem conhecer a Bahia sem gastar muito</p>
-              <button onClick={() => console.log('fernando')}>
-               <strong>Conhecer todos os destinos</strong>
-              </button>
-            </div>
-            <div className="right-column">
-              { data.pacotes.map((card) => {
-                return (
-                  <div className="pacote" key={card.id} onClick={() => history.push('/pacotes')}>
-                    <img src={card.imgLink} alt="" />
-                    <div className="details">
-                      <strong className="title">{card.title}</strong>
-                      <p>{card.categoria1}</p>
-                      <p className="description">Descrição: {card.description}</p>
-                      <strong className="price">
-                        a partir de R$
-                        <span>{card.price1},00</span>
-                      </strong>
+            <div className="content-destinos">
+              <div className="left-column">
+                <h1>Destinos para você curtir o melhor da Bahia</h1>
+                <p>Essa sessão é exclusivamente desenvolvida para aqueles que querem conhecer a Bahia sem gastar muito</p>
+                <button onClick={() => history.push('/passeios')}>
+                <strong>Conhecer todos os destinos</strong>
+                </button>
+              </div>
+              <div className="right-column">
+                { data.pacotes.map((card) => {
+                  return (
+                    <div className="pacote" key={card.id} onClick={() => history.push('/pacotes')}>
+                      <img src={card.imgLink} alt="" />
+                      <div className="details">
+                        <strong className="title">{card.title}</strong>
+                        <p>{card.categoria1}</p>
+                        <p className="description">Descrição: {card.description}</p>
+                        <strong className="price">
+                          a partir de R$
+                          <span>{card.price1},00</span>
+                        </strong>
+                      </div>
                     </div>
-                  </div>
-                )
-              }) }
+                  )
+                }) }
+              </div>
             </div>
           </div>
           <div className="services">

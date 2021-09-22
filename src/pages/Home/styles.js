@@ -66,12 +66,17 @@ export const Container = styled.div`
           background-color: ${theme.colors.backgroundColor};
           box-shadow: 0 0 2rem ${theme.colors.backgroundColor};
 
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          gap: 2rem;
-
           padding: 4rem 2rem 4rem 2rem;
+
+          .content-destinos {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+
+            max-width: 140rem;
+            margin: 0 auto;
+          }
 
           .left-column {
             color: ${theme.colors.thirdColor};
@@ -271,7 +276,6 @@ export const Container = styled.div`
               }
             }
           }
-
         }
 
         .about-us {
@@ -309,10 +313,10 @@ export const Container = styled.div`
             font-size: 2rem;
           }
         }
-
       }
+    }
 
-    @media ${theme.media.lteMedium} {
+    @media (max-width: 768px) {
       .content {
         header {
           .title-container {
@@ -324,12 +328,32 @@ export const Container = styled.div`
         }
 
         main {
-          display: flex;
-          flex-direction: column;
+          .destinos-container {
+            .content-destinos {
+              display: flex;
+              flex-direction: column;
 
-          .pacotes-container {
+              .right-column {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+              }
+            }
+          }
+
+          .services {
+            text-align: center;
             display: flex;
             flex-direction: column;
+
+            .services-container {
+              display: flex;
+              flex-direction: column;
+            }
+          }
+
+          .about-us {
+            text-align: center;
+            padding: 2rem;
           }
         }
       }

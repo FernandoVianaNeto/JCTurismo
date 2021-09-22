@@ -20,8 +20,10 @@ export const Passeios = () => {
             <div className="destino" key={destino.id}>
               <PackagePageCard
                 title={destino.title}
-                description={destino.descriptions}
+                description={destino.description}
                 imgLink={destino.imgLink}
+                categoria1={destino.categoria}
+                price1={destino.price}
               />
             </div>
           )
