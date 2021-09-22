@@ -94,7 +94,7 @@ export const Container = styled.div`
       .container {
         display: flex;
         flex-direction: column;
-        background-color: ${theme.colors.primaryColor};
+        background-color: ${theme.colors.backgroundColor};
 
         padding: 2rem 1rem 2rem 2rem;
 
