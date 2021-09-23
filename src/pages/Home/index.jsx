@@ -95,7 +95,7 @@ export const Home = () => {
                         <p className="description">Descrição: {card.description}</p>
                         <strong className="price">
                           a partir de R$
-                          <span>{card.price1},00</span>
+                          <span>{card.prices[0]},00</span>
                         </strong>
                       </div>
                     </div>

@@ -40,7 +40,7 @@ export const Destinations = () => {
             <h1>Como será o nosso passeio?</h1>
             <p className="passeio-description">
             {dataStore.destinyData.description}
-            <p className="price">{dataStore.destinyData.subtitle} <span>R$ {dataStore.destinyData.price},00</span></p>
+            <p className="price">{dataStore.destinyData.subtitle} <span>R$ {dataStore.destinyData.prices[0]},00</span></p>
             </p>
           </div>
         </main>

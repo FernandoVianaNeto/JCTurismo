@@ -25,9 +25,9 @@ export const Pacotes = () => {
                   categoria2={card.categoria2}
                   categoria3={card.categoria3}
                   description={card.description}
-                  price1={card.price1}
-                  price2={card.price2}
-                  price3={card.price3}
+                  price1={card.prices[0]}
+                  price2={card.prices[1]}
+                  price3={card.prices[2]}
                   id={card.id}
                 />
               )
