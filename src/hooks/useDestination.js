@@ -22,16 +22,10 @@ export const useDestination = () => {
     }))
   }
 
-  function handleSendPackage({ id, title, subtitle, categoria1, categoria2, categoria3, price1, price2, price3, imgLink, description }) {
+  function handleSendPackage({ id, title, imgLink, description, categorias }) {
     dispatch(setPackageData({
-      price1: price1,
-      price2: price2,
-      price3: price3,
-      categoria1: categoria1,
-      categoria2: categoria2,
-      categoria3: categoria3,
+      categorias: categorias,
       title: title,
-      subtitle: subtitle,
       imgLink: imgLink,
       description: description,
       id: id

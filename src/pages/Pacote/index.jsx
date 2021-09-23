@@ -22,23 +22,22 @@ export const Pacote = () => {
   const [categ3, setCateg3] = useState(false);
   const [added, setAdded] = useState(false);
 
-  const dataStore = useSelector(state => state)
-  console.log(dataStore)
-  const packageData = dataStore.packageData;
+  const { packageData, shoppingItems } = useSelector(state => state)
+  console.log(packageData);
 
   const [subtotal, setSubtotal] = useState(packageData.price1);
   const [categoria, setCategoria] = useState(packageData.categoria1);
   const [price, setPrice] = useState(packageData.price1)
 
   useEffect(() => {
-    dataStore.shoppingItems.items.map((obj) => {
+    shoppingItems.items.map((obj) => {
       if (obj.id === packageData.id) {
         setAdded(true);
       }
 
-      return dataStore;
+      return shoppingItems;
     })
-  }, [dataStore, packageData.id])
+  }, [packageData.id, shoppingItems])
 
   function categ1Set() {
     setCateg1(true);
@@ -94,7 +93,7 @@ export const Pacote = () => {
             <div className="description">
               <h2>Como será o nosso passeio?</h2>
               <p>{packageData.description}</p>
-              <p className="subtotal-description">A partir de <span>R$ {packageData.price1},00</span> </p>
+              <p className="subtotal-description">A partir de <span>R$ {packageData.categorias.individual.price},00</span> </p>
             </div>
           </section>
           <aside>
@@ -102,9 +101,12 @@ export const Pacote = () => {
             <div className="content-container">
               <div className="pacote-container">
                 <p>Quantidade de pessoas:</p>
-                <button className={categ1 && 'selected'} onClick={() => categ1Set()}>{packageData.categoria1}</button>
-                <button className={categ2 && 'selected'} onClick={() => categ2Set()}>{packageData.categoria2}</button>
-                <button className={categ3 && 'selected'} onClick={() => categ3Set()}>{packageData.categoria3}</button>
+                <button>{packageData.categorias.individual.tipo}</button>
+                { packageData.categorias.pacote.tipos.map((pacote) => {
+                  return (
+                    <button>{pacote.tipo}</button>
+                  )
+                })}
               </div>
               <div className="acrescer">
                 <p>Quantas pessoas a mais?</p>

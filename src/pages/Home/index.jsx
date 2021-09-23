@@ -16,7 +16,7 @@ import { data } from '../../data/data';
 import { useHistory } from 'react-router';
 
 export const Home = () => {
-  const data1 = data
+  const { destinos, chamadas, serviços } = data
   const history = useHistory();
 
   return (
@@ -62,7 +62,7 @@ export const Home = () => {
             background
           >
             {
-              data1.chamadas.map((card) => {
+              chamadas.map((card) => {
                 return (
                   <PresentationCard
                     title={card.title}
@@ -85,17 +85,17 @@ export const Home = () => {
                 </button>
               </div>
               <div className="right-column">
-                { data.pacotes.map((card) => {
+                { destinos.map((card) => {
                   return (
                     <div className="pacote" key={card.id} onClick={() => history.push('/pacotes')}>
                       <img src={card.imgLink} alt="" />
                       <div className="details">
                         <strong className="title">{card.title}</strong>
-                        <p>{card.categoria1}</p>
+                        <p>{card.status}</p>
                         <p className="description">Descrição: {card.description}</p>
                         <strong className="price">
                           a partir de R$
-                          <span>{card.prices[0]},00</span>
+                          <span>{card.categorias.individual.price},00</span>
                         </strong>
                       </div>
                     </div>
@@ -108,7 +108,7 @@ export const Home = () => {
             <h1>Confira nosso serviços</h1>
             <h3>Temos de tudo para oferecer para você uma estadia em Salvador com muitos passeios, turismo, alegria e felicidade com os nossos clientes</h3>
             <div className="services-container" >
-              { data1.serviços.map((service) => {
+              { serviços.map((service) => {
                 return (
                   <div className="service" key={service.id}>
                     <div className="left-column">

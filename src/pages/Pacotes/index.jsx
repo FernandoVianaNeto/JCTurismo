@@ -5,7 +5,7 @@ import { data } from '../../data/data';
 import { PackagePageCard } from '../../components/PackagePageCard';
 
 export const Pacotes = () => {
-  const data1 = data;
+  const { destinos } = data;
 
   return (
     <Styled.Container>
@@ -14,20 +14,14 @@ export const Pacotes = () => {
         <h1>Os melhores pacotes com os melhores preços</h1>
         <div className="package-map">
           {
-            data1.pacotes.map((card) => {
+            destinos.map((card) => {
               return (
                 <PackagePageCard
                   key={card.id}
                   imgLink={card.imgLink}
                   title={card.title}
-                  subtitle={card.subtitle}
-                  categoria1={card.categoria1}
-                  categoria2={card.categoria2}
-                  categoria3={card.categoria3}
+                  categorias={card.categorias}
                   description={card.description}
-                  price1={card.prices[0]}
-                  price2={card.prices[1]}
-                  price3={card.prices[2]}
                   id={card.id}
                 />
               )
