@@ -23,7 +23,8 @@ export const Pacote = () => {
 
   const [select, setSelect] = useState({
     id: packageData.categorias.individual.id,
-    price: packageData.categorias.individual.price
+    price: packageData.categorias.individual.price,
+    categoria: packageData.categorias.individual.tipo,
   });
   const adicional = packageData.categorias.pacote.adicional;
 
@@ -38,10 +39,11 @@ export const Pacote = () => {
 
   }, [packageData.id, shoppingItems])
 
-  function handleSetSelect({ id, price }) {
+  function handleSetSelect({ id, price, categoria }) {
     setSelect({
       id: id,
-      price: price
+      price: price,
+      categoria: categoria
     })
   }
 
@@ -83,12 +85,21 @@ export const Pacote = () => {
             <div className="content-container">
               <div className="pacote-container">
                 <p>Quantidade de pessoas:</p>
-                <button className={ select.id === packageData.categorias.individual.id ? 'selected' : ''} onClick={() => handleSetSelect({ id: packageData.categorias.individual.id, price: packageData.categorias.individual.price })}>{packageData.categorias.individual.tipo}</button>
+                <button
+                  className={ select.id === packageData.categorias.individual.id ? 'selected' : ''}
+                  onClick={() => handleSetSelect({
+                    id: packageData.categorias.individual.id,
+                    price: packageData.categorias.individual.price,
+                    categoria: packageData.categorias.individual.tipo
+                  })}
+                >
+                  {packageData.categorias.individual.tipo}
+                </button>
 
                 { packageData.categorias.pacote.tipos.map((pacote) => {
                     return (
                       <button
-                        onClick={() => handleSetSelect({ id: pacote.id, price: pacote.price })}
+                        onClick={() => handleSetSelect({ id: pacote.id, price: pacote.price, categoria: pacote.tipo })}
                         className={ pacote.id === select.id ? 'selected' : ''}
                         key={pacote.id}
                       >
@@ -115,7 +126,7 @@ export const Pacote = () => {
           { added ? (
             <Button disabled desabilitado>Você já adicionou esse passeio</Button>
           ) : (
-            <Button onClick={() => addNewItem({ id: packageData.id, imgLink: packageData.imgLink, title: packageData.title, amount: 1 })}>Adicionar esse passeio ao carrinho</Button>
+            <Button onClick={() => addNewItem({ id: packageData.id, imgLink: packageData.imgLink, title: packageData.title, amount: 1, price: select.price, categoria: select.categoria })}>Adicionar esse passeio ao carrinho</Button>
           ) }
         </div>
       </div>
