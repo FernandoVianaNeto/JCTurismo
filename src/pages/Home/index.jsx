@@ -33,9 +33,9 @@ export const Home = () => {
               <GiModernCity />
               <p>CityTour</p>
             </MenuLink>
-            <MenuLink link="/pacotes">
+            <MenuLink link="/destinos">
               <FiPackage />
-              <p>Pacotes</p>
+              <p>Destinos</p>
             </MenuLink>
             <MenuLink link="/#chamada">
               <AiOutlineSchedule />
@@ -80,14 +80,14 @@ export const Home = () => {
               <div className="left-column">
                 <h1>Destinos para você curtir o melhor da Bahia</h1>
                 <p>Essa sessão é exclusivamente desenvolvida para aqueles que querem conhecer a Bahia sem gastar muito</p>
-                <button onClick={() => history.push('/passeios')}>
+                <button onClick={() => history.push('/destinos')}>
                 <strong>Conhecer todos os destinos</strong>
                 </button>
               </div>
               <div className="right-column">
                 { destinos.map((card) => {
                   return (
-                    <div className="pacote" key={card.id} onClick={() => history.push('/pacotes')}>
+                    <div className="pacote" key={card.id} onClick={() => history.push('/destinos')}>
                       <img src={card.imgLink} alt="" />
                       <div className="details">
                         <strong className="title">{card.title}</strong>

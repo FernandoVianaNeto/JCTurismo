@@ -2,9 +2,10 @@ import * as Styled from './styles';
 
 import { useDestination } from '../../hooks/useDestination';
 
-export const PackagePageCard = ({ id, title, imgLink, description, categorias }) => {
+export const DestinosPageCard = ({ id, title, imgLink, description, categorias }) => {
   const { handleSendPackage } = useDestination();
 
+  console.log(categorias);
   return (
     <Styled.Container>
       <div className="content">

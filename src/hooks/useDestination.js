@@ -31,7 +31,7 @@ export const useDestination = () => {
       id: id
     }))
 
-    history.push('/pacote');
+    history.push('/destino');
   }
 
   return { handleSendInformation, handleSendPackage };

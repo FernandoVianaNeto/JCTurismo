@@ -1,14 +1,12 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import { Home } from './pages/Home';
-import { Destino } from './pages/Destinos';
 import { ShoppingCart } from './pages/ShoppingCart';
-import { Pacotes } from './pages/Pacotes';
-import { Pacote } from './pages/Pacote';
+import { Destinos } from './pages/Destinos';
+import { Destino } from './pages/Destino';
 import { PaymentPage } from './pages/PaymentPage';
 import { Transfer } from './pages/Transfer';
 import { CityTour } from './pages/CityTour';
-import { Passeios } from './pages/Passeios';
 
 function App() {
   return (
@@ -16,13 +14,11 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/destino" exact component={Destino} />
+        <Route path="/destinos" exact component={Destinos} />
         <Route path="/carrinhodecompras" exact component={ShoppingCart} />
-        <Route path="/pacotes" exact component={Pacotes} />
-        <Route path="/pacote" exact component={Pacote} />
         <Route path="/pagamento" exact component={PaymentPage} />
         <Route path="/transfer" exact component={Transfer} />
         <Route path="/citytour" exact component={CityTour} />
-        <Route path="/passeios" exact component={Passeios} />
       </Switch>
     </BrowserRouter>
   )

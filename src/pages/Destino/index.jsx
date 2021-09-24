@@ -12,7 +12,7 @@ import { useAddItem } from '../../hooks/useAddItem';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { AiOutlinePlus } from 'react-icons/ai';
 
-export const Pacote = () => {
+export const Destino = () => {
   const { addNewItem } = useAddItem()
 
   const [counter, setCounter] = useState(0);

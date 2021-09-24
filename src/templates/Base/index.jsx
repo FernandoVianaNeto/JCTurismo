@@ -6,7 +6,7 @@ import { MenuLink } from '../../components/MenuLink';
 
 import { FaShuttleVan } from 'react-icons/fa';
 import { GiModernCity } from 'react-icons/gi';
-import { FiPackage } from 'react-icons/fi';
+import { MdFlight } from 'react-icons/md';
 import { AiOutlineSchedule } from 'react-icons/ai';
 import { AiOutlineHome } from 'react-icons/ai';
 
@@ -27,9 +27,9 @@ export const Base = () => {
             <GiModernCity />
             <p>CityTour</p>
           </MenuLink>
-          <MenuLink link="/pacotes">
-            <FiPackage />
-            <p>Pacotes</p>
+          <MenuLink link="/destinos">
+            <MdFlight />
+            <p>Destinos</p>
           </MenuLink>
           <MenuLink link="/">
             <AiOutlineSchedule />
