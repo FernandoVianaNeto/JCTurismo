@@ -27,6 +27,11 @@ export const Container = styled.div`
       margin: 0 auto;
 
       padding: 2rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
     }
 
 
@@ -150,6 +155,7 @@ export const Container = styled.div`
 
         button {
           background-color: ${theme.colors.thirdColor};
+          color: ${theme.colors.secundaryColor};
 
           border: 1px solid ${theme.colors.thirdColor};
 
