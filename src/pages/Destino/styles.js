@@ -172,6 +172,14 @@ export const Container = styled.div`
           }
         }
 
+        .amount-button {
+          color: ${theme.colors.secundaryColor};
+
+          &:hover {
+            color: ${theme.colors.secundaryColor};
+          }
+        }
+
         .selected {
           background-color: ${theme.colors.secundaryColor};
           color: ${theme.colors.thirdColor};

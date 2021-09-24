@@ -112,10 +112,10 @@ export const Destino = () => {
                 <p>Quantas pessoas a mais?</p>
                 <div>
                   {counter > 0 && (
-                    <button onClick={() => callSetMinus()}><AiOutlineMinus /></button>
+                    <button className="amount-button" onClick={() => callSetMinus()}><AiOutlineMinus /></button>
                   )}
                   <p>{counter}</p>
-                  <button onClick={() => callSetPlus()}><AiOutlinePlus /></button>
+                  <button className="amount-button" onClick={() => callSetPlus()}><AiOutlinePlus /></button>
                 </div>
               </div>
             </div>
