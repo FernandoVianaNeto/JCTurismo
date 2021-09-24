@@ -28,7 +28,8 @@ export const data = {
           adicional: 120.00
         }
       },
-      description: "Com saída dos hotéis de Salvador, seguiremos a Linha Verde para conhecer duas das mais belas praias do Litoral Baiano. Primeira parada na Praia do Forte - conhecida como a Polinésia Brasileira, você terá a oportunidade de conhecer o Projeto Tamar, reconhecido internacionalmente como uma das mais bem sucedidas experiências de conservação marinha. Visitará a vilinha mais charmosa  com um ambiente rústico e aconchegante. Segunda parada na Praia de Guarajuba - Uma praia com selo Bandeira Azul que reserva as melhores piscinas naturais, um balneário bem estruturado com águas tranquilas e cristalinas que compõe uma paisagem fantástica. Areia bem fofinha para caminhar pelos corais e uma imensidão de coqueiros."
+      description: "Com saída dos hotéis de Salvador, seguiremos a Linha Verde para conhecer duas das mais belas praias do Litoral Baiano. Primeira parada na Praia do Forte - conhecida como a Polinésia Brasileira, você terá a oportunidade de conhecer o Projeto Tamar, reconhecido internacionalmente como uma das mais bem sucedidas experiências de conservação marinha. Visitará a vilinha mais charmosa  com um ambiente rústico e aconchegante. Segunda parada na Praia de Guarajuba - Uma praia com selo Bandeira Azul que reserva as melhores piscinas naturais, um balneário bem estruturado com águas tranquilas e cristalinas que compõe uma paisagem fantástica. Areia bem fofinha para caminhar pelos corais e uma imensidão de coqueiros.",
+      smallDescription: 'Com saída dos hotéis de Salvador, seguiremos a Linha Verde para conhecer duas das mais belas praias do Litoral Baiano. Primeira parada na Praia do Forte - conhecida como a Polinésia Brasileira...'
     },
     {
       id: 2,
@@ -57,7 +58,8 @@ export const data = {
           adicional: 120.00,
         }
       },
-      description: "A pouco mais de 10 km da Praia do Forte, a vila de Imbassaí teve origem em uma pequena aldeia indígena que hoje se tornou um dos destinos turísticos mais gostosos da Bahia. Com ótima infraestrutura de pousadas, bares, restaurantes, lojas de artesanato, e opções para todos os gostos, a Praia de Imbassaí vem conquistando todos que passam alguns dias por lá. Principalmente por causa dos ótimos preços praticados, bem diferente da sua badalada vizinha."
+      description: "A pouco mais de 10 km da Praia do Forte, a vila de Imbassaí teve origem em uma pequena aldeia indígena que hoje se tornou um dos destinos turísticos mais gostosos da Bahia. Com ótima infraestrutura de pousadas, bares, restaurantes, lojas de artesanato, e opções para todos os gostos, a Praia de Imbassaí vem conquistando todos que passam alguns dias por lá. Principalmente por causa dos ótimos preços praticados, bem diferente da sua badalada vizinha.",
+      smallDescription: 'A pouco mais de 10 km da Praia do Forte, a vila de Imbassaí teve origem em uma pequena aldeia indígena que hoje se tornou um dos destinos turísticos mais gostosos da Bahia...'
     },
     {
       id: 3,
@@ -91,7 +93,8 @@ export const data = {
           adicional: 150.00,
         }
       },
-      description: "Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus, sedullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec."
+      description: "Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper proin laoreet pretium erat lectus felis eu malesuada a. vulputate odio in ultrices dolor adipiscing placerat leo ac, phasellus justo porta et est curabitur lobortis ad faucibus, sedullamcorper ultrices etiam varius lobortis praesent fames. eu dictum in nibh iaculis facilisis suscipit odio cubilia fusce netus, duis odio cras donec lectus varius aenean lobortis nullam. lectus dapibus pharetra bibendum viverra congue dolor duis, vehicula cubilia faucibus sollicitudin consequat morbi, litora potenti risus sagittis fermentum donec.",
+      smallDescription: 'Lorem ipsum tortor ad fames magna pellentesque curabitur leo maecenas eros ligula, venenatis consequat fusce arcu bibendum platea eu primis nisi lacinia vitae, ullamcorper...'
     },
     {
       id: 4,
@@ -125,7 +128,8 @@ export const data = {
           adicional: 25.00,
         }
       },
-      description: "Com saída do Terminal Marítimo( Atrás do Mercado Modelo), você irá embarcar   em escuna equipada com serviços de bar e guia acompanhante. Durante o percurso, visita-se a Ilha dos Frades e Ponta de Areia (Itaparica), o passeio possibilita uma bela vista da cidade de Salvador. A partir da Baía de Todos os Santos, Forte São Marcelo, Elevador Lacerda e o Mercado Modelo."
+      description: "Com saída do Terminal Marítimo( Atrás do Mercado Modelo), você irá embarcar em escuna equipada com serviços de bar e guia acompanhante. Durante o percurso, visita-se a Ilha dos Frades e Ponta de Areia (Itaparica), o passeio possibilita uma bela vista da cidade de Salvador. A partir da Baía de Todos os Santos, Forte São Marcelo, Elevador Lacerda e o Mercado Modelo.",
+      smallDescription: 'Com saída do Terminal Marítimo( Atrás do Mercado Modelo), você irá embarcar em escuna equipada com serviços de bar e guia acompanhante...'
     },
     {
       id: 5,
@@ -154,7 +158,8 @@ export const data = {
           adicional: 80.00,
         }
       },
-      description: "Este passeio dura cerca de 5 horas e é um dos mais interessantes. Isso porque o guia irá te conduzir para uma viagem no tempo e te levará para conhecer cada cantinho dessa cidade fantástica. No percurso está incluso a Cidade Alta, o Largo do Pelourinho, Terreiro de Jesus, a Igreja de São Francisco (visita opcional), o Elevador Lacerda, a Igreja do Bonfim e o Mercado Modelo. Em todos os locais do roteiro haverá paradas para que você possa passear, tirar fotos e conhecer. É um passeio bem cultural e que vale a pena incluir em sua lista de o que fazer em Salvador."
+      description: "Este passeio dura cerca de 5 horas e é um dos mais interessantes. Isso porque o guia irá te conduzir para uma viagem no tempo e te levará para conhecer cada cantinho dessa cidade fantástica. No percurso está incluso a Cidade Alta, o Largo do Pelourinho, Terreiro de Jesus, a Igreja de São Francisco (visita opcional), o Elevador Lacerda, a Igreja do Bonfim e o Mercado Modelo. Em todos os locais do roteiro haverá paradas para que você possa passear, tirar fotos e conhecer. É um passeio bem cultural e que vale a pena incluir em sua lista de o que fazer em Salvador.",
+      smallDescription: 'Este passeio dura cerca de 5 horas e é um dos mais interessantes. Isso porque o guia irá te conduzir para uma viagem no tempo e te levará para conhecer cada cantinho dessa cidade fantástica...'
     },
     {
       id: 6,
@@ -183,7 +188,8 @@ export const data = {
           adicional: 120.00,
         }
       },
-      description: "Com saída dos hotéis de Salvador, seguiremos pelo extremo Norte do Estado até a divisa de Bahia e Sergipe por aproximadamente 200 km até chegar ao povado de Pontal e atravessar o Rio Real em lancha para Mangue Seco. Mangue Seco é totalmente pé na areia e não existem ruas, a vila é composta por trilhas onde os 'bugueiros' conduzem os turistas para desfrutar da belíssima praia rodeada de coqueiros e dunas. Famosa por ter sido o cenário da novela Tieta, inspirada no romance de Jorge Amado, com potencial turístico enorme, pela beleza da região. Com dunas de areia fininha, praia quase deserta, um cenário especial para um delicioso passeio de quadriciclo, banho de mar e aproveitar da deliciosa culinária."
+      description: "Com saída dos hotéis de Salvador, seguiremos pelo extremo Norte do Estado até a divisa de Bahia e Sergipe por aproximadamente 200 km até chegar ao povado de Pontal e atravessar o Rio Real em lancha para Mangue Seco. Mangue Seco é totalmente pé na areia e não existem ruas, a vila é composta por trilhas onde os 'bugueiros' conduzem os turistas para desfrutar da belíssima praia rodeada de coqueiros e dunas. Famosa por ter sido o cenário da novela Tieta, inspirada no romance de Jorge Amado, com potencial turístico enorme, pela beleza da região. Com dunas de areia fininha, praia quase deserta, um cenário especial para um delicioso passeio de quadriciclo, banho de mar e aproveitar da deliciosa culinária.",
+      smallDescription: 'Com saída dos hotéis de Salvador, seguiremos pelo extremo Norte do Estado até a divisa de Bahia e Sergipe por aproximadamente 200 km até chegar ao povado de Pontal e atravessar o Rio Real em lancha para Mangue Seco...'
     },
   ],
   serviços: [

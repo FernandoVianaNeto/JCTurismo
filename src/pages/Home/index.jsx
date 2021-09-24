@@ -7,7 +7,7 @@ import { PresentationCard } from '../../components/PresentationCard';
 
 import { FaShuttleVan } from 'react-icons/fa';
 import { GiModernCity } from 'react-icons/gi';
-import { FiPackage } from 'react-icons/fi';
+import { MdFlight } from 'react-icons/md';
 import { AiOutlineSchedule } from 'react-icons/ai';
 
 import { Presentations } from '../../subpages/Presentations';
@@ -34,7 +34,7 @@ export const Home = () => {
               <p>CityTour</p>
             </MenuLink>
             <MenuLink link="/destinos">
-              <FiPackage />
+              <MdFlight />
               <p>Destinos</p>
             </MenuLink>
             <MenuLink link="/#chamada">
@@ -85,17 +85,17 @@ export const Home = () => {
                 </button>
               </div>
               <div className="right-column">
-                { destinos.map((card) => {
+                { destinos.map((destino) => {
                   return (
-                    <div className="pacote" key={card.id} onClick={() => history.push('/destinos')}>
-                      <img src={card.imgLink} alt="" />
+                    <div className="pacote" key={destino.id} onClick={() => history.push('/destinos')}>
+                      <img src={destino.imgLink} alt="" />
                       <div className="details">
-                        <strong className="title">{card.title}</strong>
-                        <p>{card.status}</p>
-                        <p className="description">Descrição: {card.description}</p>
+                        <strong className="title">{destino.title}</strong>
+                        <p>{destino.status}</p>
+                        <p className="description">{destino.smallDescription}</p>
                         <strong className="price">
                           a partir de R$
-                          <span>{card.categorias.individual.price},00</span>
+                          <span>{destino.categorias.individual.price},00</span>
                         </strong>
                       </div>
                     </div>

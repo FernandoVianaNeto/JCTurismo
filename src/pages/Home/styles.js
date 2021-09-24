@@ -148,8 +148,13 @@ export const Container = styled.div`
                 flex-direction: column;
 
                 .title {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-align: center;
+
+                  min-height: 5rem;
                   color: ${theme.colors.secundaryColor};
-                  overflow: hidden;
                 }
 
                 p {
@@ -159,10 +164,12 @@ export const Container = styled.div`
                 }
 
                 .description {
+                  display: flex;
+                  align-items: flex-start;
 
                   text-align: justify;
-                  height: 10rem;
-                  overflow: auto;
+
+                  height: 20rem;
                 }
 
                 .price {
