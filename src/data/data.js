@@ -8,16 +8,19 @@ export const data = {
       status: 'Disponível',
       categorias: {
         individual: {
+          id: 1594561213,
           tipo: 'individual',
           price: 450.00
         },
         pacote: {
           tipos: [
             {
+              id: 15612312,
               tipo: 'A partir de 3 pessoas',
               price: 450.00,
             },
             {
+              id: 14547451,
               tipo: '4 a 6 pessoas',
               price: 750.00,
             },
@@ -34,16 +37,19 @@ export const data = {
       status: 'Disponível',
       categorias: {
         individual: {
+          id: 123151,
           tipo: 'individual',
           price: 450.00
         },
         pacote: {
           tipos: [
             {
+              id: 121213,
               tipo: 'A partir de 3 pessoas',
               price: 450.00,
             },
             {
+              id: 121311,
               tipo: '4 a 6 pessoas',
               price: 750.00,
             },
@@ -60,20 +66,24 @@ export const data = {
       status: 'Disponível',
       categorias: {
         individual: {
+          id: 123151,
           tipo: 'individual',
           price: 450.00
         },
         pacote: {
           tipos: [
             {
+              id: 28313,
               tipo: 'Com 9 pessoas',
               price: 600.00,
             },
             {
+              id: 16132,
               tipo: 'Com até 10 pessoas',
               price: 750.00,
             },
             {
+              id: 215132,
               tipo: 'Com até 11 pessoas',
               price: 900.00,
             },
@@ -90,20 +100,24 @@ export const data = {
       status: 'Disponível',
       categorias: {
         individual: {
+          id: 78461,
           tipo: 'individual',
           price: 450.00
         },
         pacote: {
           tipos: [
             {
+              id: 8465132,
               tipo: 'Passeio',
               price: 70.00,
             },
             {
+              id: 75421,
               tipo: 'Passeio + Translado ida e volta',
               price: 130.00,
             },
             {
+              id: 7413296,
               tipo: 'Passeio + Translado ida e volta + Almoço',
               price: 170.00,
             },
@@ -120,16 +134,19 @@ export const data = {
       status: 'Disponível',
       categorias: {
         individual: {
+          id: 123156151,
           tipo: 'individual',
           price: 250.00
         },
         pacote: {
           tipos: [
             {
+              id: 741852965213,
               tipo: 'A partir de 3 pessoas',
               price: 250.00,
             },
             {
+              id: 897545312,
               tipo: '4 a 6 pessoas',
               price: 400.00,
             },
@@ -146,16 +163,19 @@ export const data = {
       status: 'Disponível',
       categorias: {
         individual: {
+          id: 79513212,
           tipo: 'individual',
           price: 700.00
         },
         pacote: {
           tipos: [
             {
+              id: 4564231,
               tipo: 'A partir de 3 pessoas',
               price: 700.00,
             },
             {
+              id: 8956531,
               tipo: '4 a 6 pessoas',
               price: 450.00,
             },

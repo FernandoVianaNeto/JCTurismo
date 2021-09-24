@@ -25,6 +25,8 @@ export const Container = styled.div`
       max-width: 120rem;
 
       margin: 0 auto;
+
+      padding: 2rem;
     }
 
 
@@ -149,16 +151,17 @@ export const Container = styled.div`
         button {
           background-color: ${theme.colors.thirdColor};
 
-          border: 1px solid ${theme.colors.primaryColor};
-          border-radius: 18px;
+          border: 1px solid ${theme.colors.thirdColor};
 
           font-family: ${theme.font.family.texts};
           gap: 1rem;
 
+          padding: 1rem 0rem 1rem 0rem;
+
           cursor: pointer;
 
           &:hover {
-            background-color: ${theme.colors.primaryColor};
+            background-color: ${theme.colors.secundaryColor};
             color: ${theme.colors.thirdColor};
           }
         }

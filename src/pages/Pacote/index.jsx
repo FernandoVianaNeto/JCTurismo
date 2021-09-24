@@ -17,17 +17,15 @@ export const Pacote = () => {
 
   const [counter, setCounter] = useState(0);
 
-  const [categ1, setCateg1] = useState(true);
-  const [categ2, setCateg2] = useState(false);
-  const [categ3, setCateg3] = useState(false);
   const [added, setAdded] = useState(false);
 
   const { packageData, shoppingItems } = useSelector(state => state)
-  console.log(packageData);
 
-  const [subtotal, setSubtotal] = useState(packageData.price1);
-  const [categoria, setCategoria] = useState(packageData.categoria1);
-  const [price, setPrice] = useState(packageData.price1)
+  const [select, setSelect] = useState({
+    id: packageData.categorias.individual.id,
+    price: packageData.categorias.individual.price
+  });
+  const adicional = packageData.categorias.pacote.adicional;
 
   useEffect(() => {
     shoppingItems.items.map((obj) => {
@@ -37,46 +35,30 @@ export const Pacote = () => {
 
       return shoppingItems;
     })
+
   }, [packageData.id, shoppingItems])
 
-  function categ1Set() {
-    setCateg1(true);
-    setCateg2(false);
-    setCateg3(false);
-    setSubtotal(packageData.price1 + counter*120);
-
-    setCategoria(packageData.categoria1);
-    setPrice(packageData.price1)
-  }
-
-  function categ2Set() {
-    setCateg1(false);
-    setCateg2(true);
-    setCateg3(false);
-    setSubtotal(packageData.price2 + counter*120);
-
-    setCategoria(packageData.categoria2);
-    setPrice(packageData.price2)
-  }
-
-  function categ3Set() {
-    setCateg1(false);
-    setCateg2(false);
-    setCateg3(true);
-    setSubtotal(packageData.price3  + counter*120);
-
-    setCategoria(packageData.categoria3);
-    setPrice(packageData.price3)
+  function handleSetSelect({ id, price }) {
+    setSelect({
+      id: id,
+      price: price
+    })
   }
 
   function callSetPlus() {
     setCounter(counter + 1)
-    setSubtotal(subtotal + 120)
+    setSelect({
+      ...select,
+      price: select.price + adicional
+    })
   }
 
   function callSetMinus() {
     setCounter(counter - 1)
-    setSubtotal(subtotal - 120)
+    setSelect({
+      ...select,
+      price: select.price - adicional
+    })
   }
 
   return (
@@ -101,11 +83,18 @@ export const Pacote = () => {
             <div className="content-container">
               <div className="pacote-container">
                 <p>Quantidade de pessoas:</p>
-                <button>{packageData.categorias.individual.tipo}</button>
+                <button className={ select.id === packageData.categorias.individual.id ? 'selected' : ''} onClick={() => handleSetSelect({ id: packageData.categorias.individual.id, price: packageData.categorias.individual.price })}>{packageData.categorias.individual.tipo}</button>
+
                 { packageData.categorias.pacote.tipos.map((pacote) => {
-                  return (
-                    <button>{pacote.tipo}</button>
-                  )
+                    return (
+                      <button
+                        onClick={() => handleSetSelect({ id: pacote.id, price: pacote.price })}
+                        className={ pacote.id === select.id ? 'selected' : ''}
+                        key={pacote.id}
+                      >
+                        {pacote.tipo}
+                      </button>
+                    )
                 })}
               </div>
               <div className="acrescer">
@@ -119,14 +108,14 @@ export const Pacote = () => {
                 </div>
               </div>
             </div>
-            <p>Subtotal: <span>R$ {subtotal},00</span></p>
+            <p>Subtotal: <span>R$ {select.price},00</span></p>
           </aside>
         </div>
         <div className="footer">
           { added ? (
             <Button disabled desabilitado>Você já adicionou esse passeio</Button>
           ) : (
-            <Button onClick={() => addNewItem({ id: packageData.id, imgLink: packageData.imgLink, categoria, title: packageData.title, price, amount: 1 })}>Adicionar esse passeio ao carrinho</Button>
+            <Button onClick={() => addNewItem({ id: packageData.id, imgLink: packageData.imgLink, title: packageData.title, amount: 1 })}>Adicionar esse passeio ao carrinho</Button>
           ) }
         </div>
       </div>
