@@ -4,13 +4,16 @@ import { Base } from '../../templates/Base';
 import { ProductCard } from '../../components/ProductCard';
 
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { setNewSubtotal } from '../../store/actions/actions';
 
 import { useHistory } from 'react-router';
 
 export const ShoppingCart = () => {
   const [total, setTotal] = useState(0);
 
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const dataStore = useSelector(state => state);
@@ -19,6 +22,13 @@ export const ShoppingCart = () => {
   useEffect(() => {
     setTotal(0)
   }, [items])
+
+  useEffect(() => {
+    dispatch(setNewSubtotal({
+      subtotal: total,
+    }))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [total])
 
   useEffect(() => {
     let subtotal = [0]

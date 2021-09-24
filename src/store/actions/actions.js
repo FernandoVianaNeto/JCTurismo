@@ -29,10 +29,10 @@ export const removeDestiny = (destinys) => ({
   destinys
 })
 
-export const setNewSubtotal = (subtotal) => ({
+export const setNewSubtotal = ({subtotal}) => ({
   type: 'SET_NEW_SUBTOTAL',
   payload: {
-    subtotal: subtotal
+    subtotal
   }
 })
 

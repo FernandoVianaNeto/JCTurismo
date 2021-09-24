@@ -24,7 +24,7 @@ export function shoppingCart(state = initialState, action) {
     case 'SET_NEW_SUBTOTAL':
       return {
         ...state,
-        subtotal: action.subtotals
+        subtotal: action.payload.subtotal
       }
 
     case 'REMOVE_ITEM':
