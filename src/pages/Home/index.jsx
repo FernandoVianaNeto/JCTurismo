@@ -107,7 +107,7 @@ export const Home = () => {
           <div className="services">
             <h1>Confira nosso serviços</h1>
             <h3>Temos de tudo para oferecer para você uma estadia em Salvador com muitos passeios, turismo, alegria e felicidade com os nossos clientes</h3>
-            <div className="services-container" >
+            <div className="services-container">
               { serviços.map((service) => {
                 return (
                   <div className="service" key={service.id}>

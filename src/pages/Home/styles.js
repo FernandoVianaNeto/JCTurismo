@@ -153,6 +153,9 @@ export const Container = styled.div`
                   justify-content: center;
                   text-align: center;
 
+                  border-bottom: 1px solid ${theme.colors.secundaryColor};
+                  margin: 0 auto;
+
                   min-height: 5rem;
                   color: ${theme.colors.secundaryColor};
                 }
