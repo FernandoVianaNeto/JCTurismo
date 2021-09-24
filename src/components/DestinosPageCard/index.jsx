@@ -2,10 +2,13 @@ import * as Styled from './styles';
 
 import { useDestination } from '../../hooks/useDestination';
 
+import { AiOutlineArrowRight } from 'react-icons/ai';
+
 export const DestinosPageCard = ({ id, title, imgLink, description, categorias }) => {
   const { handleSendPackage } = useDestination();
 
-  console.log(categorias);
+  const ultimaPosição = categorias.pacote.tipos.length - 1
+
   return (
     <Styled.Container>
       <div className="content">
@@ -13,9 +16,9 @@ export const DestinosPageCard = ({ id, title, imgLink, description, categorias }
         <div className="details">
           <div className="header">
             <p className="title">{title}</p>
-            <p>{categorias.individual.tipo}</p>
+            <p><span>{categorias.individual.tipo}</span> <AiOutlineArrowRight /><span>{categorias.pacote.tipos[ultimaPosição].tipo}</span></p>
           </div>
-          <p> {description}</p>
+          <p className="description"> {description}</p>
           <div className="footer" onClick={() => handleSendPackage({ title, categorias, imgLink, description, id })}>
             <button>Comprar esse passeio</button>
             <p>A partir de <span>R$ {categorias.individual.price},00</span></p>
