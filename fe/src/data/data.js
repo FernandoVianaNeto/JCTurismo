@@ -28,7 +28,7 @@ export const data = {
           adicional: 120.00
         }
       },
-      description: "Com saída dos hotéis de Salvador, seguiremos a Linha Verde para conhecer duas das mais belas praias do Litoral Baiano. Primeira parada na Praia do Forte - conhecida como a Polinésia Brasileira, você terá a oportunidade de conhecer o Projeto Tamar, reconhecido internacionalmente como uma das mais bem sucedidas experiências de conservação marinha. Visitará a vilinha mais charmosa  com um ambiente rústico e aconchegante. Segunda parada na Praia de Guarajuba - Uma praia com selo Bandeira Azul que reserva as melhores piscinas naturais, um balneário bem estruturado com águas tranquilas e cristalinas que compõe uma paisagem fantástica. Areia bem fofinha para caminhar pelos corais e uma imensidão de coqueiros.",
+      description: `Com saída dos hotéis de Salvador, seguiremos a Linha Verde para conhecer duas das mais belas praias do Litoral Baiano. Primeira parada na Praia do Forte - conhecida como a Polinésia Brasileira, você terá a oportunidade de conhecer o Projeto Tamar, reconhecido internacionalmente como uma das mais bem sucedidas experiências de conservação marinha. Visitará a vilinha mais charmosa  com um ambiente rústico e aconchegante. Segunda parada na Praia de Guarajuba - Uma praia com selo Bandeira Azul que reserva as melhores piscinas naturais, um balneário bem estruturado com águas tranquilas e cristalinas que compõe uma paisagem fantástica. Areia bem fofinha para caminhar pelos corais e uma imensidão de coqueiros.`,
       smallDescription: 'Com saída dos hotéis de Salvador, seguiremos a Linha Verde para conhecer duas das mais belas praias do Litoral Baiano. Primeira parada na Praia do Forte - conhecida como a Polinésia Brasileira...'
     },
     {
@@ -128,8 +128,8 @@ export const data = {
           adicional: 25.00,
         }
       },
-      description: "Com saída do Terminal Marítimo( Atrás do Mercado Modelo), você irá embarcar em escuna equipada com serviços de bar e guia acompanhante. Durante o percurso, visita-se a Ilha dos Frades e Ponta de Areia (Itaparica), o passeio possibilita uma bela vista da cidade de Salvador. A partir da Baía de Todos os Santos, Forte São Marcelo, Elevador Lacerda e o Mercado Modelo.",
-      smallDescription: 'Com saída do Terminal Marítimo( Atrás do Mercado Modelo), você irá embarcar em escuna equipada com serviços de bar e guia acompanhante...'
+      description: "Com saída do Terminal Marítimo (Atrás do Mercado Modelo), você irá embarcar em escuna equipada com serviços de bar e guia acompanhante. Durante o percurso, visita-se a Ilha dos Frades e Ponta de Areia (Itaparica), o passeio possibilita uma bela vista da cidade de Salvador. A partir da Baía de Todos os Santos, Forte São Marcelo, Elevador Lacerda e o Mercado Modelo.",
+      smallDescription: 'Com saída do Terminal Marítimo (Atrás do Mercado Modelo), você irá embarcar em escuna equipada com serviços de bar e guia acompanhante...'
     },
     {
       id: 5,

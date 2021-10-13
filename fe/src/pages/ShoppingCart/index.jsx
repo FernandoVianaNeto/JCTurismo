@@ -1,14 +1,13 @@
+import React, { useEffect, useState } from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import * as Styled from './styles';
 
 import { Base } from '../../templates/Base';
 import { ProductCard } from '../../components/ProductCard';
 
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
 import { setNewSubtotal } from '../../store/actions/actions';
-
-import { useHistory } from 'react-router';
 
 export const ShoppingCart = () => {
   const [total, setTotal] = useState(0);
@@ -16,31 +15,30 @@ export const ShoppingCart = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const dataStore = useSelector(state => state);
-  const items = dataStore.shoppingItems.items;
+  const dataStore = useSelector((state) => state);
+  const { items } = dataStore.shoppingItems;
 
   useEffect(() => {
-    setTotal(0)
-  }, [items])
+    setTotal(0);
+  }, [items]);
 
   useEffect(() => {
     dispatch(setNewSubtotal({
       subtotal: total,
-    }))
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [total])
+    }));
+  }, [total]);
 
   useEffect(() => {
-    let subtotal = [0]
+    const subtotal = [0];
     items.map((card) => {
-      subtotal.push(card.price * card.amount)
+      subtotal.push(card.price * card.amount);
       return items;
-    })
+    });
 
-    setTotal(subtotal.reduce((total, element) => total + element))
+    setTotal(subtotal.reduce((element) => total + element));
 
     return subtotal;
-  }, [items])
+  }, [items]);
 
   return (
     <Styled.Container>
@@ -57,21 +55,18 @@ export const ShoppingCart = () => {
               {items.length === 0 ? (
                 <h4>Adicione algum item ao carrinho...</h4>
               ) : (
-                items.map((card) => {
-                  return (
-                    <ProductCard
-                      key={card.id}
-                      imgLink={card.imgLink}
-                      title={card.title}
-                      price={card.price}
-                      id={card.id}
-                      amount={card.amount}
-                      categoria={card.categoria}
-                    />
-                  )
-                }
-              )
-            )}
+                items.map((card) => (
+                  <ProductCard
+                    key={card.id}
+                    imgLink={card.imgLink}
+                    title={card.title}
+                    price={card.price}
+                    id={card.id}
+                    amount={card.amount}
+                    categoria={card.categoria}
+                  />
+                ))
+              )}
 
             </div>
           </div>
@@ -80,13 +75,19 @@ export const ShoppingCart = () => {
           <div className="subtotal">
             {items.length > 0 && (
               <>
-              <h3>
-                Subtotal:
-                <span> R$ {total},00</span>
-              </h3>
-              <button onClick={() => history.push('/pagamento')}>
-                Seguir para o pagamento
-              </button>
+                <h3>
+                  Subtotal:
+                  <span>
+                    {' '}
+                    R$
+                    {' '}
+                    {total}
+                    ,00
+                  </span>
+                </h3>
+                <button type="button" onClick={() => history.push('/pagamento')}>
+                  Seguir para o pagamento
+                </button>
               </>
             )}
           </div>

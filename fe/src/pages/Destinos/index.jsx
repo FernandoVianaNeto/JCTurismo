@@ -1,3 +1,4 @@
+import React from 'react';
 import * as Styled from './styles';
 
 import { Base } from '../../templates/Base';
@@ -14,18 +15,16 @@ export const Destinos = () => {
         <h1>Os melhores pacotes com os melhores preços</h1>
         <div className="package-map">
           {
-            destinos.map((card) => {
-              return (
-                <DestinosPageCard
-                  key={card.id}
-                  imgLink={card.imgLink}
-                  title={card.title}
-                  categorias={card.categorias}
-                  description={card.description}
-                  id={card.id}
-                />
-              )
-            })
+            destinos.map((card) => (
+              <DestinosPageCard
+                key={card.id}
+                imgLink={card.imgLink}
+                title={card.title}
+                categorias={card.categorias}
+                description={card.description}
+                id={card.id}
+              />
+            ))
           }
         </div>
       </div>
