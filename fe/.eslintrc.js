@@ -23,5 +23,7 @@ module.exports = {
     'max-len': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
+    'no-inner-declarations': 'off',
+    'no-return-assign': 'off',
   },
 };
