@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({ theme, bestSeller, background }) => css`
+  ${({ theme }) => css`
     display: flex;
     flex-direction: column;
 

@@ -1,13 +1,13 @@
 import { createStore } from 'redux';
-import { rootReducer } from './reducers/index';
 
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { rootReducer } from './reducers/index';
 
 const persistConfig = {
   key: 'jctData',
   storage,
-}
+};
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

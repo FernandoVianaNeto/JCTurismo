@@ -1,4 +1,6 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import React from 'react';
+
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { Home } from './pages/Home';
 import { ShoppingCart } from './pages/ShoppingCart';
@@ -21,7 +23,7 @@ function App() {
         <Route path="/citytour" exact component={CityTour} />
       </Switch>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;

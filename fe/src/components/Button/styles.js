@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({theme}) => css`
+  ${({ theme }) => css`
 
     button {
       background-color: ${theme.colors.secundaryColor};

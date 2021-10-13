@@ -6,7 +6,7 @@ const setBackground = (theme) => css`
 `;
 
 export const Container = styled.div`
-  ${({theme, background}) => css`
+  ${({ theme, background }) => css`
     height: auto;
     padding: 2rem;
     border-bottom: 1px solid ${theme.colors.thirdColor};

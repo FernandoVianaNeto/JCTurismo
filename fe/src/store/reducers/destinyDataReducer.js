@@ -6,11 +6,11 @@ const initialState = {
   link: null,
   description: null,
   id: null,
-  categoria: null
-}
+  categoria: null,
+};
 
 export function sendDestinyData(state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case 'SEND_DESTINY_DATA':
       return {
         id: action.payload.id,
@@ -20,12 +20,10 @@ export function sendDestinyData(state = initialState, action) {
         subtitle: action.payload.subtitle,
         link: action.payload.link,
         description: action.payload.description,
-        categoria: action.payload.categoria
-      }
+        categoria: action.payload.categoria,
+      };
 
-      default:
-        return state;
+    default:
+      return state;
   }
-
-
 }

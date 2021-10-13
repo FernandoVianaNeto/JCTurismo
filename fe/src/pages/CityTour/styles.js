@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({theme}) => css`
+  ${({ theme }) => css`
 
     .content {
       margin: 5rem;

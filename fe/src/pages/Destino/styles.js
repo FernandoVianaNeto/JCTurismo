@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({theme}) => css`
+  ${({ theme }) => css`
     h1 {
       font-family: ${theme.font.family.texts};
       color: ${theme.colors.primaryColor};

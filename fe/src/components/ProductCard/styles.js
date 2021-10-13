@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({theme}) => css`
+  ${({ theme }) => css`
     display: flex;
     align-items: center;
     border: 1px solid ${theme.colors.primaryColor};

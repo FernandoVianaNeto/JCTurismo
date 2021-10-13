@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { ThemeProvider } from 'styled-components';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import App from './App';
 
-import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './styles/global-styles';
 import { theme } from './styles/theme';
-
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react'
 
 import { store, persistor } from './store/index';
 
@@ -23,5 +22,5 @@ ReactDOM.render(
       </Provider>
     </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

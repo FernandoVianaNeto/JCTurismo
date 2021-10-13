@@ -1,38 +1,40 @@
 import { useDispatch } from 'react-redux';
 
-import { sendDestinyData } from '../store/actions/actions';
-import { setPackageData } from '../store/actions/actions';
-
 import { useHistory } from 'react-router-dom';
+import { sendDestinyData, setPackageData } from '../store/actions/actions';
 
 export const useDestination = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  function handleSendInformation({ imgLink, price, title, subtitle, link, description, id, categoria }) {
+  function handleSendInformation({
+    imgLink, price, title, subtitle, link, description, id, categoria,
+  }) {
     dispatch(sendDestinyData({
-      id: id,
-      imgLink: imgLink,
-      title: title,
-      price: price,
-      subtitle: subtitle,
-      link: link,
-      description: description,
-      categoria: categoria
-    }))
+      id,
+      imgLink,
+      title,
+      price,
+      subtitle,
+      link,
+      description,
+      categoria,
+    }));
   }
 
-  function handleSendPackage({ id, title, imgLink, description, categorias }) {
+  function handleSendPackage({
+    id, title, imgLink, description, categorias,
+  }) {
     dispatch(setPackageData({
-      categorias: categorias,
-      title: title,
-      imgLink: imgLink,
-      description: description,
-      id: id
-    }))
+      categorias,
+      title,
+      imgLink,
+      description,
+      id,
+    }));
 
     history.push('/destino');
   }
 
   return { handleSendInformation, handleSendPackage };
-}
+};

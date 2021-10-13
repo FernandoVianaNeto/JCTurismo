@@ -1,10 +1,10 @@
 const initialState = {
   subtotal: 0,
-  items: []
-}
+  items: [],
+};
 
 export function shoppingCart(state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case 'ADD_NEW_ITEM':
       return {
         ...state,
@@ -16,31 +16,30 @@ export function shoppingCart(state = initialState, action) {
             title: action.payload.title,
             price: action.payload.price,
             amount: action.payload.amount,
-            categoria: action.payload.categoria
-          }
-        ]
-      }
+            categoria: action.payload.categoria,
+          },
+        ],
+      };
 
     case 'SET_NEW_SUBTOTAL':
       return {
         ...state,
-        subtotal: action.payload.subtotal
-      }
+        subtotal: action.payload.subtotal,
+      };
 
     case 'REMOVE_ITEM':
       return {
         ...state,
-        items: action.destinys
-      }
+        items: action.destinys,
+      };
 
     case 'SET_NEW_AMOUNT':
       return {
         ...state,
-        items: action.payload.amount
-      }
+        items: action.payload.amount,
+      };
 
-      default:
-        return state;
+    default:
+      return state;
   }
-
 }

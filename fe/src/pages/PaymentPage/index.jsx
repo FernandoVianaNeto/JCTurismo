@@ -10,7 +10,7 @@ export const PaymentPage = () => {
   const [loaded, setLoaded] = useState(false);
 
   const { shoppingItems } = useSelector((state) => state);
-  const { subtotal } = shoppingItems;
+  // const { subtotal } = shoppingItems;
   console.log(shoppingItems);
 
   let paypalRef = useRef();
@@ -44,12 +44,8 @@ export const PaymentPage = () => {
                   },
                 ],
               }),
-              onApprove: async (_, actions) => {
-                const order = await actions.order.capture();
-
+              onApprove: async () => {
                 setPaid(true);
-
-                console.log(order);
               },
             })
             .render(paypalRef);
