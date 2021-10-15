@@ -6,7 +6,7 @@ import * as Styled from './styles';
 
 import { Base } from '../../templates/Base';
 
-import { Button } from '../../components/Button';
+import Button from '../../components/Button';
 
 import { useAddItem } from '../../hooks/useAddItem';
 

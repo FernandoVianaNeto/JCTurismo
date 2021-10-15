@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 import { useDispatch } from 'react-redux';
 
 import { addNewDestiny } from '../store/actions/actions';
@@ -9,12 +10,12 @@ export const useAddItem = () => {
     imgLink, title, price, id, amount, categoria,
   }) {
     dispatch(addNewDestiny({
-      id,
-      imgLink,
-      title,
-      price,
-      amount,
-      categoria,
+      id: id,
+      imgLink: imgLink,
+      title: title,
+      price: price,
+      amount: amount,
+      categoria: categoria,
     }));
   }
 

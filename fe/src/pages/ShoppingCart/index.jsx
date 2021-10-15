@@ -15,8 +15,8 @@ export const ShoppingCart = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const dataStore = useSelector((state) => state);
-  const { items } = dataStore.shoppingItems;
+  const { shoppingItems } = useSelector((state) => state);
+  const { items } = shoppingItems;
 
   useEffect(() => {
     setTotal(0);
@@ -35,7 +35,8 @@ export const ShoppingCart = () => {
       return items;
     });
 
-    setTotal(subtotal.reduce((element) => total + element));
+    // eslint-disable-next-line no-shadow
+    setTotal(subtotal.reduce((total, element) => total + element));
 
     return subtotal;
   }, [items]);

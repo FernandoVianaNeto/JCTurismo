@@ -10,22 +10,22 @@ export const data = {
         individual: {
           id: 1594561213,
           tipo: 'individual',
-          price: 450.00,
+          price: 500.00,
         },
         pacote: {
           tipos: [
             {
               id: 15612312,
-              tipo: 'A partir de 3 pessoas',
-              price: 450.00,
+              tipo: 'Até de 3 pessoas',
+              price: 500.00,
             },
             {
               id: 14547451,
               tipo: '4 a 6 pessoas',
-              price: 750.00,
+              price: 800.00,
             },
           ],
-          adicional: 120.00,
+          adicional: 130.00,
         },
       },
       description: 'Com saída dos hotéis de Salvador, seguiremos a Linha Verde para conhecer duas das mais belas praias do Litoral Baiano. Primeira parada na Praia do Forte - conhecida como a Polinésia Brasileira, você terá a oportunidade de conhecer o Projeto Tamar, reconhecido internacionalmente como uma das mais bem sucedidas experiências de conservação marinha. Visitará a vilinha mais charmosa  com um ambiente rústico e aconchegante. Segunda parada na Praia de Guarajuba - Uma praia com selo Bandeira Azul que reserva as melhores piscinas naturais, um balneário bem estruturado com águas tranquilas e cristalinas que compõe uma paisagem fantástica. Areia bem fofinha para caminhar pelos corais e uma imensidão de coqueiros.',
@@ -41,22 +41,22 @@ export const data = {
         individual: {
           id: 123151,
           tipo: 'individual',
-          price: 450.00,
+          price: 500.00,
         },
         pacote: {
           tipos: [
             {
               id: 121213,
-              tipo: 'A partir de 3 pessoas',
-              price: 450.00,
+              tipo: 'Até 3 pessoas',
+              price: 500.00,
             },
             {
               id: 121311,
               tipo: '4 a 6 pessoas',
-              price: 750.00,
+              price: 800.00,
             },
           ],
-          adicional: 120.00,
+          adicional: 130.00,
         },
       },
       description: 'A pouco mais de 10 km da Praia do Forte, a vila de Imbassaí teve origem em uma pequena aldeia indígena que hoje se tornou um dos destinos turísticos mais gostosos da Bahia. Com ótima infraestrutura de pousadas, bares, restaurantes, lojas de artesanato, e opções para todos os gostos, a Praia de Imbassaí vem conquistando todos que passam alguns dias por lá. Principalmente por causa dos ótimos preços praticados, bem diferente da sua badalada vizinha.',
@@ -102,33 +102,33 @@ export const data = {
     {
       id: 4,
       imgLink: 'https://res.cloudinary.com/dh84pxwgu/image/upload/v1628200208/WhatsApp_Image_2021-08-05_at_18.49.57_ehjfpe.jpg',
-      title: 'Passeio Ilha dos Frades Itaparica',
+      title: 'Passeio Ilha dos Frades - Itaparica',
       status: 'Disponível',
       categorias: {
         individual: {
           id: 78461,
           tipo: 'individual',
-          price: 450.00,
+          price: 80.00,
         },
         pacote: {
           tipos: [
             {
               id: 8465132,
               tipo: 'Passeio',
-              price: 70.00,
+              price: 80.00,
             },
             {
               id: 75421,
               tipo: 'Passeio + Translado ida e volta',
-              price: 130.00,
+              price: 140.00,
             },
             {
               id: 7413296,
               tipo: 'Passeio + Translado ida e volta + Almoço',
-              price: 170.00,
+              price: 180.00,
             },
           ],
-          adicional: 25.00,
+          // adicional: 25.00,
         },
       },
       description: 'Com saída do Terminal Marítimo (Atrás do Mercado Modelo), você irá embarcar em escuna equipada com serviços de bar e guia acompanhante. Durante o percurso, visita-se a Ilha dos Frades e Ponta de Areia (Itaparica), o passeio possibilita uma bela vista da cidade de Salvador. A partir da Baía de Todos os Santos, Forte São Marcelo, Elevador Lacerda e o Mercado Modelo.',
@@ -144,22 +144,22 @@ export const data = {
         individual: {
           id: 123156151,
           tipo: 'individual',
-          price: 250.00,
+          price: 280.00,
         },
         pacote: {
           tipos: [
             {
               id: 741852965213,
-              tipo: 'A partir de 3 pessoas',
-              price: 250.00,
+              tipo: 'Até 3 pessoas',
+              price: 280.00,
             },
             {
               id: 897545312,
               tipo: '4 a 6 pessoas',
-              price: 400.00,
+              price: 450.00,
             },
           ],
-          adicional: 80.00,
+          adicional: 100.00,
         },
       },
       description: 'Este passeio dura cerca de 5 horas e é um dos mais interessantes. Isso porque o guia irá te conduzir para uma viagem no tempo e te levará para conhecer cada cantinho dessa cidade fantástica. No percurso está incluso a Cidade Alta, o Largo do Pelourinho, Terreiro de Jesus, a Igreja de São Francisco (visita opcional), o Elevador Lacerda, a Igreja do Bonfim e o Mercado Modelo. Em todos os locais do roteiro haverá paradas para que você possa passear, tirar fotos e conhecer. É um passeio bem cultural e que vale a pena incluir em sua lista de o que fazer em Salvador.',
@@ -181,16 +181,16 @@ export const data = {
           tipos: [
             {
               id: 4564231,
-              tipo: 'A partir de 3 pessoas',
+              tipo: 'Até 3 pessoas',
               price: 700.00,
             },
             {
               id: 8956531,
               tipo: '4 a 6 pessoas',
-              price: 450.00,
+              price: 1000.00,
             },
           ],
-          adicional: 120.00,
+          adicional: 150.00,
         },
       },
       description: "Com saída dos hotéis de Salvador, seguiremos pelo extremo Norte do Estado até a divisa de Bahia e Sergipe por aproximadamente 200 km até chegar ao povado de Pontal e atravessar o Rio Real em lancha para Mangue Seco. Mangue Seco é totalmente pé na areia e não existem ruas, a vila é composta por trilhas onde os 'bugueiros' conduzem os turistas para desfrutar da belíssima praia rodeada de coqueiros e dunas. Famosa por ter sido o cenário da novela Tieta, inspirada no romance de Jorge Amado, com potencial turístico enorme, pela beleza da região. Com dunas de areia fininha, praia quase deserta, um cenário especial para um delicioso passeio de quadriciclo, banho de mar e aproveitar da deliciosa culinária.",

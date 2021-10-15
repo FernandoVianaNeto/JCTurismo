@@ -8,16 +8,16 @@ import * as Styled from './styles';
 export const PaymentPage = () => {
   const [paid, setPaid] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [descriptions, setDescriptions] = useState('');
 
   const { shoppingItems } = useSelector((state) => state);
-  // const { subtotal } = shoppingItems;
-  console.log(shoppingItems);
+  const { subtotal } = shoppingItems;
 
   let paypalRef = useRef();
 
   const product = {
-    price: 15.70,
-    description: 'curso react',
+    price: subtotal,
+    description: 'litoral norte',
   };
 
   useEffect(() => {
@@ -55,14 +55,26 @@ export const PaymentPage = () => {
     }
   });
 
+  useEffect(() => {
+    shoppingItems.items.map((item) => {
+      const { title } = item;
+      setDescriptions({
+        ...descriptions,
+        title,
+      });
+
+      return shoppingItems.items;
+    });
+  }, [subtotal]);
+
   return (
     <Styled.Container>
       { paid ? (
-        <div>
+        <div className="congratulations">
           <h1>Parabens, você concluiu o pagamento</h1>
         </div>
       ) : (
-        <div>
+        <div className="payment-container">
           <h1>
             {product.description}
             {' '}
