@@ -1,24 +1,36 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import { useSelector } from 'react-redux';
+import Input from '../../components/Input';
 import * as Styled from './styles';
-
-// import { Base } from '../../templates/Base';
 
 export const PaymentPage = () => {
   const [paid, setPaid] = useState(false);
   const [loaded, setLoaded] = useState(false);
-  const [descriptions, setDescriptions] = useState('');
+  const [description, setDescription] = useState([]);
 
   const { shoppingItems } = useSelector((state) => state);
-  const { subtotal } = shoppingItems;
+  const { subtotal, items } = shoppingItems;
 
   let paypalRef = useRef();
 
-  const product = {
+  const products = [];
+  const productDescription = {
     price: subtotal,
-    description: 'litoral norte',
+    description,
   };
+
+  useEffect(() => {
+    items.map((item) => {
+      products.push([{
+        product: item.title,
+        categoria: item.categoria,
+      }]);
+
+      return items;
+    });
+    setDescription(products);
+  }, [items]);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -36,10 +48,10 @@ export const PaymentPage = () => {
               createOrder: (data, actions) => actions.order.create({
                 purchase_units: [
                   {
-                    description: product.description,
+                    description: JSON.stringify(productDescription.description.map((product) => product)),
                     amount: {
                       currency_code: 'BRL',
-                      value: product.price,
+                      value: productDescription.price,
                     },
                   },
                 ],
@@ -55,35 +67,43 @@ export const PaymentPage = () => {
     }
   });
 
-  useEffect(() => {
-    shoppingItems.items.map((item) => {
-      const { title } = item;
-      setDescriptions({
-        ...descriptions,
-        title,
-      });
-
-      return shoppingItems.items;
-    });
-  }, [subtotal]);
-
   return (
     <Styled.Container>
       { paid ? (
         <div className="congratulations">
-          <h1>Parabens, você concluiu o pagamento</h1>
+          <a href=" " name="chamada"> </a>
+          <img src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1626980792/WhatsApp_Image_2021-07-22_at_15.41.41-removebg-preview_hydex1.png" alt="logo" />
+          <strong>Nós somos a JCT Turismo</strong>
+          <p>
+            Empresa com gostinho baiano que vai proporcionar para você  os melhores passeios  que irá  encontrar na cidade.
+            <br />
+            Focada em excelência e satisfação, procuramos sempre mostrar como um cliente deve ser tratado.
+
+          </p>
+          <strong>Entre em contato conosco e marque a melhor viagem da sua vida</strong>
         </div>
       ) : (
         <div className="payment-container">
-          <h1>
-            {product.description}
+          <section>
+            <h1>Escolha a melhor forma de pagamento</h1>
+            <div ref={(v) => (paypalRef = v)} />
+          </section>
+          <aside>
+            <h1>
+              Você está comprando:
+            </h1>
+            {productDescription.description.map((prod) => (
+              <p key={prod.id}>{prod}</p>
+            ))}
             {' '}
             por R$
-            {product.price}
-          </h1>
-          <div ref={(v) => (paypalRef = v)} />
-        </div>
+            {productDescription.price}
 
+            <form action="">
+              <Input placeholder="Digite seu nome" />
+            </form>
+          </aside>
+        </div>
       ) }
     </Styled.Container>
   );

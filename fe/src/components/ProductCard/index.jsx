@@ -1,5 +1,7 @@
-import P from 'prop-types';
 import React, { useState, useEffect } from 'react';
+
+import P from 'prop-types';
+
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import * as Styled from './styles';
 
@@ -82,7 +84,7 @@ export const ProductCard = ({
       </div>
       <div className="total">
         <p>
-          Total: R$
+          Subtotal: R$
           {' '}
           {`${total},00`}
         </p>

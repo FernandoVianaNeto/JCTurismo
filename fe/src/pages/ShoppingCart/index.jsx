@@ -19,7 +19,13 @@ export const ShoppingCart = () => {
   const { items } = shoppingItems;
 
   useEffect(() => {
-    setTotal(0);
+    const subtotal = [0];
+    items.map((product) => {
+      subtotal.push(product.price * product.amount);
+      return items;
+    });
+
+    setTotal(subtotal.reduce((tot, product) => tot + product));
   }, [items]);
 
   useEffect(() => {
@@ -27,19 +33,6 @@ export const ShoppingCart = () => {
       subtotal: total,
     }));
   }, [total]);
-
-  useEffect(() => {
-    const subtotal = [0];
-    items.map((card) => {
-      subtotal.push(card.price * card.amount);
-      return items;
-    });
-
-    // eslint-disable-next-line no-shadow
-    setTotal(subtotal.reduce((total, element) => total + element));
-
-    return subtotal;
-  }, [items]);
 
   return (
     <Styled.Container>
@@ -77,7 +70,7 @@ export const ShoppingCart = () => {
             {items.length > 0 && (
               <>
                 <h3>
-                  Subtotal:
+                  Total:
                   <span>
                     {' '}
                     R$
