@@ -21,26 +21,58 @@ export const Container = styled.div`
         align-items: center;
         justify-content: center;
         gap: 2rem;
+
         background-color: white;
 
-        width: 100%;
         flex: 2;
+
+        header {
+          width: 100%;
+        }
 
         img {
           width: 40rem;
         }
 
-        h1 {
+        p {
+          width: 100%;
+          text-align: left;
+          display: flex;
           font-family: ${theme.font.family.texts};
-          color: ${theme.colors.backgroundColor};
-          width: 40rem;
+
+          strong {
+            color: ${theme.colors.secundaryColor};
+          }
+        }
+
+        h1 {
+          width: 100%;
+          font-family: ${theme.font.family.texts};
+          color: ${theme.colors.secundaryColor};
           text-align: left;
         }
 
         form {
-          width: 50rem;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          width: 60rem;
+          padding: 5rem;
+          small {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-color: blue;
+            text-align: right;
+          }
+        }
+
+        .price-footer{
+          width: 100%;
+          text-align: center;
         }
       }
+
       section {
         display: flex;
         flex-direction: column;
@@ -49,6 +81,7 @@ export const Container = styled.div`
         background-color: ${theme.colors.backgroundColor};
         gap: 2rem;
 
+        padding: 3rem;
         flex: 1;
 
         h1 {

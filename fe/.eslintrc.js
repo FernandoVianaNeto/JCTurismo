@@ -25,5 +25,6 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     'no-inner-declarations': 'off',
     'no-return-assign': 'off',
+    'react/jsx-one-expression-per-line': 'off',
   },
 };

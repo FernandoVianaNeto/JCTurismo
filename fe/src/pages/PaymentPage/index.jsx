@@ -8,6 +8,10 @@ export const PaymentPage = () => {
   const [paid, setPaid] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [description, setDescription] = useState([]);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [date, setDate] = useState('');
 
   const { shoppingItems } = useSelector((state) => state);
   const { subtotal, items } = shoppingItems;
@@ -22,10 +26,8 @@ export const PaymentPage = () => {
 
   useEffect(() => {
     items.map((item) => {
-      products.push([{
-        product: item.title,
-        categoria: item.categoria,
-      }]);
+      const passeio = { id: item.id, title: item.title, categoria: item.categoria };
+      products.push(passeio);
 
       return items;
     });
@@ -89,18 +91,58 @@ export const PaymentPage = () => {
             <div ref={(v) => (paypalRef = v)} />
           </section>
           <aside>
-            <h1>
-              Você está comprando:
-            </h1>
-            {productDescription.description.map((prod) => (
-              <p key={prod.id}>{prod}</p>
-            ))}
-            {' '}
-            por R$
-            {productDescription.price}
+            <header>
+              <h1>
+                Você está comprando:
+              </h1>
+              {productDescription.description.map((prod) => (
+                <p key={prod.id}>
+                  {prod.title}
+                  {' '}
+                  -
+                  {' '}
+                  <strong>
+                    {' '}
+                    {prod.categoria}
+                  </strong>
+
+                </p>
+              ))}
+              <p className="price-footer">
+                {' '}
+                por
+                <strong>
+                  R$ {productDescription.price}
+                </strong>
+              </p>
+            </header>
 
             <form action="">
-              <Input placeholder="Digite seu nome" />
+              <Input
+                type="text"
+                placeholder="Digite seu nome*"
+                onChange={(event) => setName(event.target.value)}
+                value={name}
+              />
+              <div>
+                <Input
+                  type="date"
+                  placeholder="Selecione a data*"
+                  onChange={(event) => setDate(event.target.value)}
+                  value={date}
+                />
+                <small>Selecione a data que deseja realizar o passeio*</small>
+              </div>
+              <Input
+                placeholder="Qual o seu telefone?*"
+                value={phone}
+                onChange={(event) => setPhone(event.target.value)}
+              />
+              <Input
+                placeholder="Qual o seu e-mail?*"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
             </form>
           </aside>
         </div>
