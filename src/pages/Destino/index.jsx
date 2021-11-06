@@ -5,7 +5,6 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import * as Styled from './styles';
 
 import { Base } from '../../templates/Base';
-
 import Button from '../../components/Button';
 
 import { useAddItem } from '../../hooks/useAddItem';

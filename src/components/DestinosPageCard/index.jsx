@@ -3,39 +3,40 @@ import React from 'react';
 import P from 'prop-types';
 
 import { AiOutlineArrowRight } from 'react-icons/ai';
-import * as Styled from './styles';
+import {
+  Container, Content, Group, Footer, Header,
+} from './styles';
 
 import { useDestination } from '../../hooks/useDestination';
 
 export const DestinosPageCard = ({
-  id, title, imgLink, description, categorias,
+  id, title, imglink, description, categories,
 }) => {
   const { handleSendPackage } = useDestination();
 
-  const ultimaPosição = categorias.pacote.tipos.length - 1;
+  const ultimaPosição = categories.pacote.types.length - 1;
 
   return (
-    <Styled.Container>
-      <div className="content">
-        <img src={imgLink} alt="imgAlt" />
-        <div className="details">
-          <div className="header">
-            <p className="title">{title}</p>
+    <Container>
+      <Content>
+        <img src={imglink} alt="imgAlt" />
+        <Group>
+          <Header>
+            <p>{title}</p>
             <p>
-              <span>{categorias.individual.tipo}</span>
+              <span>{categories.individual.type}</span>
               {' '}
               <AiOutlineArrowRight />
-              <span>{categorias.pacote.tipos[ultimaPosição].tipo}</span>
+              <span>{categories.pacote.types[ultimaPosição].type}</span>
             </p>
-          </div>
+          </Header>
           <p className="description">
             {' '}
             {description}
           </p>
-          <div
-            className="footer"
+          <Footer
             onClick={() => handleSendPackage({
-              title, categorias, imgLink, description, id,
+              title, categories, imglink, description, id,
             })}
           >
             <button type="button">Comprar esse passeio</button>
@@ -44,22 +45,22 @@ export const DestinosPageCard = ({
               {' '}
               <span>
                 R$
-                {categorias.individual.price}
+                {categories.individual.price}
                 ,00
               </span>
             </p>
-          </div>
-        </div>
-      </div>
-
-    </Styled.Container>
+          </Footer>
+        </Group>
+      </Content>
+    </Container>
   );
 };
 
 DestinosPageCard.propTypes = {
-  id: P.number.isRequired,
+  id: P.string.isRequired,
   title: P.string.isRequired,
-  imgLink: P.string.isRequired,
+  imglink: P.string.isRequired,
   description: P.string.isRequired,
-  categorias: P.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  categories: P.object.isRequired,
 };
