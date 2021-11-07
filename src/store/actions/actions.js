@@ -1,19 +1,3 @@
-export const sendDestinyData = ({
-  imgLink, price, title, subtitle, link, description, id, categoria,
-}) => ({
-  type: 'SEND_DESTINY_DATA',
-  payload: {
-    id,
-    imgLink,
-    title,
-    price,
-    subtitle,
-    link,
-    description,
-    categoria,
-  },
-});
-
 export const addNewDestiny = ({
   imgLink, price, title, id, amount, categoria,
 }) => ({

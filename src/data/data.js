@@ -242,3 +242,37 @@ export const data = {
     },
   ],
 };
+
+// modelo de data:
+// {
+//   "id": "67c12281-e208-41ad-8f78-d88e3c70aa7f",
+//   "title": "Mangue Seco",
+//   "imglink": "https://res.cloudinary.com/dh84pxwgu/image/upload/v1630440293/WhatsApp_Image_2021-08-31_at_17.04.42_ry7oci.jpg",
+//   "status": true,
+//   "description": "Com saída dos hotéis de Salvador, seguiremos pelo extremo Norte do Estado até a divisa de Bahia e Sergipe por aproximadamente 200 km até chegar ao povado de Pontal e atravessar o Rio Real em lancha para Mangue Seco. Mangue Seco é totalmente pé na areia e não existem ruas, a vila é composta por trilhas onde os 'bugueiros' conduzem os turistas para desfrutar da belíssima praia rodeada de coqueiros e dunas. Famosa por ter sido o cenário da novela Tieta, inspirada no romance de Jorge Amado, com potencial turístico enorme, pela beleza da região. Com dunas de areia fininha, praia quase deserta, um cenário especial para um delicioso passeio de quadriciclo, banho de mar e aproveitar da deliciosa culinária.",
+//   "smalldescription": "Com saída dos hotéis de Salvador, seguiremos pelo extremo Norte do Estado até a divisa de Bahia e Sergipe por aproximadamente 200 km até chegar ao povado de Pontal e atravessar o Rio Real em lancha para Mangue Seco...",
+//   "paymentdescription": "Passeio Mangue Seco",
+//   "categories": {
+//     "individual": {
+//       "id": 79513212,
+//       "type": "individual",
+//       "price": 700
+//     },
+//     "pacote": {
+//       "types": [
+//         {
+//           "id": 4564231,
+//           "type": "Até 3 pessoas",
+//           "price": 700
+//         },
+//         {
+//           "id": 8956531,
+//           "type": "4 a 6 pessoas",
+//           "price": 1000
+//         }
+//       ],
+//       "adicional": 150
+//     }
+//   },
+//   "avaliations": null
+// }

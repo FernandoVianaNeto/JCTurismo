@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -75,7 +76,7 @@ export const Destino = () => {
     <Container>
       <Base />
       {
-          destinoData.id !== 0 ? (
+          destinoData.id !== undefined ? (
             <ContainerItems>
               <h1>{destinoData.title}</h1>
               <Content>
@@ -163,14 +164,18 @@ export const Destino = () => {
               </Content>
               <div className="footer">
                 { added ? (
-                  <Button disabled desabilitado>Você já adicionou esse passeio</Button>
+                  <Button disabled>Você já adicionou esse passeio</Button>
                 ) : (
-                  <Button onClick={() => addNewItem({
-                    id: destinoData.id, imgLink: destinoData.imglink, title: destinoData.title, amount: 1, price: select.price, categoria: select.categoria,
-                  })}
-                  >
-                    Adicionar esse passeio ao carrinho
-                  </Button>
+                  select.typeId !== undefined ? (
+                    <Button onClick={() => addNewItem({
+                      id: destinoData.id, imgLink: destinoData.imglink, title: destinoData.title, amount: 1, price: select.price, categoria: select.categoria,
+                    })}
+                    >
+                      Adicionar esse passeio ao carrinho
+                    </Button>
+                  ) : (
+                    <Button disabled>Selecione uma categoria</Button>
+                  )
                 ) }
               </div>
             </ContainerItems>
