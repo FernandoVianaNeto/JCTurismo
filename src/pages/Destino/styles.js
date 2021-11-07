@@ -21,175 +21,9 @@ export const Container = styled.div`
       margin: 1rem auto;
     }
 
-    .container-items {
-      max-width: 120rem;
-
-      margin: 0 auto;
-
-      padding: 2rem;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-
-    }
-
-
-    .content {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-
-      margin: 3rem auto;
-
-      img {
-        width: 30rem;
-        height: 30rem;
-
-        border-radius: 18px;
-      }
-
-      section {
-        background-color: #F3EFF5;
-
-        flex: 6;
-
-        padding: 2rem;
-
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-
-        border-radius: 18px;
-
-        .img-container {
-          text-align: center;
-
-          font-family: ${theme.font.family.texts};
-        }
-
-        .description {
-
-          h2 {
-            font-family: ${theme.font.family.texts};
-            color: ${theme.colors.secundaryColor};
-
-            text-align: center;
-            margin-bottom: 2rem;
-          }
-
-          p {
-            font-family: ${theme.font.family.texts};
-            text-align: justify;
-
-            padding: 1rem;
-
-            span {
-              color: ${theme.colors.secundaryColor};
-              font-weight: bold;
-            }
-          }
-
-          .subtotal-description {
-            text-align: right;
-          }
-
-        }
-      }
-
       aside {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
 
-        padding: 2rem;
-
-        border-radius: 18px;
-
-        background-color: #F3EFF5;
-        flex: 2;
-
-        .content-container {
-          display: flex;
-          flex-direction: column;
-          gap: 4rem;
-        }
-
-        .pacote-container {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-
-          div {
-            display: flex;
-            gap: 1rem;
-          }
-        }
-
-        .acrescer {
-          div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-
-            button {
-              background: transparent;
-              border: none;
-
-              display:flex;
-              align-items: center;
-            }
-          }
-        }
-
-        p {
-          font-family: ${theme.font.family.texts};
-
-          span {
-            color: ${theme.colors.secundaryColor};
-          }
-        }
-
-        button {
-          background-color: ${theme.colors.thirdColor};
-          color: ${theme.colors.secundaryColor};
-
-          border: 1px solid ${theme.colors.thirdColor};
-
-          font-family: ${theme.font.family.texts};
-          gap: 1rem;
-
-          padding: 1rem 0rem 1rem 0rem;
-
-          cursor: pointer;
-
-          &:hover {
-            background-color: ${theme.colors.secundaryColor};
-            color: ${theme.colors.thirdColor};
-          }
-        }
-
-        .amount-button {
-          color: ${theme.colors.secundaryColor};
-
-          &:hover {
-            color: ${theme.colors.secundaryColor};
-          }
-        }
-
-        .selected {
-          background-color: ${theme.colors.secundaryColor};
-          color: ${theme.colors.thirdColor};
-
-          &:hover {
-            background-color: ${theme.colors.secundaryColor};
-          }
-        }
       }
-    }
 
     @media ${theme.media.lteMedium} {
       .container-items {
@@ -214,6 +48,180 @@ export const Container = styled.div`
             flex-direction: column;
           }
         }
+      }
+    }
+  `}
+`;
+
+export const ContainerItems = styled.div`
+  ${() => css`
+    max-width: 120rem;
+
+    margin: 0 auto;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  `}
+`;
+
+export const Content = styled.div`
+  ${() => css`
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    margin: 3rem auto;
+
+    img {
+      width: 30rem;
+      height: 30rem;
+
+      border-radius: 18px;
+    }
+  `}
+`;
+
+export const Section = styled.div`
+  ${({ theme }) => css`
+    background-color: #F3EFF5;
+    flex: 6;
+
+    padding: 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    border-radius: 18px;
+
+    .img-container {
+      text-align: center;
+
+      font-family: ${theme.font.family.texts};
+    }
+
+    .description {
+
+      h2 {
+        font-family: ${theme.font.family.texts};
+        color: ${theme.colors.secundaryColor};
+
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-family: ${theme.font.family.texts};
+        text-align: justify;
+
+        padding: 1rem;
+
+        span {
+          color: ${theme.colors.secundaryColor};
+          font-weight: bold;
+        }
+      }
+
+      .subtotal-description {
+        text-align: right;
+      }
+
+    }
+  `}
+`;
+
+export const Aside = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 2rem;
+
+    border-radius: 18px;
+
+    background-color: #F3EFF5;
+    flex: 2;
+
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .pacote-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      div {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+
+    .acrescer {
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        button {
+          background: transparent;
+          border: none;
+
+          display:flex;
+          align-items: center;
+        }
+      }
+    }
+
+    p {
+      font-family: ${theme.font.family.texts};
+
+      span {
+        color: ${theme.colors.secundaryColor};
+      }
+    }
+
+    button {
+      background-color: ${theme.colors.thirdColor};
+      color: ${theme.colors.secundaryColor};
+
+      border: 1px solid ${theme.colors.thirdColor};
+
+      font-family: ${theme.font.family.texts};
+      gap: 1rem;
+
+      padding: 1rem 0rem 1rem 0rem;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: ${theme.colors.secundaryColor};
+        color: ${theme.colors.thirdColor};
+      }
+    }
+
+    .amount-button {
+      color: ${theme.colors.secundaryColor};
+
+      &:hover {
+        color: ${theme.colors.secundaryColor};
+      }
+    }
+
+    .selected {
+      background-color: ${theme.colors.secundaryColor};
+      color: ${theme.colors.thirdColor};
+
+      &:hover {
+        background-color: ${theme.colors.secundaryColor};
       }
     }
   `}

@@ -3,17 +3,14 @@ import React from 'react';
 import P from 'prop-types';
 
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 import {
   Container, Content, Group, Footer, Header,
 } from './styles';
 
-import { useDestination } from '../../hooks/useDestination';
-
 export const DestinosPageCard = ({
   id, title, imglink, description, categories,
 }) => {
-  const { handleSendPackage } = useDestination();
-
   const ultimaPosição = categories.pacote.types.length - 1;
 
   return (
@@ -34,12 +31,8 @@ export const DestinosPageCard = ({
             {' '}
             {description}
           </p>
-          <Footer
-            onClick={() => handleSendPackage({
-              title, categories, imglink, description, id,
-            })}
-          >
-            <button type="button">Comprar esse passeio</button>
+          <Footer>
+            <Link to={`/destino/${id}`}>Comprar esse passeio</Link>
             <p>
               A partir de
               {' '}

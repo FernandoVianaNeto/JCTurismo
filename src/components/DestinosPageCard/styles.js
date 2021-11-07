@@ -96,18 +96,18 @@ export const Footer = styled.footer`
     align-items: center;
     justify-content: space-between;
 
-    button {
-      padding: 0.5rem 3rem 0.5rem 3rem;
+    a {
+      padding: 5px 16px;
 
       background-color: ${theme.colors.thirdColor};
       border: 1px solid ${theme.colors.secundaryColor};
 
-      color: ${theme.colors.secundaryColor};
-
       cursor: pointer;
 
       font-family: ${theme.font.family.texts};
-
+      font-size: 14px;
+      color: ${theme.colors.secundaryColor};
+      text-decoration: none;
       transition: ease-out all 300ms;
 
       &:hover {

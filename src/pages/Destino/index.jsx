@@ -1,43 +1,55 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import * as Styled from './styles';
-
+import {
+  Container, ContainerItems, Content, Section, Aside,
+} from './styles';
 import { Base } from '../../templates/Base';
 import Button from '../../components/Button';
 
 import { useAddItem } from '../../hooks/useAddItem';
 
 export const Destino = () => {
-  const { addNewItem } = useAddItem();
-
   const [counter, setCounter] = useState(0);
-
   const [added, setAdded] = useState(false);
-
-  const { packageData, shoppingItems } = useSelector((state) => state);
-
-  const [select, setSelect] = useState({
-    id: packageData.categorias.individual.id,
-    price: packageData.categorias.individual.price,
-    categoria: packageData.categorias.individual.tipo,
+  const [destinoData, setDestinoData] = useState({
+    id: 0,
+    imglink: '',
+    title: '',
+    description: '',
+    categories: {
+      individual: {},
+      pacote: {
+        types: [],
+      },
+      adicional: 0,
+    },
   });
-  const { adicional } = packageData.categorias.pacote;
+  const [select, setSelect] = useState({});
+
+  const { addNewItem } = useAddItem();
+  const { id } = useParams();
+  const { shoppingItems } = useSelector((state) => state);
 
   useEffect(() => {
-    shoppingItems.items.map((obj) => {
-      if (obj.id === packageData.id) {
-        setAdded(true);
-      }
+    fetch(`http://localhost:3001/destino/${id}`)
+      .then(async (response) => {
+        const json = await response.json();
+        setDestinoData(json);
+      });
+  }, []);
 
-      return shoppingItems;
-    });
-  }, [packageData.id, shoppingItems]);
+  useEffect(() => {
+    if (shoppingItems.items.find((item) => item.id === destinoData.id)) {
+      setAdded(true);
+    }
+  }, [destinoData, shoppingItems]);
 
-  function handleSetSelect({ id, price, categoria }) {
+  function handleSetSelect({ typeId, price, categoria }) {
     setSelect({
-      id,
+      typeId,
       price,
       categoria,
     });
@@ -47,7 +59,7 @@ export const Destino = () => {
     setCounter(counter + 1);
     setSelect({
       ...select,
-      price: select.price + adicional,
+      price: select.price + Number(destinoData.categories.adicional),
     });
   }
 
@@ -55,111 +67,117 @@ export const Destino = () => {
     setCounter(counter - 1);
     setSelect({
       ...select,
-      price: select.price - adicional,
+      price: select.price - Number(destinoData.categories.adicional),
     });
   }
 
   return (
-    <Styled.Container>
+    <Container>
       <Base />
-      <div className="container-items">
-        <h1>{packageData.title}</h1>
-        <div className="content">
-          <section>
-            <div className="img-container">
-              <img src={packageData.imgLink} alt="imagem" />
-              <p>img descriptions</p>
-            </div>
-            <div className="description">
-              <h2>Como será o nosso passeio?</h2>
-              <p>{packageData.description}</p>
-              <p className="subtotal-description">
-                A partir de
-                {' '}
-                <span>
-                  R$
-                  {packageData.categorias.individual.price}
-                  ,00
-                </span>
-                {' '}
-              </p>
-            </div>
-          </section>
-          <aside>
-            <h3>Detalhes do passeio</h3>
-            <div className="content-container">
-              <div className="pacote-container">
-                <p>Quantidade de pessoas:</p>
-                <button
-                  type="button"
-                  className={select.id === packageData.categorias.individual.id ? 'selected' : ''}
-                  onClick={() => handleSetSelect({
-                    id: packageData.categorias.individual.id,
-                    price: packageData.categorias.individual.price,
-                    categoria: packageData.categorias.individual.tipo,
-                  })}
-                >
-                  {packageData.categorias.individual.tipo}
-                </button>
+      {
+          destinoData.id !== 0 ? (
+            <ContainerItems>
+              <h1>{destinoData.title}</h1>
+              <Content>
+                <Section>
+                  <div className="img-container">
+                    <img src={destinoData.imglink} alt="imagem" />
+                    <p>img descriptions</p>
+                  </div>
+                  <div className="description">
+                    <h2>Como será o nosso passeio?</h2>
+                    <p>{destinoData.description}</p>
+                    <p className="subtotal-description">
+                      A partir de
+                      {' '}
+                      <span>
+                        R$
+                        {destinoData.categories.individual.price}
+                        ,00
+                      </span>
+                      {' '}
+                    </p>
+                  </div>
+                </Section>
+                <Aside>
+                  <h3>Detalhes do passeio</h3>
+                  <div className="content-container">
+                    <div className="pacote-container">
+                      <p>Quantidade de pessoas:</p>
+                      <button
+                        type="button"
+                        className={select.typeId === destinoData.categories.individual.id ? 'selected' : ''}
+                        onClick={() => handleSetSelect({
+                          typeId: destinoData.categories.individual.id,
+                          price: destinoData.categories.individual.price,
+                          categoria: destinoData.categories.individual.type,
+                        })}
+                      >
+                        {destinoData.categories.individual.type}
+                      </button>
 
-                { packageData.categorias.pacote.tipos.map((pacote) => (
-                  <button
-                    type="button"
-                    onClick={() => handleSetSelect({ id: pacote.id, price: pacote.price, categoria: pacote.tipo })}
-                    className={pacote.id === select.id ? 'selected' : ''}
-                    key={pacote.id}
+                      { destinoData.categories.pacote.types.map((pacote) => (
+                        <button
+                          type="button"
+                          onClick={() => handleSetSelect({ typeId: pacote.id, price: pacote.price, categoria: pacote.type })}
+                          className={pacote.id === select.typeId ? 'selected' : ''}
+                          key={pacote.id}
+                        >
+                          {pacote.type}
+                        </button>
+                      ))}
+                    </div>
+                    <div className="acrescer">
+                      <p>Quantas pessoas a mais?</p>
+                      <div>
+                        {counter > 0 && (
+                        <button
+                          type="button"
+                          className="amount-button"
+                          onClick={() => callSetMinus()}
+                        >
+                          <AiOutlineMinus />
+                        </button>
+                        )}
+                        <p>{counter}</p>
+                        <button
+                          type="button"
+                          className="amount-button"
+                          onClick={() => callSetPlus()}
+                        >
+                          <AiOutlinePlus />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Subtotal:
+                    {' '}
+                    <span>
+                      R$
+                      {select.price}
+                      ,00
+                    </span>
+                  </p>
+                </Aside>
+              </Content>
+              <div className="footer">
+                { added ? (
+                  <Button disabled desabilitado>Você já adicionou esse passeio</Button>
+                ) : (
+                  <Button onClick={() => addNewItem({
+                    id: destinoData.id, imgLink: destinoData.imglink, title: destinoData.title, amount: 1, price: select.price, categoria: select.categoria,
+                  })}
                   >
-                    {pacote.tipo}
-                  </button>
-                ))}
+                    Adicionar esse passeio ao carrinho
+                  </Button>
+                ) }
               </div>
-              <div className="acrescer">
-                <p>Quantas pessoas a mais?</p>
-                <div>
-                  {counter > 0 && (
-                    <button
-                      type="button"
-                      className="amount-button"
-                      onClick={() => callSetMinus()}
-                    >
-                      <AiOutlineMinus />
-                    </button>
-                  )}
-                  <p>{counter}</p>
-                  <button
-                    type="button"
-                    className="amount-button"
-                    onClick={() => callSetPlus()}
-                  >
-                    <AiOutlinePlus />
-                  </button>
-                </div>
-              </div>
-            </div>
-            <p>
-              Subtotal:
-              {' '}
-              <span>
-                R$
-                {select.price}
-                ,00
-              </span>
-            </p>
-          </aside>
-        </div>
-        <div className="footer">
-          { added ? (
-            <Button disabled desabilitado>Você já adicionou esse passeio</Button>
+            </ContainerItems>
           ) : (
-            <Button onClick={() => addNewItem({
-              id: packageData.id, imgLink: packageData.imgLink, title: packageData.title, amount: 1, price: select.price, categoria: select.categoria,
-            })}
-            >
-              Adicionar esse passeio ao carrinho
-            </Button>
-          ) }
-        </div>
-      </div>
-    </Styled.Container>
+            <h1>Não encontramos nada</h1>
+          )
+}
+    </Container>
   );
 };
