@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import * as Styled from './styles';
+import {
+  Container, Content, Header, Main, Footer,
+} from './styles';
 
 import { Base } from '../../templates/Base';
 import { ProductCard } from '../../components/ProductCard';
@@ -35,15 +36,15 @@ export const ShoppingCart = () => {
   }, [total]);
 
   return (
-    <Styled.Container>
+    <Container>
       <Base />
-      <div className="content">
-        <header>
+      <Content>
+        <Header>
           <h1>
             Meu carrinho
           </h1>
-        </header>
-        <main>
+        </Header>
+        <Main>
           <div className="products-container">
             <div className="products">
               {items.length === 0 ? (
@@ -64,8 +65,8 @@ export const ShoppingCart = () => {
 
             </div>
           </div>
-        </main>
-        <footer>
+        </Main>
+        <Footer>
           <div className="subtotal">
             {items.length > 0 && (
               <>
@@ -85,8 +86,8 @@ export const ShoppingCart = () => {
               </>
             )}
           </div>
-        </footer>
-      </div>
-    </Styled.Container>
+        </Footer>
+      </Content>
+    </Container>
   );
 };
