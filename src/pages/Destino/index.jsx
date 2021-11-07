@@ -59,7 +59,7 @@ export const Destino = () => {
     setCounter(counter + 1);
     setSelect({
       ...select,
-      price: select.price + Number(destinoData.categories.adicional),
+      price: select.price + Number(destinoData.categories.pacote.adicional),
     });
   }
 
@@ -67,7 +67,7 @@ export const Destino = () => {
     setCounter(counter - 1);
     setSelect({
       ...select,
-      price: select.price - Number(destinoData.categories.adicional),
+      price: select.price - Number(destinoData.categories.pacote.adicional),
     });
   }
 
