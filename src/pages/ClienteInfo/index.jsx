@@ -11,6 +11,7 @@ import Button from '../../components/Button';
 
 import formatPhone from '../../utils/formatPhone';
 import isEmailValid from '../../utils/isEmailValid';
+import { Base } from '../../templates/Base';
 
 export const ClienteInfo = () => {
   const [email, setEmail] = useState('');
@@ -46,6 +47,7 @@ export const ClienteInfo = () => {
 
   return (
     <Container>
+      <Base />
       <ModalContainer>
         <Form action="http://localhost:3001/saveclientinfo" method="POST">
           <h1>Informações do cliente</h1>

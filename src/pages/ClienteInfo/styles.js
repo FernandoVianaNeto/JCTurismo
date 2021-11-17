@@ -2,14 +2,14 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${() => css`
-    max-width: 50vw;
-    margin: 0 auto;
+
   `}
 `;
 
 export const ModalContainer = styled.div`
   ${() => css`
-
+    max-width: 50vw;
+    margin: 0 auto;
   `}
 `;
 

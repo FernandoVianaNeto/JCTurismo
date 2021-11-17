@@ -27,11 +27,11 @@ export const PaymentPage = () => {
   useEffect(() => {
     window.onload = () => {
       Mercadopago.getIdentificationTypes();
+
       function checkFn() {
         Mercadopago.setPublishableKey(
-          'TEST-910a0325-69a6-4be1-a504-ddc2d605d466',
+          'APP_USR-5ac54a69-7ce0-426e-8d59-0e21ac177d51',
         );
-        Mercadopago.getIdentificationTypes();
       }
 
       checkFn();
@@ -179,6 +179,7 @@ export const PaymentPage = () => {
                   type="text"
                   name="cardholderName"
                   data-checkout="cardholderName"
+                  placeholder="Digite como está no cartão"
                 />
               </SmallGroup>
               <SmallGroup>
@@ -186,13 +187,11 @@ export const PaymentPage = () => {
                 <FlexDiv>
                   <Input
                     type="text"
-                    name="cardholderName"
                     data-checkout="cardExpirationMonth"
                     placeholder="MM"
                   />
                   <Input
                     type="text"
-                    name="cardholderName"
                     data-checkout="cardExpirationYear"
                     placeholder="YY"
                   />
