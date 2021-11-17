@@ -13,6 +13,7 @@ import { store, persistor } from './store/index';
 
 ReactDOM.render(
   <React.StrictMode>
+    <script src="https://sdk.mercadopago.com/js/v2" />
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>

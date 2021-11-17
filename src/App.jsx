@@ -7,6 +7,7 @@ import { ShoppingCart } from './pages/ShoppingCart';
 import { Destinos } from './pages/Destinos';
 import { Destino } from './pages/Destino';
 import { PaymentPage } from './pages/PaymentPage';
+import { ClienteInfo } from './pages/ClienteInfo';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/destino/:id" exact component={Destino} />
         <Route path="/destinos" exact component={Destinos} />
         <Route path="/carrinhodecompras" exact component={ShoppingCart} />
+        <Route path="/clienteinfo" exact component={ClienteInfo} />
         <Route path="/pagamento" exact component={PaymentPage} />
       </Switch>
     </BrowserRouter>

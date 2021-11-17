@@ -2,20 +2,12 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${() => css`
-
+    max-width: 50vw;
+    margin: 0 auto;
   `}
 `;
 
-export const BigGroup = styled.div`
-  ${() => css`
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 30px;
-  `}
-`;
-
-export const Group = styled.div`
+export const ModalContainer = styled.div`
   ${() => css`
 
   `}
@@ -44,25 +36,5 @@ export const CheckGroup = styled.div`
       font-family: ${theme.font.family.texts};
       color: ${theme.colors.secundaryColor};
     }
-  `}
-`;
-
-export const FlexDiv = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    small {
-      font-family: ${theme.font.family.texts};
-      color: ${theme.colors.secundaryColor};
-    }
-  `}
-`;
-
-export const ModalContainer = styled.div`
-  ${() => css`
-
-
   `}
 `;

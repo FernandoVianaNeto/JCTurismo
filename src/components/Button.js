@@ -24,5 +24,18 @@ export default styled.button`
       color: ${theme.colors.primaryColor};
       background-color: lightgray;
     }
+
+    &[type = "submit"] {
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: ${theme.colors.secundaryColor};
+      border: 1px solid ${theme.colors.secundaryColor};
+      color: ${theme.colors.thirdColor};
+
+      &:hover {
+        background-color: ${theme.colors.thirdColor};
+        color: ${theme.colors.secundaryColor};
+      }
+    }
   `}
 `;

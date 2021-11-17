@@ -64,5 +64,9 @@ export const Menu = ({ children, background = false }) => {
 
 Menu.propTypes = {
   children: P.node.isRequired,
-  background: P.bool.isRequired,
+  background: P.bool,
+};
+
+Menu.defaultProps = {
+  background: false,
 };

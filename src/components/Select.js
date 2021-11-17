@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export default styled.input`
+export const Select = styled.select`
   ${({ theme }) => css`
     width: 100%;
     height: 40px;
@@ -11,7 +11,7 @@ export default styled.input`
 
     font-family: ${theme.font.family.texts};
 
-    cursor: text;
+    cursor: pointer;
 
     &:focus {
       outline: none;

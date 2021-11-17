@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { FaShuttleVan } from 'react-icons/fa';
 import { GiModernCity } from 'react-icons/gi';
@@ -19,8 +19,18 @@ import { Presentations } from '../../subpages/Presentations';
 import { data } from '../../data/data';
 
 export const Home = () => {
-  const { destinos, chamadas, serviços } = data;
+  const [destinosData, setDestinosData] = useState([]);
+
+  const { chamadas, serviços } = data;
   const history = useHistory();
+
+  useEffect(() => {
+    fetch('http://localhost:3001/destinations')
+      .then(async (response) => {
+        const json = await response.json();
+        setDestinosData(json);
+      });
+  }, []);
 
   return (
     <Styled.Container>
@@ -89,23 +99,30 @@ export const Home = () => {
                 </button>
               </div>
               <div className="right-column">
-                { destinos.map((destino) => (
-                  <div className="pacote" key={destino.id} onClick={() => history.push('/destinos')}>
-                    <img src={destino.imgLink} alt="" />
-                    <div className="details">
-                      <strong className="title">{destino.title}</strong>
-                      <p>{destino.status}</p>
-                      <p className="description">{destino.smallDescription}</p>
-                      <strong className="price">
-                        a partir de R$
-                        <span>
-                          {destino.categorias.individual.price}
-                          ,00
-                        </span>
-                      </strong>
-                    </div>
-                  </div>
-                )) }
+                {
+                  destinosData.length > 0
+                    ? (
+                      destinosData.map((destino) => (
+                        <div className="pacote" key={destino.id} onClick={() => history.push('/destinos')}>
+                          <img src={destino.imglink} alt="" />
+                          <div className="details">
+                            <strong className="title">{destino.title}</strong>
+                            <p>{destino.status === true ? 'Disponível' : 'Indisponível'}</p>
+                            <p className="description">{destino.smalldescription}</p>
+                            <strong className="price">
+                              a partir de R$
+                              <span>
+                                {destino.categories.individual.price}
+                                ,00
+                              </span>
+                            </strong>
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <h1>Nenhum destino encontrado para você</h1>
+                    )
+                }
               </div>
             </div>
           </div>
@@ -136,7 +153,6 @@ export const Home = () => {
               Empresa com gostinho baiano que vai proporcionar para você  os melhores passeios  que irá  encontrar na cidade.
               <br />
               Focada em excelência e satisfação, procuramos sempre mostrar como um cliente deve ser tratado.
-
             </p>
             <strong>Entre em contato conosco e marque a melhor viagem da sua vida</strong>
           </div>
