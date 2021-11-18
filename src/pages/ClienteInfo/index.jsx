@@ -49,7 +49,7 @@ export const ClienteInfo = () => {
     <Container>
       <Base />
       <ModalContainer>
-        <Form action="http://localhost:3001/saveclientinfo" method="POST">
+        <Form action="https://jctturismo.herokuapp.com/saveclientinfo" method="POST">
           <h1>Informações do cliente</h1>
           <SmallGroup>
             <small>Nome: </small>

@@ -80,7 +80,7 @@ export const ShoppingCart = () => {
                     ,00
                   </span>
                 </h3>
-                <button type="button" onClick={() => history.push('/pagamento')}>
+                <button type="button" onClick={() => history.push('/clienteinfo')}>
                   Seguir para o pagamento
                 </button>
               </>
