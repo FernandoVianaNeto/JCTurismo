@@ -22,7 +22,7 @@ export const Destinos = () => {
   return (
     <Container>
       {isLoading && <Loader isLoading={isLoading} />}
-      <Base />
+      <Base destino />
       <Content>
         <h1>Os melhores pacotes com os melhores preços</h1>
         <Group>
