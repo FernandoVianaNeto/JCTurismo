@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Content, Group } from './styles';
+import React, { useEffect, useState, useMemo } from 'react';
+import {
+  Container, Content, Group, SmallGroup,
+} from './styles';
 
 import { Base } from '../../templates/Base';
 import Loader from '../../components/Loader';
@@ -8,6 +10,11 @@ import { DestinosPageCard } from '../../components/DestinosPageCard';
 export const Destinos = () => {
   const [destinos, setDestinos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredDestinos = useMemo(() => destinos.filter((destino) => (
+    destino.title.toLowerCase().includes(searchTerm.toLowerCase())
+  )), [destinos, searchTerm]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -24,11 +31,19 @@ export const Destinos = () => {
       {isLoading && <Loader isLoading={isLoading} />}
       <Base destino />
       <Content>
-        <h1>Os melhores pacotes com os melhores preços</h1>
+        <SmallGroup>
+          <h1>Os melhores pacotes com os melhores preços</h1>
+          <input
+            type="text"
+            placeholder="Qual destino você procura?"
+            value={searchTerm}
+            onChange={(event) => setSearchTerm(event.target.value)}
+          />
+        </SmallGroup>
         <Group>
           {
-            destinos.length > 0 ? (
-              destinos.map((card) => (
+            filteredDestinos.length > 0 ? (
+              filteredDestinos.map((card) => (
                 <DestinosPageCard
                   key={card.id}
                   imglink={card.imglink}

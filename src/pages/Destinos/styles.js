@@ -5,6 +5,30 @@ export const Container = styled.div`
   `}
 `;
 
+export const SmallGroup = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid ${theme.colors.secundaryColor};
+
+    input {
+      padding: 5px 16px;
+      border: 1px solid ${theme.colors.secundaryColor};
+      border-radius: 4px;
+      background-color: ${theme.colors.thirdColor};
+      color: ${theme.colors.backgroundColor};
+      height: 20px;
+      width: 300px;
+      font-style: italic;
+      &:focus {
+        outline: none;
+      }
+    }
+  `}
+`;
+
 export const Group = styled.div`
   ${() => css`
     display: flex;
@@ -23,7 +47,7 @@ export const Content = styled.div`
       color: ${theme.colors.primaryColor};
       font-family: ${theme.font.family.texts};
 
-      border-bottom: 1px solid ${theme.colors.secundaryColor};
+
     }
 
     @media ${theme.media.lteMedium} {
