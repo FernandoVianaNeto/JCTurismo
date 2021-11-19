@@ -378,8 +378,6 @@ export const DepoimentsContainer = styled.div`
 
     padding: 50px;
 
-    border-bottom: 1px solid ${theme.colors.thirdColor};
-
     h1 {
       color: ${theme.colors.secundaryColor};
     }
@@ -389,9 +387,32 @@ export const DepoimentsContainer = styled.div`
 export const Depoiments = styled.div`
   ${() => css`
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 20px;
-
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    font-weight: bold;
     padding: 50px 0px;
+  `}
+`;
+
+export const Button = styled.button`
+  ${({ theme }) => css`
+    padding: 15px 25px;
+
+    font-family: ${theme.font.family.texts};
+    font-size: 16px;
+    font-weight: bold;
+    color: ${theme.colors.secundaryColor};
+
+    background-color: ${theme.colors.thirdColor};
+
+    border: 2px solid ${theme.colors.thirdColor};
+    cursor: pointer;
+
+    transition: ease-in-out all 300ms;
+
+    &:hover {
+      border: 2px solid ${theme.colors.secundaryColor};
+      font-weight: bold;
+    }
   `}
 `;

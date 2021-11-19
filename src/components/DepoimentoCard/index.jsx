@@ -8,9 +8,7 @@ export const DepoimentoCard = ({
 }) => (
   <Container>
     <h3>{title}</h3>
-
     <i>{description}</i>
-
     <Footer>
       <small className="name">{name}</small>
       <small>{date}</small>

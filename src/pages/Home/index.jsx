@@ -7,7 +7,9 @@ import { AiOutlineSchedule } from 'react-icons/ai';
 
 import { useHistory } from 'react-router-dom';
 
-import { Container, DepoimentsContainer, Depoiments } from './styles';
+import {
+  Container, DepoimentsContainer, Depoiments, Button,
+} from './styles';
 
 import { Menu } from '../../components/Menu';
 import { MenuLink } from '../../components/MenuLink';
@@ -61,10 +63,6 @@ export const Home = () => {
             <MenuLink link="/#chamada">
               <AiOutlineSchedule />
               <p>Agende o seu passeio</p>
-            </MenuLink>
-            <MenuLink link="/#chamada">
-              <AiOutlineSchedule />
-              <p>Solicie seu orçamento</p>
             </MenuLink>
           </Menu>
           <div className="title-container">
@@ -182,6 +180,7 @@ export const Home = () => {
               Focada em excelência e satisfação, procuramos sempre mostrar como um cliente deve ser tratado.
             </p>
             <strong>Entre em contato conosco e marque a melhor viagem da sua vida</strong>
+            <Button type="button">Solicite seu orçamento</Button>
           </div>
         </main>
       </div>
