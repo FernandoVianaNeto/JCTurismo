@@ -11,6 +11,7 @@ import { Base } from '../../templates/Base';
 import Button from '../../components/Button';
 
 import { useAddItem } from '../../hooks/useAddItem';
+import Loader from '../../components/Loader';
 
 export const Destino = () => {
   const [counter, setCounter] = useState(0);
@@ -29,16 +30,19 @@ export const Destino = () => {
     },
   });
   const [select, setSelect] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   const { addNewItem } = useAddItem();
   const { id } = useParams();
   const { shoppingItems } = useSelector((state) => state);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/destino/${id}`)
+    setIsLoading(true);
+    fetch(`https://jctturismo.herokuapp.com/destino/${id}`)
       .then(async (response) => {
         const json = await response.json();
         setDestinoData(json);
+        setIsLoading(false);
       });
   }, []);
 
@@ -74,6 +78,7 @@ export const Destino = () => {
 
   return (
     <Container>
+      {isLoading && <Loader isLoading={isLoading} />}
       <Base />
       {
           destinoData.id !== undefined ? (
