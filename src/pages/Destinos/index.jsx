@@ -9,7 +9,7 @@ export const Destinos = () => {
   const [destinos, setDestinos] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/destinations')
+    fetch('https://jctturismo.herokuapp.com/destinations')
       .then(async (response) => {
         const json = await response.json();
         setDestinos(json);

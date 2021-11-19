@@ -42,7 +42,7 @@ export const Container = styled.div`
             font-weight: bold;
             letter-spacing: 0.05em;
 
-            border: 1px solid ${theme.colors.secundaryColor};
+            border: 1px solid ${theme.colors.thirdColor};
 
             cursor: pointer;
 
@@ -52,9 +52,9 @@ export const Container = styled.div`
 
             &:hover {
               background-color: ${theme.colors.secundaryColor};
+              border: 1px solid ${theme.colors.secundaryColor};
               color: ${theme.colors.thirdColor};
-
-              font-weight: bold;
+              font-weight: normal;
             }
           }
         }

@@ -25,7 +25,7 @@ export const Home = () => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch('http://localhost:3001/destinations')
+    fetch('https://jctturismo.herokuapp.com/destinations')
       .then(async (response) => {
         const json = await response.json();
         setDestinosData(json);
@@ -53,6 +53,10 @@ export const Home = () => {
             <MenuLink link="/#chamada">
               <AiOutlineSchedule />
               <p>Agende o seu passeio</p>
+            </MenuLink>
+            <MenuLink link="/#chamada">
+              <AiOutlineSchedule />
+              <p>Solicie seu orçamento</p>
             </MenuLink>
           </Menu>
           <div className="title-container">

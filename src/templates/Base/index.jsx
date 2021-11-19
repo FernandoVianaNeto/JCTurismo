@@ -34,6 +34,10 @@ export const Base = () => (
           <AiOutlineSchedule />
           <p>Agende o seu passeio</p>
         </MenuLink>
+        <MenuLink link="/">
+          <AiOutlineSchedule />
+          <p>Solicitar orçamento</p>
+        </MenuLink>
       </Menu>
     </Styled.MenuContainer>
     <WhatsappButton />

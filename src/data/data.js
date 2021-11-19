@@ -70,7 +70,7 @@ export const data = {
       status: 'Disponível',
       categorias: {
         individual: {
-          id: 123151,
+          id: 1232151,
           tipo: 'individual',
           price: 450.00,
         },
