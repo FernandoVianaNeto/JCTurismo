@@ -222,69 +222,7 @@ export const Container = styled.div`
 
           .services-container {
             display: flex;
-
             gap: 3rem;
-
-            p {
-              color: ${theme.colors.backgroundColor};
-            }
-
-            .service {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              gap: 2rem;
-
-              max-width: 30rem;
-
-              padding: 2rem;
-
-              background-color: ${theme.colors.backgroundColor};
-
-              color: ${theme.colors.thirdColor};
-
-              h2 {
-                color: ${theme.colors.secundaryColor};
-              }
-
-              .left-column {
-                background-color: lightgray;
-                flex: 1;
-
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                height: 100%;
-              }
-
-              .right-column {
-                display: flex;
-                flex-direction: column;
-                flex: 2;
-
-                p {
-                  color: ${theme.colors.thirdColor};
-                }
-
-                a {
-                  margin-top: 2rem;
-                  text-align: right;
-
-                  cursor: pointer;
-
-                  color: ${theme.colors.secundaryColor};
-
-                  &:hover {
-                    color: ${theme.colors.thirdColor};
-                  }
-                }
-              }
-
-              img {
-                width: 7rem;
-              }
-            }
           }
         }
 
@@ -373,14 +311,27 @@ export const Container = styled.div`
 
 export const DepoimentsContainer = styled.div`
   ${({ theme }) => css`
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 120vh;
     background-color: ${theme.colors.backgroundColor};
-
+    border-bottom: 1px solid ${theme.colors.secundaryColor};
     padding: 50px;
 
     h1 {
       color: ${theme.colors.secundaryColor};
     }
+  `}
+`;
+
+export const HeaderContainer = styled.div`
+  ${() => css`
+  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   `}
 `;
 

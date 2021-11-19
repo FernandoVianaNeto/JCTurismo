@@ -8,7 +8,7 @@ import { AiOutlineSchedule } from 'react-icons/ai';
 import { useHistory } from 'react-router-dom';
 
 import {
-  Container, DepoimentsContainer, Depoiments, Button,
+  Container, DepoimentsContainer, Depoiments, Button, HeaderContainer,
 } from './styles';
 
 import { Menu } from '../../components/Menu';
@@ -20,6 +20,7 @@ import { Presentations } from '../../subpages/Presentations';
 
 import { data } from '../../data/data';
 import { DepoimentoCard } from '../../components/DepoimentoCard';
+import { ServiceCard } from '../../components/ServiceCard';
 
 export const Home = () => {
   const [destinosData, setDestinosData] = useState([]);
@@ -141,21 +142,21 @@ export const Home = () => {
             <h3>Temos de tudo para oferecer para você uma estadia em Salvador com muitos passeios, turismo, alegria e felicidade com os nossos clientes</h3>
             <div className="services-container">
               { serviços.map((service) => (
-                <div className="service" key={service.id}>
-                  <div className="left-column">
-                    <img src={service.iconLink} alt="" />
-                  </div>
-                  <div className="right-column">
-                    <h2>{service.title}</h2>
-                    <p>{service.smallDescription}</p>
-                    <a href={service.link}>Ver mais</a>
-                  </div>
-                </div>
+                <ServiceCard
+                  smallDescription={service.smallDescription}
+                  title={service.title}
+                  link={service.link}
+                >
+                  <img src={service.iconLink} alt="imagem link" />
+                </ServiceCard>
               ))}
             </div>
           </div>
           <DepoimentsContainer>
-            <h1>Confira alguns depoimentos de nossos clientes</h1>
+            <HeaderContainer>
+              <h1>Confira alguns depoimentos de nossos clientes</h1>
+              <Button type="button">Escreva um depoimento</Button>
+            </HeaderContainer>
             <Depoiments>
               {
                 depoimentosData.map((depoimento) => (
@@ -169,6 +170,7 @@ export const Home = () => {
                 ))
               }
             </Depoiments>
+
           </DepoimentsContainer>
           <div className="about-us">
             <a href=" " name="chamada"> </a>
