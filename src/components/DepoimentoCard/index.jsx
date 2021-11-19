@@ -1,16 +1,20 @@
 import React from 'react';
 
 import P from 'prop-types';
-import { Container } from './styles';
+import { Container, Footer } from './styles';
 
 export const DepoimentoCard = ({
   title, name, description, date,
 }) => (
   <Container>
-    <p>{title}</p>
-    <p>{name}</p>
-    <p>{description}</p>
-    <p>{date}</p>
+    <h3>{title}</h3>
+
+    <i>{description}</i>
+
+    <Footer>
+      <small className="name">{name}</small>
+      <small>{date}</small>
+    </Footer>
   </Container>
 );
 

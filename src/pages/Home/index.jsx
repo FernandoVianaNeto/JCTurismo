@@ -22,7 +22,7 @@ import { DepoimentoCard } from '../../components/DepoimentoCard';
 export const Home = () => {
   const [destinosData, setDestinosData] = useState([]);
   const [depoimentosData, setDepoimentosData] = useState([]);
-  console.log(depoimentosData);
+
   const { chamadas, serviços } = data;
   const history = useHistory();
 

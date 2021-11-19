@@ -388,6 +388,10 @@ export const DepoimentsContainer = styled.div`
 
 export const Depoiments = styled.div`
   ${() => css`
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
 
+    padding: 50px 0px;
   `}
 `;
