@@ -7,7 +7,7 @@ import { AiOutlineSchedule } from 'react-icons/ai';
 
 import { useHistory } from 'react-router-dom';
 
-import * as Styled from './styles';
+import { Container, DepoimentsContainer, Depoiments } from './styles';
 
 import { Menu } from '../../components/Menu';
 import { MenuLink } from '../../components/MenuLink';
@@ -17,23 +17,31 @@ import { PresentationCard } from '../../components/PresentationCard';
 import { Presentations } from '../../subpages/Presentations';
 
 import { data } from '../../data/data';
+import { DepoimentoCard } from '../../components/DepoimentoCard';
 
 export const Home = () => {
   const [destinosData, setDestinosData] = useState([]);
-
+  const [depoimentosData, setDepoimentosData] = useState([]);
+  console.log(depoimentosData);
   const { chamadas, serviços } = data;
   const history = useHistory();
 
   useEffect(() => {
     fetch('https://jctturismo.herokuapp.com/destinations')
       .then(async (response) => {
-        const json = await response.json();
-        setDestinosData(json);
+        const destinos = await response.json();
+        setDestinosData(destinos);
+      });
+
+    fetch('https://jctturismo.herokuapp.com/depoimentos')
+      .then(async (response) => {
+        const depoimentos = await response.json();
+        setDepoimentosData(depoimentos);
       });
   }, []);
 
   return (
-    <Styled.Container>
+    <Container>
       <div className="content">
         <header>
           <img className="image-background" id="background2" src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628110983/julian-tilgenkamp-J6L2uT15K1o-unsplash_vr53t0.jpg" alt="background" />
@@ -147,8 +155,23 @@ export const Home = () => {
                 </div>
               ))}
             </div>
-
           </div>
+          <DepoimentsContainer>
+            <h1>Confira alguns depoimentos de nossos clientes</h1>
+            <Depoiments>
+              {
+                depoimentosData.map((depoimento) => (
+                  <DepoimentoCard
+                    key={depoimento.id}
+                    title={depoimento.title}
+                    description={depoimento.description}
+                    name={depoimento.name}
+                    date={depoimento.date}
+                  />
+                ))
+              }
+            </Depoiments>
+          </DepoimentsContainer>
           <div className="about-us">
             <a href=" " name="chamada"> </a>
             <img src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1626980792/WhatsApp_Image_2021-07-22_at_15.41.41-removebg-preview_hydex1.png" alt="logo" />
@@ -162,6 +185,6 @@ export const Home = () => {
           </div>
         </main>
       </div>
-    </Styled.Container>
+    </Container>
   );
 };

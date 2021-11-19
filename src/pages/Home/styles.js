@@ -370,3 +370,24 @@ export const Container = styled.div`
     }
   `}
 `;
+
+export const DepoimentsContainer = styled.div`
+  ${({ theme }) => css`
+    height: 100vh;
+    background-color: ${theme.colors.backgroundColor};
+
+    padding: 50px;
+
+    border-bottom: 1px solid ${theme.colors.thirdColor};
+
+    h1 {
+      color: ${theme.colors.secundaryColor};
+    }
+  `}
+`;
+
+export const Depoiments = styled.div`
+  ${() => css`
+
+  `}
+`;
