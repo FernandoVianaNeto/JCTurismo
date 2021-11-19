@@ -15,36 +15,49 @@ import { Menu } from '../../components/Menu';
 import { MenuLink } from '../../components/MenuLink';
 import { WhatsappButton } from '../../components/WhatsappButton';
 import { PresentationCard } from '../../components/PresentationCard';
-
+import { DepoimentoCard } from '../../components/DepoimentoCard';
+import { ServiceCard } from '../../components/ServiceCard';
+import Loader from '../../components/Loader';
 import { Presentations } from '../../subpages/Presentations';
 
 import { data } from '../../data/data';
-import { DepoimentoCard } from '../../components/DepoimentoCard';
-import { ServiceCard } from '../../components/ServiceCard';
 
 export const Home = () => {
   const [destinosData, setDestinosData] = useState([]);
   const [depoimentosData, setDepoimentosData] = useState([]);
+  const [depoimentosLoaded, setDepoimentosLoaded] = useState(false);
+  const [destinosLoaded, setDestinosLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { chamadas, serviços } = data;
   const history = useHistory();
 
   useEffect(() => {
+    setIsLoading(true);
     fetch('https://jctturismo.herokuapp.com/destinations')
       .then(async (response) => {
         const destinos = await response.json();
         setDestinosData(destinos);
+        setDestinosLoaded(true);
       });
 
     fetch('https://jctturismo.herokuapp.com/depoimentos')
       .then(async (response) => {
         const depoimentos = await response.json();
         setDepoimentosData(depoimentos);
+        setDepoimentosLoaded(true);
       });
   }, []);
 
+  useEffect(() => {
+    if (destinosLoaded && depoimentosLoaded) {
+      setIsLoading(false);
+    }
+  }, [depoimentosLoaded, destinosLoaded]);
+
   return (
     <Container>
+      {isLoading && <Loader isLoading={isLoading} />}
       <div className="content">
         <header>
           <img className="image-background" id="background2" src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1628110983/julian-tilgenkamp-J6L2uT15K1o-unsplash_vr53t0.jpg" alt="background" />
