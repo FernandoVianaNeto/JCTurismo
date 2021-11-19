@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import P from 'prop-types';
 
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
-import * as Styled from './styles';
+
+import { Container } from './styles';
 
 import { useRemoveItem } from '../../hooks/useRemoveItem';
 import { useChangeAmount } from '../../hooks/useChangeAmount';
@@ -37,7 +38,8 @@ export const ProductCard = ({
   }
 
   return (
-    <Styled.Container>
+    <Container>
+
       <div className="details">
         <img src={imgLink} alt="productImage" />
         <div className="title-category">
@@ -92,7 +94,7 @@ export const ProductCard = ({
           Excluir item
         </button>
       </div>
-    </Styled.Container>
+    </Container>
   );
 };
 
