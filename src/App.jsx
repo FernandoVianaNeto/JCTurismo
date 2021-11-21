@@ -8,6 +8,7 @@ import { Destinos } from './pages/Destinos';
 import { Destino } from './pages/Destino';
 import { PaymentPage } from './pages/PaymentPage';
 import { ClienteInfo } from './pages/ClienteInfo';
+import { RegistrarDepoimento } from './pages/RegistrarDepoimento';
 import { AdminPage } from './pages/AdminPage';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/clienteinfo" exact component={ClienteInfo} />
         <Route path="/pagamento" exact component={PaymentPage} />
         <Route path="/adminpage/admin" exact component={AdminPage} />
+        <Route path="/escreverdepoimento" exact component={RegistrarDepoimento} />
       </Switch>
     </BrowserRouter>
   );

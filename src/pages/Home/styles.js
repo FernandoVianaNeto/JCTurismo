@@ -345,7 +345,7 @@ export const Depoiments = styled.div`
   `}
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
   ${({ theme }) => css`
     padding: 15px 25px;
 
@@ -360,7 +360,7 @@ export const Button = styled.button`
     cursor: pointer;
 
     transition: ease-in-out all 300ms;
-
+    text-decoration: none;
     &:hover {
       border: 2px solid ${theme.colors.secundaryColor};
       font-weight: bold;

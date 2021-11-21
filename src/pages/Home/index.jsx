@@ -168,7 +168,7 @@ export const Home = () => {
           <DepoimentsContainer>
             <HeaderContainer>
               <h1>Confira alguns depoimentos de nossos clientes</h1>
-              <Button type="button">Escreva um depoimento</Button>
+              <Button href="/escreverdepoimento">Escreva um depoimento</Button>
             </HeaderContainer>
             <Depoiments>
               {
