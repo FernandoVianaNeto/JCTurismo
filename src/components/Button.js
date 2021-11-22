@@ -32,6 +32,12 @@ export default styled.button`
       border: 1px solid ${theme.colors.secundaryColor};
       color: ${theme.colors.thirdColor};
 
+      &[disabled] {
+        color: ${theme.colors.thirdColor};
+        background-color: lightgray;
+        border: 1px solid lightgray;
+      }
+
       &:hover {
         background-color: ${theme.colors.thirdColor};
         color: ${theme.colors.secundaryColor};

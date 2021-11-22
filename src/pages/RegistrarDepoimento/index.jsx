@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container, FormContainer } from './styles';
 
@@ -16,12 +16,23 @@ export const RegistrarDepoimento = () => {
   const [date, setDate] = useState('');
   const [title, setTitle] = useState('');
   const [testimony, setTestimony] = useState('');
-  const [emailIsValid, setEmailIsValid] = useState(false);
+  const [emailIsValid, setEmailIsValid] = useState(true);
+  const [formIsValid, setFormIsValid] = useState(false);
+
+  useEffect(() => {
+    if (name.trim() !== '' && date.trim !== '' && title.trim() !== '' && testimony.trim() !== '' && emailIsValid === true) {
+      setFormIsValid(true);
+    } else {
+      setFormIsValid(false);
+    }
+  }, [emailIsValid, title, date, name, testimony]);
 
   function handleValidateEmail(event) {
     setEmail(event.target.value);
 
     if (!isEmailValid(email)) {
+      setEmailIsValid(false);
+    } else {
       setEmailIsValid(true);
     }
   }
@@ -47,7 +58,7 @@ export const RegistrarDepoimento = () => {
               placeholder="Qual o seu e-mail?"
               type="text"
             />
-            {emailIsValid && <small>Digite um e-mail válido</small>}
+            {!emailIsValid && <small>Digite um e-mail válido</small>}
           </div>
           <div>
             <small>Quando realizou o seu passeio?</small>
@@ -72,7 +83,12 @@ export const RegistrarDepoimento = () => {
             cols="30"
             rows="10"
           />
-          <Button type="submit">Enviar</Button>
+          <Button
+            type="submit"
+            disabled={!formIsValid && true}
+          >
+            Enviar
+          </Button>
         </Form>
       </FormContainer>
     </Container>
