@@ -176,7 +176,7 @@ export const Home = () => {
                   <DepoimentoCard
                     key={depoimento.id}
                     title={depoimento.title}
-                    description={depoimento.description}
+                    description={depoimento.testimony}
                     name={depoimento.name}
                     date={depoimento.date}
                   />

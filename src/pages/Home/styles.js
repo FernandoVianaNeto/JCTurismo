@@ -313,8 +313,6 @@ export const DepoimentsContainer = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     height: 120vh;
     background-color: ${theme.colors.backgroundColor};
     border-bottom: 1px solid ${theme.colors.secundaryColor};
