@@ -10,6 +10,7 @@ import { PaymentPage } from './pages/PaymentPage';
 import { ClienteInfo } from './pages/ClienteInfo';
 import { RegistrarDepoimento } from './pages/RegistrarDepoimento';
 import { AdminPage } from './pages/AdminPage';
+import { Login } from './pages/Login';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/pagamento" exact component={PaymentPage} />
         <Route path="/adminpage/admin" exact component={AdminPage} />
         <Route path="/escreverdepoimento" exact component={RegistrarDepoimento} />
+        <Route path="/login" exact component={Login} />
       </Switch>
     </BrowserRouter>
   );
