@@ -9,8 +9,9 @@ import { Destino } from './pages/Destino';
 import { PaymentPage } from './pages/PaymentPage';
 import { ClienteInfo } from './pages/ClienteInfo';
 import { RegistrarDepoimento } from './pages/RegistrarDepoimento';
-import { AdminPage } from './pages/AdminPage';
 import { Login } from './pages/Login';
+
+import { AdminPage } from './pages/BackOffice/AdminPage';
 
 function App() {
   return (

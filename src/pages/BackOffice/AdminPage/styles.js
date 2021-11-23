@@ -3,27 +3,31 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${() => css`
     display: flex;
+    width: 100%;
   `}
 `;
 
 export const DestinationsContainer = styled.div`
   ${() => css`
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
     justify-content: space-around;
     margin: 50px;
+
+    width: 100%;
   `}
 `;
 
 export const DestinyCard = styled.div`
   ${({ theme }) => css`
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 10px;
 
     min-height: 50px;
-    width: 200px;
+    width: 100%;
 
     border: 1px solid ${theme.colors.primaryColor};
 
@@ -40,8 +44,26 @@ export const DestinyCard = styled.div`
     }
 
     img {
-      max-width: 100%;
+      max-width: 200px;
       max-height: 200px;
+    }
+
+
+
+    table {
+      width: 100%;
+    }
+
+    .imagem {
+      max-width: 200px;
+    }
+
+    .description {
+      max-width: 300px;
+    }
+
+    .title {
+      max-width: 150px;
     }
   `}
 `;
@@ -53,45 +75,12 @@ export const FormContainer = styled.div`
   `}
 `;
 
-export const Aside = styled.aside`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 150px;
-    height: 100vh;
-    background-color: ${theme.colors.backgroundColor};
-
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-family: ${theme.font.family.texts};
-      color: ${theme.colors.thirdColor};
-      margin: 5px;
-      background-color: transparent;
-      border: 0;
-
-      cursor: pointer;
-    }
-
-  `}
-`;
-
-export const Section = styled.section`
-  ${() => css`
-    width: 100%;
-  `}
-`;
-
 export const ButtonContainer = styled.div`
   ${({ theme }) => css`
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
 
     button {
       border: 0;
