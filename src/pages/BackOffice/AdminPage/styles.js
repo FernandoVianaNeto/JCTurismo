@@ -20,7 +20,7 @@ export const DestinationsContainer = styled.div`
   `}
 `;
 
-export const DestinyCard = styled.div`
+export const DestinyCard = styled.table`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
@@ -48,22 +48,29 @@ export const DestinyCard = styled.div`
       max-height: 200px;
     }
 
-
-
-    table {
+    tbody {
       width: 100%;
     }
 
     .imagem {
-      max-width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      margin-right: 20px;
     }
 
     .description {
-      max-width: 300px;
+      width: 500px;
     }
 
     .title {
-      max-width: 150px;
+      margin-right: 20px;
+      width: 200px;
+    }
+
+    .op {
+      width: 100px;
     }
   `}
 `;

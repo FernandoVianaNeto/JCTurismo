@@ -12,6 +12,7 @@ import { RegistrarDepoimento } from './pages/RegistrarDepoimento';
 import { Login } from './pages/Login';
 
 import { AdminPage } from './pages/BackOffice/AdminPage';
+import { ClientesAdminPage } from './pages/BackOffice/ClientesAdminPage';
 
 function App() {
   return (
@@ -23,9 +24,11 @@ function App() {
         <Route path="/carrinhodecompras" exact component={ShoppingCart} />
         <Route path="/clienteinfo" exact component={ClienteInfo} />
         <Route path="/pagamento" exact component={PaymentPage} />
-        <Route path="/adminpage/admin" exact component={AdminPage} />
         <Route path="/escreverdepoimento" exact component={RegistrarDepoimento} />
         <Route path="/login" exact component={Login} />
+
+        <Route path="/admin/home" exact component={AdminPage} />
+        <Route path="/admin/clientes" exact component={ClientesAdminPage} />
       </Switch>
     </BrowserRouter>
   );

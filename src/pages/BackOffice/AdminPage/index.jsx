@@ -25,25 +25,25 @@ export const AdminPage = () => {
           {
             destinations.map((destination) => (
               <DestinyCard key={destination.id}>
-                <table>
+                <tbody>
                   <tr>
-                    <th>Imagem</th>
-                    <th>Título</th>
-                    <th>Descrição</th>
-                    <th>Opções</th>
+                    <th className="imagem">Imagem</th>
+                    <th className="title">Título</th>
+                    <th className="description">Descrição</th>
+                    <th className="op">Opções</th>
                   </tr>
                   <tr>
                     <td className="imagem"><img src={destination.imglink} alt="destino logo" /></td>
                     <td className="title"><span><p>{destination.title}</p></span></td>
                     <td className="description"><p>{destination.smalldescription}</p></td>
-                    <td>
+                    <td className="op">
                       <ButtonContainer>
                         <button type="button" aria-label="editar"><FiEdit2 /></button>
                         <button type="button" aria-label="deletar"><AiOutlineDelete /></button>
                       </ButtonContainer>
                     </td>
                   </tr>
-                </table>
+                </tbody>
               </DestinyCard>
             ))
           }

@@ -51,8 +51,7 @@ export const Aside = styled.aside`
 export const Section = styled.section`
   ${() => css`
     display: flex;
-    align-items: center;
-    justify-content: center;
+
     margin-left: 200px;
     position: relative;
     width: 100%;
