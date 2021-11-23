@@ -6,13 +6,37 @@ import {
   Container, Aside, Section, ButtonContainer, Footer,
 } from './styles';
 
-export const BackOfficeTemplate = ({ children }) => (
+export const BackOfficeTemplate = ({
+  children, clientes, depoimentos, home,
+}) => (
   <Container>
     <Aside>
       <img src="https://res.cloudinary.com/dh84pxwgu/image/upload/v1626980716/WhatsApp_Image_2021-07-22_at_15.34.13-removebg-preview_rsmhcx.png" alt="logoimage" />
       <ButtonContainer>
-        <Link to="/admin/clientes">Ver clientes</Link>
-        <Link to="/admin/depoimentos">Ver depoimentos</Link>
+        {
+          depoimentos && (
+            <>
+              <Link to="/admin/clientes">Ver Clientes</Link>
+              <Link to="/admin/home">Ver Destinos</Link>
+            </>
+          )
+        }
+        {
+          clientes && (
+            <>
+              <Link to="/admin/depoimentos">Ver Depoimentos</Link>
+              <Link to="/admin/home">Ver Destinos</Link>
+            </>
+          )
+        }
+        {
+          home && (
+            <>
+              <Link to="/admin/clientes">Ver Clientes</Link>
+              <Link to="/admin/depoimentos">Ver Depoimentos</Link>
+            </>
+          )
+        }
       </ButtonContainer>
       <Footer>
         <small>Desenvolvido por Fernando Viana</small>
@@ -26,4 +50,13 @@ export const BackOfficeTemplate = ({ children }) => (
 
 BackOfficeTemplate.propTypes = {
   children: P.node.isRequired,
+  depoimentos: P.bool,
+  clientes: P.bool,
+  home: P.bool,
+};
+
+BackOfficeTemplate.defaultProps = {
+  depoimentos: false,
+  clientes: false,
+  home: false,
 };

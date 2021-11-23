@@ -20,7 +20,7 @@ export const AdminPage = () => {
 
   return (
     <Container>
-      <BackOfficeTemplate>
+      <BackOfficeTemplate home>
         <DestinationsContainer>
           {
             destinations.map((destination) => (

@@ -1,18 +1,28 @@
 import React, { useState, useEffect } from 'react';
 
 import { FiEdit2 } from 'react-icons/fi';
-import { AiOutlineDelete } from 'react-icons/ai';
+import { AiOutlineDelete, AiOutlineUserAdd } from 'react-icons/ai';
 
 import {
-  Container, ClientesCard, ClientesContainer, ButtonContainer,
+  Container, ClientesCard, ClientesContainer, ButtonContainer, Header, FormContainer,
 } from './styles';
 
 import { BackOfficeTemplate } from '../../../templates/BackOfficeTemplate';
 import Loader from '../../../components/Loader';
+import { Form } from '../../../components/Form';
+import Button from '../../../components/Button';
+import Input from '../../../components/Input';
+import { Select } from '../../../components/Select';
+
+import isEmailValid from '../../../utils/isEmailValid';
 
 export const ClientesAdminPage = () => {
   const [clientes, setClientes] = useState([]);
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [formIsValid, setFormIsValid] = useState(false);
+  const [registerClientActive, setRegisterClientActive] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -24,39 +34,111 @@ export const ClientesAdminPage = () => {
       });
   }, []);
 
+  useEffect(() => {
+    if (isEmailValid(email)) {
+      setFormIsValid(true);
+    } else {
+      setFormIsValid(false);
+    }
+  }, [email]);
+
+  function handleEmailValidation(event) {
+    setEmail(event.target.value);
+    if (!isEmailValid(email)) {
+      setEmailError(true);
+    } else {
+      setEmailError(false);
+    }
+  }
+
   return (
     <Container>
       {isLoading && <Loader isLoading={isLoading} />}
-      <BackOfficeTemplate>
+      <BackOfficeTemplate clientes>
         <ClientesContainer>
-          <h1>Clientes Cadastrados</h1>
           {
-            clientes.map((cliente) => (
-              <ClientesCard key={cliente.id}>
-                <tbody>
-                  <tr>
-                    <th className="name">Nome</th>
-                    <th className="email">E-mail</th>
-                    <th className="phone">Telefone</th>
-                    <th className="know">Como conheceu</th>
-                    <th className="op">Opções</th>
-                  </tr>
-                  <tr>
-                    <td className="name">{cliente.name}</td>
-                    <td className="email">{cliente.email}</td>
-                    <td className="phone">{cliente.phone}</td>
-                    <td className="know">{cliente.know}</td>
-                    <td>
-                      <ButtonContainer>
-                        <button type="button" aria-label="editar"><FiEdit2 /></button>
-                        <button type="button" aria-label="deletar"><AiOutlineDelete /></button>
-                      </ButtonContainer>
-                    </td>
-                  </tr>
-                </tbody>
-              </ClientesCard>
-            ))
+            registerClientActive
+              ? (
+                <>
+                  <Header>
+                    <h1>Cadastrar cliente</h1>
+                    <button type="button" onClick={() => setRegisterClientActive(false)}>Voltar</button>
+                  </Header>
+                  <FormContainer>
+                    <Form action="https://jctturismo.herokuapp.com/createclient" method="POST">
+                      <Input
+                        placeholder="Nome"
+                      />
+                      <div>
+                        <Input
+                          name="email"
+                          value={email}
+                          placeholder="E-mail*"
+                          onChange={handleEmailValidation}
+                        />
+                        {
+                          emailError && <small>Email não é válido</small>
+                        }
+                      </div>
+                      <Input
+                        name="phone"
+                        placeholder="Telefone"
+                      />
+                      <Select
+                        name="know"
+                        placeholder="Como conheceu a JCTurismo"
+                      >
+                        <option>Instagram</option>
+                        <option>Facebook</option>
+                        <option>Google</option>
+                        <option>Indicação</option>
+                        <option>Outros</option>
+                      </Select>
+                      <Button type="submit" disabled={!formIsValid}>
+                        Enviar
+                      </Button>
+                    </Form>
+                  </FormContainer>
+
+                </>
+              )
+              : (
+                <>
+                  <Header>
+                    <h1>Clientes Cadastrados</h1>
+                    <button type="button" onClick={() => setRegisterClientActive(true)}>Cadastrar novo cliente <AiOutlineUserAdd /></button>
+                  </Header>
+                  {
+                    clientes.map((cliente) => (
+                      <ClientesCard key={cliente.id}>
+                        <tbody>
+                          <tr>
+                            <th className="name">Nome</th>
+                            <th className="email">E-mail</th>
+                            <th className="phone">Telefone</th>
+                            <th className="know">Como conheceu</th>
+                            <th className="op">Opções</th>
+                          </tr>
+                          <tr>
+                            <td className="name">{cliente.name}</td>
+                            <td className="email">{cliente.email}</td>
+                            <td className="phone">{cliente.phone}</td>
+                            <td className="know">{cliente.know}</td>
+                            <td>
+                              <ButtonContainer>
+                                <button type="button" aria-label="editar"><FiEdit2 /></button>
+                                <button type="button" aria-label="deletar"><AiOutlineDelete /></button>
+                              </ButtonContainer>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </ClientesCard>
+                    ))
+                  }
+                </>
+              )
           }
+
         </ClientesContainer>
 
       </BackOfficeTemplate>
