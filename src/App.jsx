@@ -13,6 +13,7 @@ import { Login } from './pages/Login';
 
 import { AdminPage } from './pages/BackOffice/AdminPage';
 import { ClientesAdminPage } from './pages/BackOffice/ClientesAdminPage';
+import { EditClient } from './pages/BackOffice/EditClient';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
 
         <Route path="/admin/home" exact component={AdminPage} />
         <Route path="/admin/clientes" exact component={ClientesAdminPage} />
+        <Route path="/admin/clientes/editarcliente/:id" exact component={EditClient} />
       </Switch>
     </BrowserRouter>
   );

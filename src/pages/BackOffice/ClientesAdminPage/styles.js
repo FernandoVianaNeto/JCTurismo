@@ -80,7 +80,7 @@ export const ButtonContainer = styled.div`
     justify-content: space-between;
     color: ${theme.colors.secundaryColor};
 
-    button {
+    a, button {
       border: 0;
       background: transparent;
       font-family: ${theme.font.family.texts};

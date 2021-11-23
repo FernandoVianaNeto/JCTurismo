@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FiEdit2 } from 'react-icons/fi';
 import { AiOutlineDelete, AiOutlineUserAdd } from 'react-icons/ai';
 
+import { Link } from 'react-router-dom';
 import {
   Container, ClientesCard, ClientesContainer, ButtonContainer, Header, FormContainer,
 } from './styles';
@@ -15,10 +16,12 @@ import Input from '../../../components/Input';
 import { Select } from '../../../components/Select';
 
 import isEmailValid from '../../../utils/isEmailValid';
+import formatPhone from '../../../utils/formatPhone';
 
 export const ClientesAdminPage = () => {
   const [clientes, setClientes] = useState([]);
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [emailError, setEmailError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [formIsValid, setFormIsValid] = useState(false);
@@ -81,6 +84,8 @@ export const ClientesAdminPage = () => {
                         }
                       </div>
                       <Input
+                        value={phone}
+                        onChange={(event) => setPhone(formatPhone(event.target.value))}
                         name="phone"
                         placeholder="Telefone"
                       />
@@ -88,11 +93,11 @@ export const ClientesAdminPage = () => {
                         name="know"
                         placeholder="Como conheceu a JCTurismo"
                       >
-                        <option>Instagram</option>
-                        <option>Facebook</option>
-                        <option>Google</option>
-                        <option>Indicação</option>
-                        <option>Outros</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="google">Google</option>
+                        <option value="indicação">Indicação</option>
+                        <option value="outros">Outros</option>
                       </Select>
                       <Button type="submit" disabled={!formIsValid}>
                         Enviar
@@ -126,8 +131,12 @@ export const ClientesAdminPage = () => {
                             <td className="know">{cliente.know}</td>
                             <td>
                               <ButtonContainer>
-                                <button type="button" aria-label="editar"><FiEdit2 /></button>
-                                <button type="button" aria-label="deletar"><AiOutlineDelete /></button>
+                                <Link to={`/admin/clientes/editarcliente/${cliente.id}`} aria-label="editar"><FiEdit2 /></Link>
+
+                                <form action={`https://jctturismo.herokuapp.com/deleteclient/${cliente.id}`} method="POST">
+                                  <button type="submit" aria-label="deletar"><AiOutlineDelete /></button>
+                                </form>
+
                               </ButtonContainer>
                             </td>
                           </tr>
