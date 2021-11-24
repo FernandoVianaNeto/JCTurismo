@@ -24,5 +24,10 @@ export const Form = styled.form`
       color: ${theme.colors.thirdColor};
       font-family: ${theme.font.family.texts};
     }
+
+    small {
+      color: ${theme.colors.thirdColor};
+      font-family: ${theme.font.family.texts};
+    }
   `}
 `;

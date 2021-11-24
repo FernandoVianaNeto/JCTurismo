@@ -44,6 +44,7 @@ export const DestinyCard = styled.table`
     }
 
     img {
+      border-radius: 4px;
       max-width: 200px;
       max-height: 200px;
     }
@@ -77,8 +78,7 @@ export const DestinyCard = styled.table`
 
 export const FormContainer = styled.div`
   ${() => css`
-    max-width: 500px;
-    margin: 0 auto;
+    width: 100%;
   `}
 `;
 
@@ -89,18 +89,117 @@ export const ButtonContainer = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    button {
+    a, button {
       border: 0;
       background: transparent;
       font-family: ${theme.font.family.texts};
       font-size: 16px;
       cursor: pointer;
-
+      color: ${theme.colors.backgroundColor};
       transition: ease-in-out all 300ms;
 
       &:hover {
         transform: scale(1.1);
       }
+    }
+  `}
+`;
+
+export const Header = styled.header`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: ${theme.colors.secundaryColor};
+    width: 100%;
+
+    h1 {
+      font-family: ${theme.font.family.texts};
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: space-between;
+
+      border: 2px solid ${theme.colors.secundaryColor};
+      border-radius: 4px;
+
+      background: ${theme.colors.secundaryColor};
+      padding: 5px;
+
+      font-family: ${theme.font.family.texts};
+      font-size: 16px;
+      color: ${theme.colors.thirdColor};
+
+      cursor: pointer;
+
+      transition: ease-in-out all 300ms;
+
+      &:hover {
+        border: 2px solid ${theme.colors.secundaryColor};
+        color: ${theme.colors.secundaryColor};
+        background-color: ${theme.colors.thirdColor};
+      }
+    }
+  `}
+`;
+
+export const BigGroup = styled.div`
+  ${() => css`
+    display: flex;
+  `}
+`;
+
+export const Group = styled.div`
+  ${() => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+    margin: 0px 40px;
+  `}
+`;
+
+export const SmallGroup = styled.div`
+  ${() => css`
+    display: flex;
+  `}
+`;
+
+export const Form = styled.form`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 25px;
+    padding: 30px;
+    min-width: 500px;
+    margin: 15px;
+
+    background-color: ${theme.colors.backgroundColor};
+
+    border-radius: 6px;
+
+    div {
+      width: 100%;
+    }
+
+    h1 {
+      color: ${theme.colors.thirdColor};
+      font-family: ${theme.font.family.texts};
+    }
+
+    h3 {
+      color: ${theme.colors.thirdColor};
+      font-family: ${theme.font.family.texts};
+    }
+
+    small {
+      color: ${theme.colors.thirdColor};
+      font-family: ${theme.font.family.texts};
     }
   `}
 `;

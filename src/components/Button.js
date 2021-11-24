@@ -5,8 +5,8 @@ export default styled.button`
     background-color: ${theme.colors.secundaryColor};
     padding: 1rem;
 
-    border-radius: 18px;
-    border: ${theme.colors.thirdColor};
+    border-radius: 4px;
+    border: 1px solid ${theme.colors.secundaryColor};
 
     color: ${theme.colors.thirdColor};
     font-family: ${theme.font.family.texts};
@@ -15,9 +15,13 @@ export default styled.button`
 
     width: 100%;
 
+    transition: ease-in-out all 200ms;
+
     &:hover {
-      background-color: ${theme.colors.primaryColor};
-      color: ${theme.colors.thirdColor};
+      background-color: ${theme.colors.thirdColor};
+      color: ${theme.colors.secundaryColor};
+      border: 1px solid ${theme.colors.secundaryColor};
+      font-weight: bold;
     }
 
     &[disabled] {
