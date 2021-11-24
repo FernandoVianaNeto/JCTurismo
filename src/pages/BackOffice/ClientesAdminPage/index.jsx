@@ -70,6 +70,7 @@ export const ClientesAdminPage = () => {
                   <FormContainer>
                     <Form action="https://jctturismo.herokuapp.com/createclient" method="POST">
                       <Input
+                        name="name"
                         placeholder="Nome"
                       />
                       <div>

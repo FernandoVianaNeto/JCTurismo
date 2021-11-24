@@ -30,7 +30,11 @@ export const EditClient = () => {
       {isLoading && <Loader isLoading={isLoading} />}
       <BackOfficeTemplate clientes>
         <FormContainer>
-          <Form action={`https://jctturismo.herokuapp.com/updateclient/${cliente.id}`} method="POST">
+          <Form
+            action={`https://jctturismo.herokuapp.com/updateclient/${cliente.id}`}
+            method="POST"
+          >
+            <h1>Editar: <span>{cliente.name}</span></h1>
             <Input
               defaultValue={cliente.name}
               name="name"
