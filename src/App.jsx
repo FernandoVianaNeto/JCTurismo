@@ -12,6 +12,8 @@ import { RegistrarDepoimento } from './pages/RegistrarDepoimento';
 import { Login } from './pages/Login';
 
 import { AdminPage } from './pages/BackOffice/AdminPage';
+import { EditDestination } from './pages/BackOffice/EditDestination';
+
 import { ClientesAdminPage } from './pages/BackOffice/ClientesAdminPage';
 import { EditClient } from './pages/BackOffice/EditClient';
 
@@ -29,6 +31,7 @@ function App() {
         <Route path="/login" exact component={Login} />
 
         <Route path="/admin/home" exact component={AdminPage} />
+        <Route path="/editardestino/:id" exact component={EditDestination} />
         <Route path="/admin/clientes" exact component={ClientesAdminPage} />
         <Route path="/admin/clientes/editarcliente/:id" exact component={EditClient} />
       </Switch>
