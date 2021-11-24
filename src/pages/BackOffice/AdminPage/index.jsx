@@ -22,7 +22,6 @@ export const AdminPage = () => {
   const [description, setDescription] = useState('');
   const [smallDescription, setSmallDescription] = useState('');
   const [paymentDescription, setPaymentDescription] = useState('');
-  const [price, setPrice] = useState(0);
   const [destinations, setDestinations] = useState([]);
   const [registerDestinationActive, setRegisterDestinationActive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -88,12 +87,12 @@ export const AdminPage = () => {
                       <div>
                         <small>Disponibilidade do passeio</small>
                         <Select
-                          name="status"
+                          name="statusName"
                           value={status}
                           onChange={(event) => setStatus(event.target.value)}
                         >
-                          <option value="disponível">Disponível</option>
-                          <option value="indisponível">Indisponível</option>
+                          <option value="true">Disponível</option>
+                          <option value="false">Indisponível</option>
                         </Select>
                       </div>
                     </Group>
@@ -104,72 +103,80 @@ export const AdminPage = () => {
                         <small>Categoria 1</small>
                         <Input
                           placeholder="Tipo de quantidade"
+                          name="catTitle1"
                         />
                         <SmallGroup>
                           <Input
+                            name="catPrice1"
                             placeholder="Preço"
                             type="number"
-                            value={price}
-                            onChange={(event) => setPrice(event.target.value)}
                           />
-                          <Select>
+                          <Select
+                            name="catType1"
+                          >
                             <option value="individual">Individual</option>
-                            <option value="pacote">Pacote</option>
                           </Select>
+                          <Input type="hidden" name="id1" value={(Math.random() * 10000000).toFixed(0)} />
                         </SmallGroup>
                       </Group>
                       <Group>
                         <small>Categoria 2</small>
                         <Input
                           placeholder="Tipo de quantidade"
+                          name="catTitle2"
                         />
                         <SmallGroup>
                           <Input
                             placeholder="Preço"
                             type="number"
-                            value={price}
-                            onChange={(event) => setPrice(event.target.value)}
+                            name="catPrice2"
                           />
-                          <Select>
-                            <option value="individual">Individual</option>
+                          <Select
+                            name="catType2"
+                          >
                             <option value="pacote">Pacote</option>
                           </Select>
+                          <Input type="hidden" name="id2" value={(Math.random() * 10000000).toFixed(0)} />
                         </SmallGroup>
                       </Group>
                       <Group>
                         <small>Categoria 3</small>
                         <Input
                           placeholder="Tipo de quantidade"
+                          name="catTitle3"
                         />
                         <SmallGroup>
                           <Input
                             placeholder="Preço"
                             type="number"
-                            value={price}
-                            onChange={(event) => setPrice(event.target.value)}
+                            name="catPrice3"
                           />
-                          <Select>
-                            <option value="individual">Individual</option>
+                          <Select
+                            name="catType3"
+                          >
                             <option value="pacote">Pacote</option>
                           </Select>
+                          <Input type="hidden" name="id3" value={(Math.random() * 10000000).toFixed(0)} />
                         </SmallGroup>
                       </Group>
                       <Group>
                         <small>Categoria 4</small>
                         <Input
                           placeholder="Tipo de quantidade"
+                          name="catTitle4"
                         />
                         <SmallGroup>
                           <Input
                             placeholder="Preço"
                             type="number"
-                            value={price}
-                            onChange={(event) => setPrice(event.target.value)}
+                            name="catPrice4"
                           />
-                          <Select>
-                            <option value="individual">Individual</option>
+                          <Select
+                            name="catType4"
+                          >
                             <option value="pacote">Pacote</option>
                           </Select>
+                          <Input type="hidden" name="id4" value={(Math.random() * 10000000).toFixed(0)} />
                         </SmallGroup>
                       </Group>
 
@@ -181,18 +188,20 @@ export const AdminPage = () => {
                                 <small>Categoria 5</small>
                                 <Input
                                   placeholder="Tipo de quantidade"
+                                  name="catType5"
                                 />
                                 <SmallGroup>
                                   <Input
                                     placeholder="Preço"
                                     type="number"
-                                    value={price}
-                                    onChange={(event) => setPrice(event.target.value)}
+                                    name="catPrice5"
                                   />
-                                  <Select>
-                                    <option value="individual">Individual</option>
+                                  <Select
+                                    name="catType5"
+                                  >
                                     <option value="pacote">Pacote</option>
                                   </Select>
+                                  <Input type="hidden" name="id5" value={(Math.random() * 10000000).toFixed(0)} />
                                 </SmallGroup>
                               </Group>
                               <Button type="button" onClick={() => setShowMore(false)}>Fechar</Button>
@@ -233,7 +242,7 @@ export const AdminPage = () => {
                             <ButtonContainer>
                               <Link aria-label="editar" to={`/editardestino/${destination.id}`}><FiEdit2 /></Link>
                               <form action={`https://jctturismo.herokuapp.com/deletardestino/${destination.id}`} method="POST">
-                                <button type="button" aria-label="deletar"><AiOutlineDelete /></button>
+                                <button type="submit" aria-label="deletar"><AiOutlineDelete /></button>
                               </form>
                             </ButtonContainer>
                           </td>

@@ -7,7 +7,7 @@ export default styled.input`
     border-radius: 4px;
     border: 1px solid ${theme.colors.backgroundColor};
 
-    padding: 0px 2px;
+    padding: 0px 4px;
 
     font-family: ${theme.font.family.texts};
 
