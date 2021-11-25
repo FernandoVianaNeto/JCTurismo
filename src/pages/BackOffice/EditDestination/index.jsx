@@ -18,7 +18,7 @@ export const EditDestination = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [title, setTitle] = useState('');
   const [imglink, setImglink] = useState('');
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState(Boolean);
   const [description, setDescription] = useState('');
   const [smalldescription, setSmallDescription] = useState('');
   const [paymentDescription, setPaymentDescription] = useState('');
@@ -51,7 +51,7 @@ export const EditDestination = () => {
       {isLoading
         ? <Loader isLoading={isLoading} />
         : (
-          <BackOfficeTemplate>
+          <BackOfficeTemplate clientes>
             <FormContainer>
               <Form action={`https://jctturismo.herokuapp.com/editardestino/${id}`} method="POST">
                 <BigGroup>
@@ -77,25 +77,25 @@ export const EditDestination = () => {
                     />
                     <TextArea
                       placeholder="Descrição reduzida do passeio*"
-                      name="smallDescription"
+                      name="smalldescription"
                       value={smalldescription}
                       onChange={(event) => setSmallDescription(event.target.value)}
                     />
                     <Input
                       placeholder="Descrição de pagamento*"
-                      name="paymentDescription"
+                      name="paymentdescription"
                       value={paymentDescription}
                       onChange={(event) => setPaymentDescription(event.target.value)}
                     />
                     <div>
                       <small>Disponibilidade do passeio</small>
                       <Select
-                        name="statusName"
+                        name="status"
                         value={status}
                         onChange={(event) => setStatus(event.target.value)}
                       >
-                        <option value="true">Disponível</option>
-                        <option value="false">Indisponível</option>
+                        <option value={Boolean(true)}>Disponível</option>
+                        <option value={Boolean(false)}>Indisponível</option>
                       </Select>
                     </div>
                   </Group>
@@ -106,12 +106,11 @@ export const EditDestination = () => {
                       <small>Categoria</small>
                       <Input
                         placeholder="Tipo de quantidade"
-                        name="catTitle1"
                         defaultValue={categories !== {} && categories.individual.type}
                       />
                       <SmallGroup>
                         <Input
-                          name="catPrice1"
+                          name="priceInd"
                           placeholder="Preço"
                           type="number"
                           defaultValue={categories !== {} && categories.individual.price}
@@ -121,7 +120,7 @@ export const EditDestination = () => {
                         >
                           <option value="individual">Individual</option>
                         </Select>
-                        <Input type="hidden" name="id1" value={categories !== {} && categories.individual.id} />
+                        <Input type="hidden" name="idInd" value={categories !== {} && categories.individual.id} />
                       </SmallGroup>
                     </Group>
                     {
@@ -130,12 +129,12 @@ export const EditDestination = () => {
                           <small>Categoria</small>
                           <Input
                             placeholder="Tipo de quantidade"
-                            name="catTitle1"
+                            name="types"
                             defaultValue={type.type}
                           />
                           <SmallGroup>
                             <Input
-                              name="catPrice1"
+                              name="prices"
                               placeholder="Preço"
                               type="number"
                               defaultValue={type.price}
@@ -145,7 +144,7 @@ export const EditDestination = () => {
                             >
                               <option value="pacote">Pacote</option>
                             </Select>
-                            <Input type="hidden" name="id1" value={(Math.random() * 10000000).toFixed(0)} />
+                            <Input type="hidden" name="ids" value={type.id} />
                           </SmallGroup>
                         </Group>
                       ))

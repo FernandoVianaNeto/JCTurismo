@@ -159,27 +159,6 @@ export const AdminPage = () => {
                           <Input type="hidden" name="id3" value={(Math.random() * 10000000).toFixed(0)} />
                         </SmallGroup>
                       </Group>
-                      <Group>
-                        <small>Categoria 4</small>
-                        <Input
-                          placeholder="Tipo de quantidade"
-                          name="catTitle4"
-                        />
-                        <SmallGroup>
-                          <Input
-                            placeholder="Preço"
-                            type="number"
-                            name="catPrice4"
-                          />
-                          <Select
-                            name="catType4"
-                          >
-                            <option value="pacote">Pacote</option>
-                          </Select>
-                          <Input type="hidden" name="id4" value={(Math.random() * 10000000).toFixed(0)} />
-                        </SmallGroup>
-                      </Group>
-
                       {
                         showMore
                           ? (
