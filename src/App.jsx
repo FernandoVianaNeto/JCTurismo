@@ -16,6 +16,7 @@ import { EditDestination } from './pages/BackOffice/EditDestination';
 import { ClientesAdminPage } from './pages/BackOffice/ClientesAdminPage';
 import { EditClient } from './pages/BackOffice/EditClient';
 import { TestimonyAdminPage } from './pages/BackOffice/TestimonyAdminPage';
+import { EditTestimony } from './pages/BackOffice/EditTestimony';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/admin/clientes" exact component={ClientesAdminPage} />
         <Route path="/admin/clientes/editarcliente/:id" exact component={EditClient} />
         <Route path="/admin/depoimentos" exact component={TestimonyAdminPage} />
+        <Route path="/admin/depoimentos/editardepoimento/:id" exact component={EditTestimony} />
       </Switch>
     </BrowserRouter>
   );

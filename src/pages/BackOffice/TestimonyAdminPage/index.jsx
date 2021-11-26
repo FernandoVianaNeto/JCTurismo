@@ -42,6 +42,16 @@ export const TestimonyAdminPage = () => {
     }
   }, [email, testimony, date, name, title]);
 
+  function handleDeleteTestimony({ id, titleTestimony }) {
+    // eslint-disable-next-line no-alert
+    if (window.confirm(`Tem certeza que você deseja deletar o depoimento '${titleTestimony}'`)) {
+      fetch(`https://jctturismo.herokuapp.com/deletardepoimento/${id}`, { method: 'POST' })
+        .then(() => {
+          document.location.reload(true);
+        });
+    }
+  }
+
   return (
     <Container>
       <BackOfficeTemplate depoimentos>
@@ -116,9 +126,7 @@ export const TestimonyAdminPage = () => {
                           <small>{depoimento.date}</small>
                           <ButtonContainer>
                             <Link to={`admin/editardepoimento/${depoimento.id}`}><FiEdit2 /></Link>
-                            <form action={`https://jctturismo.herokuapp.com/deletardepoimento/${depoimento.id}`} method="POST">
-                              <button type="submit" aria-label="deletar depoimento"><AiOutlineDelete /></button>
-                            </form>
+                            <button type="button" onClick={() => handleDeleteTestimony({ id: depoimento.id, titleTestimony: depoimento.title })} aria-label="deletar depoimento"><AiOutlineDelete /></button>
                           </ButtonContainer>
                         </Footer>
                       </DepoimentoContainer>
