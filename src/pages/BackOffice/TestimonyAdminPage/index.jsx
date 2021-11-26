@@ -8,7 +8,7 @@ import {
 } from './styles';
 
 import { BackOfficeTemplate } from '../../../templates/BackOfficeTemplate';
-// import Loader from '../../../components/Loader';
+import Loader from '../../../components/Loader';
 import { Form } from '../../../components/Form';
 import Input from '../../../components/Input';
 import { TextArea } from '../../../components/TextArea';
@@ -20,6 +20,7 @@ export const TestimonyAdminPage = () => {
   const [depoimentos, setDepoimentos] = useState([]);
   const [registerTestimonyActive, setRegisterTestimonyActive] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [testimony, setTestimony] = useState('');
   const [date, setDate] = useState('');
@@ -31,6 +32,7 @@ export const TestimonyAdminPage = () => {
       .then(async (response) => {
         const depoimentosData = await response.json();
         setDepoimentos(depoimentosData);
+        setIsLoading(false);
       });
   }, []);
 
@@ -54,6 +56,7 @@ export const TestimonyAdminPage = () => {
 
   return (
     <Container>
+      {isLoading && <Loader isLoading={isLoading} />}
       <BackOfficeTemplate depoimentos>
         <Content>
           {
@@ -125,7 +128,7 @@ export const TestimonyAdminPage = () => {
                           <small className="name">{depoimento.name}</small>
                           <small>{depoimento.date}</small>
                           <ButtonContainer>
-                            <Link to={`admin/editardepoimento/${depoimento.id}`}><FiEdit2 /></Link>
+                            <Link to={`/admin/depoimentos/editardepoimento/${depoimento.id}`}><FiEdit2 /></Link>
                             <button type="button" onClick={() => handleDeleteTestimony({ id: depoimento.id, titleTestimony: depoimento.title })} aria-label="deletar depoimento"><AiOutlineDelete /></button>
                           </ButtonContainer>
                         </Footer>
