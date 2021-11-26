@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 import { FiEdit2 } from 'react-icons/fi';
 import { AiOutlineDelete, AiOutlineUserAdd } from 'react-icons/ai';
 
 import { Link } from 'react-router-dom';
 import {
-  Container, ClientesCard, ClientesContainer, ButtonContainer, Header, FormContainer,
+  Container, ClientesCard, ClientesContainer, ButtonContainer, Header, FormContainer, Content, HeaderGroup,
 } from './styles';
 
 import { BackOfficeTemplate } from '../../../templates/BackOfficeTemplate';
@@ -22,10 +22,15 @@ export const ClientesAdminPage = () => {
   const [clientes, setClientes] = useState([]);
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [emailError, setEmailError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [formIsValid, setFormIsValid] = useState(false);
   const [registerClientActive, setRegisterClientActive] = useState(false);
+
+  const filteredClients = useMemo(() => clientes.filter((client) => (
+    client.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )), [clientes, searchTerm]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -58,8 +63,9 @@ export const ClientesAdminPage = () => {
     <Container>
       {isLoading && <Loader isLoading={isLoading} />}
       <BackOfficeTemplate clientes>
-        <ClientesContainer>
-          {
+        <Content>
+          <ClientesContainer>
+            {
             registerClientActive
               ? (
                 <>
@@ -112,10 +118,17 @@ export const ClientesAdminPage = () => {
                 <>
                   <Header>
                     <h1>Clientes Cadastrados</h1>
-                    <button type="button" onClick={() => setRegisterClientActive(true)}>Cadastrar novo cliente <AiOutlineUserAdd /></button>
+                    <HeaderGroup>
+                      <input
+                        placeholder="Pesquise um destino"
+                        value={searchTerm}
+                        onChange={(event) => setSearchTerm(event.target.value)}
+                      />
+                      <button type="button" onClick={() => setRegisterClientActive(true)}>Cadastrar novo cliente <AiOutlineUserAdd /></button>
+                    </HeaderGroup>
                   </Header>
                   {
-                    clientes.map((cliente) => (
+                    filteredClients.map((cliente) => (
                       <ClientesCard key={cliente.id}>
                         <tbody>
                           <tr>
@@ -148,9 +161,8 @@ export const ClientesAdminPage = () => {
                 </>
               )
           }
-
-        </ClientesContainer>
-
+          </ClientesContainer>
+        </Content>
       </BackOfficeTemplate>
     </Container>
   );

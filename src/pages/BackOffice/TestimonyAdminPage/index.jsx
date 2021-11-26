@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 import { FiEdit2 } from 'react-icons/fi';
 import { AiOutlineDelete, AiFillBook } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import {
-  Container, DepoimentoContainer, Footer, TestimonysContainer, ButtonContainer, Content, ButtonContainerHeader, FormContainer, Group,
+  Container, DepoimentoContainer, Footer, TestimonysContainer, ButtonContainer, Content, ButtonContainerHeader, FormContainer, Group, HeaderGroup,
 } from './styles';
 
 import { BackOfficeTemplate } from '../../../templates/BackOfficeTemplate';
@@ -26,6 +26,11 @@ export const TestimonyAdminPage = () => {
   const [date, setDate] = useState('');
   const [name, setName] = useState('');
   const [title, setTitle] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredTestimony = useMemo(() => depoimentos.filter((depoimento) => (
+    depoimento.title.toLowerCase().includes(searchTerm.toLowerCase())
+  )), [depoimentos, searchTerm]);
 
   useEffect(() => {
     fetch('https://jctturismo.herokuapp.com/depoimentos')
@@ -116,11 +121,18 @@ export const TestimonyAdminPage = () => {
               <>
                 <ButtonContainerHeader>
                   <h1>Depoimentos</h1>
-                  <button type="button" onClick={() => setRegisterTestimonyActive(true)}>Adicionar um novo depoimento <AiFillBook /></button>
+                  <HeaderGroup>
+                    <input
+                      placeholder="Pesquise um depoimento"
+                      value={searchTerm}
+                      onChange={(event) => setSearchTerm(event.target.value)}
+                    />
+                    <button type="button" onClick={() => setRegisterTestimonyActive(true)}>Adicionar um novo depoimento <AiFillBook /></button>
+                  </HeaderGroup>
                 </ButtonContainerHeader>
                 <TestimonysContainer>
                   {
-                    depoimentos.map((depoimento) => (
+                    filteredTestimony.map((depoimento) => (
                       <DepoimentoContainer key={depoimento.key}>
                         <h3>{depoimento.title}</h3>
                         <i>{depoimento.testimony}</i>

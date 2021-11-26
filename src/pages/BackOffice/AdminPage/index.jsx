@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 import { FiEdit2 } from 'react-icons/fi';
 import { AiOutlineDelete, AiOutlineUserAdd } from 'react-icons/ai';
 
 import { Link } from 'react-router-dom';
 import {
-  Container, DestinationsContainer, DestinyCard, ButtonContainer, Header, Group, Form, BigGroup, SmallGroup,
+  Container, DestinationsContainer, DestinyCard, ButtonContainer, Header, Group, Form, BigGroup, SmallGroup, HeaderGroup, Content,
 } from './styles';
 
 import { BackOfficeTemplate } from '../../../templates/BackOfficeTemplate';
@@ -22,10 +22,15 @@ export const AdminPage = () => {
   const [description, setDescription] = useState('');
   const [smallDescription, setSmallDescription] = useState('');
   const [paymentDescription, setPaymentDescription] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [destinations, setDestinations] = useState([]);
   const [registerDestinationActive, setRegisterDestinationActive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showMore, setShowMore] = useState(false);
+
+  const filteredTestimony = useMemo(() => destinations.filter((destino) => (
+    destino.title.toLowerCase().includes(searchTerm.toLowerCase())
+  )), [destinations, searchTerm]);
 
   useEffect(() => {
     fetch('https://jctturismo.herokuapp.com/destinations')
@@ -40,8 +45,9 @@ export const AdminPage = () => {
     <Container>
       {isLoading && <Loader isLoading={isLoading} />}
       <BackOfficeTemplate home>
-        <DestinationsContainer>
-          {
+        <Content>
+          <DestinationsContainer>
+            {
             registerDestinationActive ? (
               <>
                 <Header>
@@ -199,12 +205,19 @@ export const AdminPage = () => {
               <>
                 <Header>
                   <h1>Destinos disponíveis</h1>
-                  <button type="button" onClick={() => setRegisterDestinationActive(true)}>
-                    Cadastrar novo destino <AiOutlineUserAdd />
-                  </button>
+                  <HeaderGroup>
+                    <input
+                      placeholder="Pesquise um destino"
+                      value={searchTerm}
+                      onChange={(event) => setSearchTerm(event.target.value)}
+                    />
+                    <button type="button" onClick={() => setRegisterDestinationActive(true)}>
+                      Cadastrar novo destino <AiOutlineUserAdd />
+                    </button>
+                  </HeaderGroup>
                 </Header>
                 {
-                  destinations.map((destination) => (
+                  filteredTestimony.map((destination) => (
                     <DestinyCard key={destination.id}>
                       <tbody>
                         <tr>
@@ -234,7 +247,9 @@ export const AdminPage = () => {
             )
           }
 
-        </DestinationsContainer>
+          </DestinationsContainer>
+        </Content>
+
       </BackOfficeTemplate>
     </Container>
   );

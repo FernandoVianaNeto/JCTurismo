@@ -49,7 +49,6 @@ export const EditTestimony = () => {
       <BackOfficeTemplate depoimentos>
         <Content>
           <h3>Editar depoimento: {title}</h3>
-
           <FormContainer>
             <Form action={`https://jctturismo.herokuapp.com/editardepoimento/${id}`} method="POST">
               <Input

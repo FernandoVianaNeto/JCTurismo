@@ -142,3 +142,21 @@ export const Group = styled.div`
     }
   `}
 `;
+
+export const HeaderGroup = styled.div`
+  ${({ theme }) => css`
+      min-width: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      input {
+        font-family: ${theme.font.family.texts};
+        height: 35px;
+        border: 1px solid ${theme.colors.backgroundColor};
+        border-radius: 4px;
+        padding: 0px 16px;
+      }
+  `}
+`;

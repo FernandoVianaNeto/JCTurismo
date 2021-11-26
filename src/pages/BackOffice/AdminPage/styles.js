@@ -14,7 +14,6 @@ export const DestinationsContainer = styled.div`
     align-items: center;
     gap: 10px;
     justify-content: space-around;
-    margin: 50px;
 
     width: 100%;
   `}
@@ -201,5 +200,30 @@ export const Form = styled.form`
       color: ${theme.colors.thirdColor};
       font-family: ${theme.font.family.texts};
     }
+  `}
+`;
+
+export const HeaderGroup = styled.div`
+  ${({ theme }) => css`
+      min-width: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      input {
+        font-family: ${theme.font.family.texts};
+        height: 35px;
+        border: 1px solid ${theme.colors.backgroundColor};
+        border-radius: 4px;
+        padding: 0px 16px;
+      }
+  `}
+`;
+
+export const Content = styled.div`
+  ${() => css`
+    width: 100%;
+    padding: 50px;
   `}
 `;

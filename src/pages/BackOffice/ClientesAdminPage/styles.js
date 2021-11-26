@@ -15,7 +15,6 @@ export const ClientesContainer = styled.div`
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    padding: 10px;
   `}
 `;
 
@@ -28,6 +27,13 @@ export const FormContainer = styled.div`
       font-family: ${theme.font.family.texts};
       color: red;
     }
+  `}
+`;
+
+export const Content = styled.div`
+  ${() => css`
+  width: 100%;
+    padding: 50px;
   `}
 `;
 
@@ -130,5 +136,23 @@ export const Header = styled.header`
         background-color: ${theme.colors.thirdColor};
       }
     }
+  `}
+`;
+
+export const HeaderGroup = styled.div`
+  ${({ theme }) => css`
+      min-width: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      input {
+        font-family: ${theme.font.family.texts};
+        height: 35px;
+        border: 1px solid ${theme.colors.backgroundColor};
+        border-radius: 4px;
+        padding: 0px 16px;
+      }
   `}
 `;
