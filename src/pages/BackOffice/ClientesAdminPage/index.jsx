@@ -120,7 +120,7 @@ export const ClientesAdminPage = () => {
                     <h1>Clientes Cadastrados</h1>
                     <HeaderGroup>
                       <input
-                        placeholder="Pesquise um destino"
+                        placeholder="Pesquise um cliente"
                         value={searchTerm}
                         onChange={(event) => setSearchTerm(event.target.value)}
                       />

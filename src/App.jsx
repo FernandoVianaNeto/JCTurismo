@@ -31,12 +31,12 @@ function App() {
         <Route path="/escreverdepoimento" exact component={RegistrarDepoimento} />
         <Route path="/login" exact component={Login} />
 
-        <Route path="/admin/home" exact component={AdminPage} />
-        <Route path="/editardestino/:id" exact component={EditDestination} />
-        <Route path="/admin/clientes" exact component={ClientesAdminPage} />
-        <Route path="/admin/clientes/editarcliente/:id" exact component={EditClient} />
-        <Route path="/admin/depoimentos" exact component={TestimonyAdminPage} />
-        <Route path="/admin/depoimentos/editardepoimento/:id" exact component={EditTestimony} />
+        <Route path="/admin/home/auth=:token" exact component={AdminPage} />
+        <Route path="/editardestino/:id/auth=:token" exact component={EditDestination} />
+        <Route path="/auth?=:token/admin/clientes/auth=:token" exact component={ClientesAdminPage} />
+        <Route path="/auth?=:token/admin/clientes/editarcliente/:id/auth=:token" exact component={EditClient} />
+        <Route path="/auth?=:token/admin/depoimentos/auth=:token" exact component={TestimonyAdminPage} />
+        <Route path="/auth?=:token/admin/depoimentos/editardepoimento/:id/auth=:token" exact component={EditTestimony} />
       </Switch>
     </BrowserRouter>
   );

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { FiEdit2 } from 'react-icons/fi';
 import { AiOutlineDelete, AiOutlineUserAdd } from 'react-icons/ai';
 
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {
   Container, DestinationsContainer, DestinyCard, ButtonContainer, Header, Group, Form, BigGroup, SmallGroup, HeaderGroup, Content,
 } from './styles';
@@ -27,6 +27,8 @@ export const AdminPage = () => {
   const [registerDestinationActive, setRegisterDestinationActive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showMore, setShowMore] = useState(false);
+
+  const { token } = useParams();
 
   const filteredTestimony = useMemo(() => destinations.filter((destino) => (
     destino.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -56,7 +58,7 @@ export const AdminPage = () => {
                     Voltar
                   </button>
                 </Header>
-                <Form action="https://jctturismo.herokuapp.com/createdestination" method="POST">
+                <Form action={`https://jctturismo.herokuapp.com/createdestination/${token}`} method="POST">
                   <BigGroup>
                     <Group>
                       <h3>Informações do passeio</h3>
@@ -232,8 +234,8 @@ export const AdminPage = () => {
                           <td className="description"><p>{destination.smalldescription}</p></td>
                           <td className="op">
                             <ButtonContainer>
-                              <Link aria-label="editar" to={`/editardestino/${destination.id}`}><FiEdit2 /></Link>
-                              <form action={`https://jctturismo.herokuapp.com/deletardestino/${destination.id}`} method="POST">
+                              <Link aria-label="editar" to={`/editardestino/${destination.id}/auth=${token}`}><FiEdit2 /></Link>
+                              <form action={`https://jctturismo.herokuapp.com/deletardestino/${destination.id}/${token}`} method="POST">
                                 <button type="submit" aria-label="deletar"><AiOutlineDelete /></button>
                               </form>
                             </ButtonContainer>

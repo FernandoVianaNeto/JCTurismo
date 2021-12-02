@@ -23,7 +23,9 @@ export const EditDestination = () => {
   const [smalldescription, setSmallDescription] = useState('');
   const [paymentDescription, setPaymentDescription] = useState('');
   const [categories, setCategories] = useState({});
+
   const { id } = useParams();
+  const { token } = useParams();
 
   useEffect(() => {
     fetch(`https://jctturismo.herokuapp.com/destino/${id}`)
@@ -53,7 +55,7 @@ export const EditDestination = () => {
         : (
           <BackOfficeTemplate clientes>
             <FormContainer>
-              <Form action={`https://jctturismo.herokuapp.com/editardestino/${id}`} method="POST">
+              <Form action={`https://jctturismo.herokuapp.com/editardestino/${id}/${token}`} method="POST">
                 <BigGroup>
                   <Group>
                     <h3>Informações do passeio</h3>

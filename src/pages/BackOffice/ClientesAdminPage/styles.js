@@ -32,7 +32,7 @@ export const FormContainer = styled.div`
 
 export const Content = styled.div`
   ${() => css`
-  width: 100%;
+    width: 100%;
     padding: 50px;
   `}
 `;

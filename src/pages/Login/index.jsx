@@ -22,7 +22,7 @@ export const Login = () => {
 
   return (
     <Container>
-      <Form action="https://jctturismo.herokuapp.com/login">
+      <Form action="https://jctturismo.herokuapp.com/authenticate" method="POST">
         <h1>Login em JCTturismo</h1>
         <Input
           value={username}
