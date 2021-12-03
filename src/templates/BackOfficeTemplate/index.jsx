@@ -25,7 +25,7 @@ export const BackOfficeTemplate = ({
           clientes && (
             <>
               <Link to={`/admin/depoimentos/auth=${token}`}>Ver Depoimentos</Link>
-              <Link to="/admin/home">Ver Destinos</Link>
+              <Link to={`/admin/home/auth=${token}`}>Ver Destinos</Link>
             </>
           )
         }

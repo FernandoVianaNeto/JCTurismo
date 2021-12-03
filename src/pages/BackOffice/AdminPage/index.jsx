@@ -30,8 +30,6 @@ export const AdminPage = () => {
 
   const { token } = useParams();
 
-  console.log(destinations);
-
   const filteredTestimony = useMemo(() => destinations.filter((destino) => (
     destino.title.toLowerCase().includes(searchTerm.toLowerCase())
   )), [destinations, searchTerm]);
