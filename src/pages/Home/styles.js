@@ -54,7 +54,7 @@ export const Container = styled.div`
               background-color: ${theme.colors.secundaryColor};
               border: 1px solid ${theme.colors.secundaryColor};
               color: ${theme.colors.thirdColor};
-              font-weight: normal;
+              font-weight: bold;
             }
           }
         }

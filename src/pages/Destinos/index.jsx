@@ -20,8 +20,8 @@ export const Destinos = () => {
     setIsLoading(true);
     fetch('https://jctturismo.herokuapp.com/destinations')
       .then(async (response) => {
-        const json = await response.json();
-        setDestinos(json);
+        const destinosData = await response.json();
+        setDestinos(destinosData);
         setIsLoading(false);
       });
   }, []);
@@ -42,15 +42,15 @@ export const Destinos = () => {
         </SmallGroup>
         <Group>
           {
-            filteredDestinos.length > 0 ? (
-              filteredDestinos.map((card) => (
+            destinos !== [] ? (
+              filteredDestinos.map((destino) => (
                 <DestinosPageCard
-                  key={card.id}
-                  imglink={card.imglink}
-                  title={card.title}
-                  categories={card.categories}
-                  description={card.description}
-                  id={card.id}
+                  key={destino.id}
+                  imglink={destino.imglink}
+                  title={destino.title}
+                  categories={destino.categories}
+                  description={destino.description}
+                  id={destino.id}
                 />
               ))
             ) : (
