@@ -53,7 +53,7 @@ export const EditDestination = () => {
       {isLoading
         ? <Loader isLoading={isLoading} />
         : (
-          <BackOfficeTemplate clientes>
+          <BackOfficeTemplate clientes token={token}>
             <FormContainer>
               <Form action={`https://jctturismo.herokuapp.com/editardestino/${id}/${token}`} method="POST">
                 <BigGroup>
@@ -151,6 +151,17 @@ export const EditDestination = () => {
                         </Group>
                       ))
                     }
+                    <Group>
+                      <small>Adicional por pessoa</small>
+                      <SmallGroup>
+                        <Input
+                          name="adicional"
+                          placeholder="Preço"
+                          type="number"
+                          defaultValue={categories !== {} && categories.pacote.adicional}
+                        />
+                      </SmallGroup>
+                    </Group>
                   </Group>
                 </BigGroup>
                 <Button type="submit">Editar</Button>

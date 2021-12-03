@@ -30,6 +30,8 @@ export const AdminPage = () => {
 
   const { token } = useParams();
 
+  console.log(destinations);
+
   const filteredTestimony = useMemo(() => destinations.filter((destino) => (
     destino.title.toLowerCase().includes(searchTerm.toLowerCase())
   )), [destinations, searchTerm]);
@@ -164,6 +166,17 @@ export const AdminPage = () => {
                           >
                             <option value="pacote">Pacote</option>
                           </Select>
+                          <Input type="hidden" name="id3" value={(Math.random() * 10000000).toFixed(0)} />
+                        </SmallGroup>
+                      </Group>
+                      <Group>
+                        <small>Adicional por pessoa</small>
+                        <SmallGroup>
+                          <Input
+                            placeholder="Preço"
+                            type="number"
+                            name="adicional"
+                          />
                           <Input type="hidden" name="id3" value={(Math.random() * 10000000).toFixed(0)} />
                         </SmallGroup>
                       </Group>
