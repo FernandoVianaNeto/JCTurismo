@@ -15,6 +15,7 @@ export const EditClient = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const { id } = useParams();
+  const { token } = useParams();
 
   useEffect(() => {
     fetch(`https://jctturismo.herokuapp.com/cliente/${id}`)
@@ -28,10 +29,10 @@ export const EditClient = () => {
   return (
     <Container>
       {isLoading && <Loader isLoading={isLoading} />}
-      <BackOfficeTemplate clientes>
+      <BackOfficeTemplate clientes token={token}>
         <FormContainer>
           <Form
-            action={`https://jctturismo.herokuapp.com/updateclient/${cliente.id}`}
+            action={`https://jctturismo.herokuapp.com/updateclient/${cliente.id}/${token}`}
             method="POST"
           >
             <h1>Editar: <span>{cliente.name}</span></h1>

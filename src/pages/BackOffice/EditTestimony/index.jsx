@@ -23,6 +23,7 @@ export const EditTestimony = () => {
   const [formIsValid, setFormIsValid] = useState();
 
   const { id } = useParams();
+  const { token } = useParams();
 
   useEffect(() => {
     fetch(`https://jctturismo.herokuapp.com/depoimento/${id}`)
@@ -50,7 +51,7 @@ export const EditTestimony = () => {
         <Content>
           <h3>Editar depoimento: {title}</h3>
           <FormContainer>
-            <Form action={`https://jctturismo.herokuapp.com/editardepoimento/${id}`} method="POST">
+            <Form action={`https://jctturismo.herokuapp.com/editardepoimento/${id}/${token}`} method="POST">
               <Input
                 type="text"
                 name="title"

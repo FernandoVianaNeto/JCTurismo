@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 
 import { FiEdit2 } from 'react-icons/fi';
 import { AiOutlineDelete, AiFillBook } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {
   Container, DepoimentoContainer, Footer, TestimonysContainer, ButtonContainer, Content, ButtonContainerHeader, FormContainer, Group, HeaderGroup,
 } from './styles';
@@ -28,6 +28,8 @@ export const TestimonyAdminPage = () => {
   const [title, setTitle] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
+  const { token } = useParams();
+
   const filteredTestimony = useMemo(() => depoimentos.filter((depoimento) => (
     depoimento.title.toLowerCase().includes(searchTerm.toLowerCase())
   )), [depoimentos, searchTerm]);
@@ -52,7 +54,7 @@ export const TestimonyAdminPage = () => {
   function handleDeleteTestimony({ id, titleTestimony }) {
     // eslint-disable-next-line no-alert
     if (window.confirm(`Tem certeza que você deseja deletar o depoimento '${titleTestimony}'`)) {
-      fetch(`https://jctturismo.herokuapp.com/deletardepoimento/${id}`, { method: 'POST' })
+      fetch(`https://jctturismo.herokuapp.com/deletardepoimento/${id}/${token}`, { method: 'POST' })
         .then(() => {
           document.location.reload(true);
         });
@@ -62,7 +64,7 @@ export const TestimonyAdminPage = () => {
   return (
     <Container>
       {isLoading && <Loader isLoading={isLoading} />}
-      <BackOfficeTemplate depoimentos>
+      <BackOfficeTemplate depoimentos token={token}>
         <Content>
           {
             registerTestimonyActive ? (
@@ -72,7 +74,7 @@ export const TestimonyAdminPage = () => {
                   <button type="button" onClick={() => setRegisterTestimonyActive(false)}>Voltar</button>
                 </ButtonContainerHeader>
                 <FormContainer>
-                  <Form action="https://jctturismo.herokuapp.com/criardepoimento" method="POST">
+                  <Form action={`https://jctturismo.herokuapp.com/criardepoimento/${token}`} method="POST">
                     <Input
                       type="text"
                       name="title"
@@ -140,7 +142,7 @@ export const TestimonyAdminPage = () => {
                           <small className="name">{depoimento.name}</small>
                           <small>{depoimento.date}</small>
                           <ButtonContainer>
-                            <Link to={`/admin/depoimentos/editardepoimento/${depoimento.id}`}><FiEdit2 /></Link>
+                            <Link to={`/admin/depoimentos/editardepoimento/${depoimento.id}/auth=${token}`}><FiEdit2 /></Link>
                             <button type="button" onClick={() => handleDeleteTestimony({ id: depoimento.id, titleTestimony: depoimento.title })} aria-label="deletar depoimento"><AiOutlineDelete /></button>
                           </ButtonContainer>
                         </Footer>

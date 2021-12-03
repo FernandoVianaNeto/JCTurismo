@@ -7,7 +7,7 @@ import {
 } from './styles';
 
 export const BackOfficeTemplate = ({
-  children, clientes, depoimentos, home,
+  children, clientes, depoimentos, home, token,
 }) => (
   <Container>
     <Aside>
@@ -16,15 +16,15 @@ export const BackOfficeTemplate = ({
         {
           depoimentos && (
             <>
-              <Link to="/admin/clientes">Ver Clientes</Link>
-              <Link to="/admin/home">Ver Destinos</Link>
+              <Link to={`/admin/clientes/auth=${token}`}>Ver Clientes</Link>
+              <Link to={`/admin/home/auth=${token}`}>Ver Destinos</Link>
             </>
           )
         }
         {
           clientes && (
             <>
-              <Link to="/admin/depoimentos">Ver Depoimentos</Link>
+              <Link to={`/admin/depoimentos/auth=${token}`}>Ver Depoimentos</Link>
               <Link to="/admin/home">Ver Destinos</Link>
             </>
           )
@@ -32,8 +32,8 @@ export const BackOfficeTemplate = ({
         {
           home && (
             <>
-              <Link to="/admin/clientes">Ver Clientes</Link>
-              <Link to="/admin/depoimentos">Ver Depoimentos</Link>
+              <Link to={`/admin/clientes/auth=${token}`}>Ver Clientes</Link>
+              <Link to={`/admin/depoimentos/auth=${token}`}>Ver Depoimentos</Link>
             </>
           )
         }
@@ -53,6 +53,7 @@ BackOfficeTemplate.propTypes = {
   depoimentos: P.bool,
   clientes: P.bool,
   home: P.bool,
+  token: P.string.isRequired,
 };
 
 BackOfficeTemplate.defaultProps = {

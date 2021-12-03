@@ -46,7 +46,7 @@ export const AdminPage = () => {
   return (
     <Container>
       {isLoading && <Loader isLoading={isLoading} />}
-      <BackOfficeTemplate home>
+      <BackOfficeTemplate home token={token}>
         <Content>
           <DestinationsContainer>
             {

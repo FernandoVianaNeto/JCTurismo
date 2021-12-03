@@ -3,7 +3,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { FiEdit2 } from 'react-icons/fi';
 import { AiOutlineDelete, AiOutlineUserAdd } from 'react-icons/ai';
 
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+
 import {
   Container, ClientesCard, ClientesContainer, ButtonContainer, Header, FormContainer, Content, HeaderGroup,
 } from './styles';
@@ -27,6 +28,8 @@ export const ClientesAdminPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [formIsValid, setFormIsValid] = useState(false);
   const [registerClientActive, setRegisterClientActive] = useState(false);
+
+  const { token } = useParams();
 
   const filteredClients = useMemo(() => clientes.filter((client) => (
     client.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -62,7 +65,7 @@ export const ClientesAdminPage = () => {
   return (
     <Container>
       {isLoading && <Loader isLoading={isLoading} />}
-      <BackOfficeTemplate clientes>
+      <BackOfficeTemplate clientes token={token}>
         <Content>
           <ClientesContainer>
             {
@@ -74,7 +77,7 @@ export const ClientesAdminPage = () => {
                     <button type="button" onClick={() => setRegisterClientActive(false)}>Voltar</button>
                   </Header>
                   <FormContainer>
-                    <Form action="https://jctturismo.herokuapp.com/createclient" method="POST">
+                    <Form action={`https://jctturismo.herokuapp.com/createclient/${token}`} method="POST">
                       <Input
                         name="name"
                         placeholder="Nome"
@@ -145,9 +148,9 @@ export const ClientesAdminPage = () => {
                             <td className="know">{cliente.know}</td>
                             <td>
                               <ButtonContainer>
-                                <Link to={`/admin/clientes/editarcliente/${cliente.id}`} aria-label="editar"><FiEdit2 /></Link>
+                                <Link to={`/admin/clientes/editarcliente/${cliente.id}/auth=${token}`} aria-label="editar"><FiEdit2 /></Link>
 
-                                <form action={`https://jctturismo.herokuapp.com/deleteclient/${cliente.id}`} method="POST">
+                                <form action={`https://jctturismo.herokuapp.com/deleteclient/${cliente.id}/${token}`} method="POST">
                                   <button type="submit" aria-label="deletar"><AiOutlineDelete /></button>
                                 </form>
 
