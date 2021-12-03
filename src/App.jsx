@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import { Home } from './pages/Home';
 import { ShoppingCart } from './pages/ShoppingCart';
@@ -20,7 +20,7 @@ import { EditTestimony } from './pages/BackOffice/EditTestimony';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/destino/:id" exact component={Destino} />
@@ -38,7 +38,7 @@ function App() {
         <Route path="/admin/depoimentos/auth=:token" exact component={TestimonyAdminPage} />
         <Route path="/admin/depoimentos/editardepoimento/:id/auth=:token" exact component={EditTestimony} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
