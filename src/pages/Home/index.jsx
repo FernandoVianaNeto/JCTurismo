@@ -52,7 +52,7 @@ export const Home = () => {
               <FaShuttleVan />
               <p>Transfer</p>
             </MenuLink>
-            <MenuLink link="/citytour">
+            <MenuLink link="/destino/ac162483-d112-4b6e-8ca4-010f72e99763">
               <GiModernCity />
               <p>CityTour</p>
             </MenuLink>

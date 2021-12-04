@@ -210,12 +210,14 @@ export const data = {
       title: 'City Tour',
       smallDescription: 'Este passeio extremamente cultural, levará você por uma viagem no tempo, conhecendo o melhor da história de Salvador',
       iconLink: 'https://res.cloudinary.com/dh84pxwgu/image/upload/v1632174356/city_building_construction_cities_buildings_icon_133122_ibo2wy.svg',
+      link: '/destino/ac162483-d112-4b6e-8ca4-010f72e99763',
     },
     {
       id: 121311,
       title: 'Pacotes',
       smallDescription: 'Você poderá escolher um pacote, entre os nossos passeios, para curtir com sua família, sem gastar muito, aproveitando o melhor com o menor preço',
       iconLink: 'https://res.cloudinary.com/dh84pxwgu/image/upload/v1632176167/package_106363_oyaoes.svg',
+      link: '/destinos',
     },
   ],
   chamadas: [

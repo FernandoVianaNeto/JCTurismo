@@ -21,12 +21,18 @@ export default styled.button`
       background-color: ${theme.colors.thirdColor};
       color: ${theme.colors.secundaryColor};
       border: 1px solid ${theme.colors.secundaryColor};
-      font-weight: bold;
     }
 
     &[disabled] {
       color: ${theme.colors.primaryColor};
       background-color: lightgray;
+      border: 1px solid lightgray;
+
+      &:hover {
+        font-style: normal;
+        color: ${theme.colors.primaryColor};
+        cursor: default;
+      }
     }
 
     &[type = "submit"] {
