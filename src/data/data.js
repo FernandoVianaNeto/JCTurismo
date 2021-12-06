@@ -204,6 +204,7 @@ export const data = {
       title: 'Transfer',
       smallDescription: 'Transporte entre o aeroporto e o seu destino de escolha, com confiabilidade e e segurança',
       iconLink: 'https://res.cloudinary.com/dh84pxwgu/image/upload/v1632173801/bus_120710_shasxs.svg',
+      link: '/transfer',
     },
     {
       id: 14,

@@ -17,6 +17,7 @@ import { ClientesAdminPage } from './pages/BackOffice/ClientesAdminPage';
 import { EditClient } from './pages/BackOffice/EditClient';
 import { TestimonyAdminPage } from './pages/BackOffice/TestimonyAdminPage';
 import { EditTestimony } from './pages/BackOffice/EditTestimony';
+import { TransferPage } from './pages/TransferPage';
 
 function App() {
   return (
@@ -29,8 +30,9 @@ function App() {
         <Route path="/clienteinfo" exact component={ClienteInfo} />
         <Route path="/pagamento" exact component={PaymentPage} />
         <Route path="/escreverdepoimento" exact component={RegistrarDepoimento} />
-        <Route path="/login" exact component={Login} />
+        <Route path="/transfer" exact component={TransferPage} />
 
+        <Route path="/login" exact component={Login} />
         <Route path="/admin/home/auth=:token" exact component={AdminPage} />
         <Route path="/editardestino/:id/auth=:token" exact component={EditDestination} />
         <Route path="/admin/clientes/auth=:token" exact component={ClientesAdminPage} />

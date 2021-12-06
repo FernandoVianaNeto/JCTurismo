@@ -22,12 +22,23 @@ export const Base = ({ destino }) => (
           <p>Home</p>
         </MenuLink>
         {
-          !destino && (
+          destino ? (
             <>
               <MenuLink link="/transfer">
                 <FaShuttleVan />
                 <p>Transfer</p>
               </MenuLink>
+              <MenuLink link="/citytour">
+                <GiModernCity />
+                <p>CityTour</p>
+              </MenuLink>
+              <MenuLink link="/destinos">
+                <MdFlight />
+                <p>Destinos</p>
+              </MenuLink>
+            </>
+          ) : (
+            <>
               <MenuLink link="/citytour">
                 <GiModernCity />
                 <p>CityTour</p>
