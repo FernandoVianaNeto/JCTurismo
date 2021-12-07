@@ -6,29 +6,17 @@ export const Container = styled.div`
   `}
 `;
 
-export const BigGroup = styled.div`
+export const FormContainer = styled.div`
   ${() => css`
-    display: flex;
-    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
   `}
 `;
 
 export const Group = styled.div`
   ${() => css`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
     .emailError {
       color: red;
     }
-  `}
-`;
-
-export const FormContainer = styled.div`
-  ${() => css`
-    margin: 0 auto;
-
   `}
 `;

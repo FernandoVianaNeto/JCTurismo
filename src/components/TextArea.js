@@ -6,5 +6,6 @@ export const TextArea = styled.textarea`
     padding: 5px;
     width: 100%;
     min-height: 200px;
+    border-radius: 4px;
   `}
 `;

@@ -181,7 +181,7 @@ export const Home = () => {
               Focada em excelência e satisfação, procuramos sempre mostrar como um cliente deve ser tratado.
             </p>
             <strong>Entre em contato conosco e marque a melhor viagem da sua vida</strong>
-            <Button type="button">Solicite seu orçamento</Button>
+            <Button href="/solicitarorcamento">Solicite seu orçamento</Button>
           </div>
         </main>
       </div>

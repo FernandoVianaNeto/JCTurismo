@@ -43,66 +43,79 @@ export const TransferPage = () => {
     <Container>
       <Base />
       <FormContainer>
-        <Form>
-          <Input
-            type="text"
-            placeholder="Seu nome"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
-          <Group>
-            <Input
-              type="text"
-              placeholder="Seu e-mail"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-            {
-              emailError && <small className="emailError">Digite um e-mail válido</small>
-            }
-          </Group>
-          <Input
-            type="text"
-            placeholder="Telefone para contato"
-            value={phone}
-            onChange={(event) => setPhone(formatPhone(event.target.value))}
-          />
-          <Input
-            type="text"
-            placeholder="Local de partida"
-            value={departureLocal}
-            onChange={(event) => setDepartureLocal(event.target.value)}
-          />
-          <Input
-            type="text"
-            placeholder="Local de destino"
-            value={arriveLocal}
-            onChange={(event) => setArriveLocal(event.target.value)}
-          />
-          <Group>
-            <small>Dia do transfer</small>
-            <Input
-              type="date"
-              value={date}
-              onChange={(event) => setDate(event.target.value)}
-            />
-          </Group>
+        <Form action="https://jctturismo.herokuapp.com/transferform" method="POST">
+          <h3>Solicite o seu transfer aqui na JCTurismo</h3>
           <BigGroup>
             <Group>
-              <small>Hora do transfer</small>
               <Input
-                type="time"
-                value={time}
-                onChange={(event) => setTime(event.target.value)}
+                type="text"
+                placeholder="Seu nome"
+                name="name"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+              />
+              <Group>
+                <Input
+                  type="text"
+                  placeholder="Seu e-mail"
+                  value={email}
+                  name="email"
+                  onChange={(event) => setEmail(event.target.value)}
+                />
+                {
+              emailError && <small className="emailError">Digite um e-mail válido</small>
+            }
+              </Group>
+              <Input
+                type="text"
+                placeholder="Telefone para contato"
+                value={phone}
+                name="phone"
+                onChange={(event) => setPhone(formatPhone(event.target.value))}
+              />
+              <Input
+                type="text"
+                placeholder="Local de partida"
+                value={departureLocal}
+                name="departureLocal"
+                onChange={(event) => setDepartureLocal(event.target.value)}
+              />
+              <Input
+                type="text"
+                placeholder="Local de destino"
+                value={arriveLocal}
+                name="arriveLocal"
+                onChange={(event) => setArriveLocal(event.target.value)}
               />
             </Group>
             <Group>
-              <Input
-                placeholder="Quantidade de pessoas"
-                type="number"
-                value={passengers}
-                onChange={(event) => setPassengers(event.target.value)}
-              />
+              <Group>
+                <small>Dia do transfer</small>
+                <Input
+                  type="date"
+                  name="date"
+                  value={date}
+                  onChange={(event) => setDate(event.target.value)}
+                />
+              </Group>
+              <Group>
+                <small>Hora do transfer</small>
+                <Input
+                  type="time"
+                  name="time"
+                  value={time}
+                  onChange={(event) => setTime(event.target.value)}
+                />
+              </Group>
+              <Group>
+                <small>Quantidade de passageiros</small>
+                <Input
+                  type="number"
+                  value={passengers}
+                  name="passengers"
+                  onChange={(event) => setPassengers(event.target.value)}
+                />
+              </Group>
             </Group>
           </BigGroup>
           <Button

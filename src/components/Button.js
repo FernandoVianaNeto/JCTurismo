@@ -46,6 +46,12 @@ export default styled.button`
         color: ${theme.colors.thirdColor};
         background-color: lightgray;
         border: 1px solid lightgray;
+
+        &:hover {
+          color: ${theme.colors.thirdColor};
+          background-color: lightgray;
+          border: 1px solid lightgray;
+        }
       }
 
       &:hover {
