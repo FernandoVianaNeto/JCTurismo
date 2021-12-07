@@ -10,6 +10,9 @@ import { PaymentPage } from './pages/PaymentPage';
 import { ClienteInfo } from './pages/ClienteInfo';
 import { RegistrarDepoimento } from './pages/RegistrarDepoimento';
 import { Login } from './pages/Login';
+import { TransferPage } from './pages/TransferPage';
+import { SolicitarOrcamento } from './pages/SolicitarOrcamento';
+import { Thanks } from './pages/Thanks';
 
 import { AdminPage } from './pages/BackOffice/AdminPage';
 import { EditDestination } from './pages/BackOffice/EditDestination';
@@ -17,8 +20,6 @@ import { ClientesAdminPage } from './pages/BackOffice/ClientesAdminPage';
 import { EditClient } from './pages/BackOffice/EditClient';
 import { TestimonyAdminPage } from './pages/BackOffice/TestimonyAdminPage';
 import { EditTestimony } from './pages/BackOffice/EditTestimony';
-import { TransferPage } from './pages/TransferPage';
-import { SolicitarOrcamento } from './pages/SolicitarOrcamento';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/escreverdepoimento" exact component={RegistrarDepoimento} />
         <Route path="/transfer" exact component={TransferPage} />
         <Route path="/solicitarorcamento" exact component={SolicitarOrcamento} />
+        <Route path="/confimacao" exact component={Thanks} />
 
         <Route path="/login" exact component={Login} />
         <Route path="/admin/home/auth=:token" exact component={AdminPage} />
