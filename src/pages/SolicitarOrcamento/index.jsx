@@ -38,7 +38,7 @@ export const SolicitarOrcamento = () => {
     <Container>
       <Base />
       <FormContainer>
-        <Form>
+        <Form action="https://jctturismo.herokuapp.com/solicitarorcamentoform" method="POST">
           <h3>Solicite o seu orçamento junto com  JCTurismo</h3>
           <Input
             placeholder="Seu nome"

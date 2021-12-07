@@ -5,6 +5,8 @@ import {
   Container, Content, Header, Main, Footer,
 } from './styles';
 
+import Button from '../../components/Button';
+
 import { Base } from '../../templates/Base';
 import { ProductCard } from '../../components/ProductCard';
 
@@ -80,9 +82,9 @@ export const ShoppingCart = () => {
                     ,00
                   </span>
                 </h3>
-                <button type="button" onClick={() => history.push('/clienteinfo')}>
+                <Button type="button" onClick={() => history.push('/clienteinfo')}>
                   Seguir para o pagamento
-                </button>
+                </Button>
               </>
             )}
           </div>
