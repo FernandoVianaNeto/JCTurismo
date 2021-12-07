@@ -57,6 +57,9 @@ export const RightColumn = styled.div`
 
       color: ${theme.colors.secundaryColor};
 
+      text-decoration: none;
+      transition: ease-in-out all 300ms;
+
       &:hover {
         color: ${theme.colors.thirdColor};
       }
