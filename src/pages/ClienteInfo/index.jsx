@@ -86,7 +86,7 @@ export const ClienteInfo = () => {
             <Select
               value={selectValue}
               onChange={(event) => setSelectValue(event.target.value)}
-              name="howYouMeet"
+              name="know"
             >
               <option value="">Selecione uma opção</option>
               <option value="Instagram">Instagram</option>
